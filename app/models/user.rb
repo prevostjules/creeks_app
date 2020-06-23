@@ -8,4 +8,12 @@ class User < ApplicationRecord
   enum role: { viewer: 0, streamer: 1 }
 
   validates :username, presence: true, uniqueness: true
+  validates :description, presence: true, on: :update, if: :is_streamer?
+
+  private
+
+  def is_streamer?
+    self.streamer?
+  end
+
 end

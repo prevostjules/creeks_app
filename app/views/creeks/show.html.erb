@@ -7,3 +7,5 @@
 <%= @creek.price %>
 <%= @creek.capacity %>
 <%= @creek.user.username %>
+
+<%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>
