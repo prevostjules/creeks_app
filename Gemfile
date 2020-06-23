@@ -31,7 +31,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
 gem 'google-api-client', '~> 0.34'
-gem 'httparty', '~> 0.18.1'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
