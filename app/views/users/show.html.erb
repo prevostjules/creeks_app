@@ -1,2 +1,18 @@
+<% if @user.role == "streamer" %>
+  <%= @user.username %>
+  <%= @user.role %>
+  <% if @user == current_user %>
+    <%= link_to "Nouvelle Creek", creeks_new_path, class: "btn btn-primary" %>
+    <%= link_to "Modifier profil", edit_user_registration_path, class: "btn btn-primary"  %>
+  <% end %>
+<% else  %>
+  <h1> vous n'êtes pas streamer</h1>
+  <%= link_to "home", root_path %>
+<% end %>
+
+
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+
+
