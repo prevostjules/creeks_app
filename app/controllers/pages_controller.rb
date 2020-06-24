@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     if params[:code].present?
       url = URI("https://accounts.google.com/o/oauth2/token")
 
-      https = Net::HTTP.new(url.host, url.port);
+      https = Net::HTTP.new(url.host, url.port)
       https.use_ssl = true
 
       request = Net::HTTP::Post.new(url)
