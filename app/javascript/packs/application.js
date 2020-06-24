@@ -24,7 +24,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { getCode } from "./get_code";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,5 +31,4 @@ import { getCode } from "./get_code";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  getCode();
 });
