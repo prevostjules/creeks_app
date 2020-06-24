@@ -3,7 +3,7 @@
 <% else %>
   <h2>PROFILE DU STREAMER</h2>
   <% if @user == current_user && current_user.streamer? %>
-    <a href="https://accounts.google.com/o/oauth2/auth?client_id=206719754391-rer1a7fdjuf8g80sq4l1ab55bptsc2n7.apps.googleusercontent.com&redirect_uri=http://localhost:3000&scope=https://www.googleapis.com/auth/youtube&response_type=code&access_type=offline">Lien vers ton compte</a>
+    <a href=<%= @link_to_google_auth %>>test</a>
     <%= link_to "Nouvelle Creek", creeks_new_path, class: "btn btn-primary" %>
     <%= render "show-streamer" %>
   <% end %>
