@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 
     request = Net::HTTP::Post.new(url)
     request["Content-Type"] = "application/x-www-form-urlencoded"
-    request.body = "code=#{params[:code]}&client_id=#{ENV['CLIENT_ID']}&client_secret=#{ENV['CLIENT_SECRET']}&redirect_uri=http%3A//localhost%3A3000&grant_type=authorization_code&Content-Type=application/x-www-form-urlencoded"
+    request.body = "code=#{params[:code]}&client_id=#{ENV['CLIENT_ID']}&client_secret=#{ENV['CLIENT_SECRET']}&redirect_uri=#{ENV['REDIRECT_URI']}&grant_type=authorization_code&Content-Type=application/x-www-form-urlencoded"
 
     response = https.request(request)
     results = response.read_body
