@@ -6,15 +6,15 @@
 <p><a href="https://res.cloudinary.com/dvwipbafx/video/upload/v1592923383/Yoga_-_27089_aemiih.mp4">Creeks</a>
 <button>Pause</button>
 </div>
-
-
  -->
 
-<div id="header" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://business.lesechos.fr/images/2020/04/14/336750_coronavirus-le-monde-de-la-remise-en-forme-bascule-en-ligne-web-tete-0603055198207_1200x640.jpg);">
+
+
+<div id="header" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "https://res.cloudinary.com/dvwipbafx/image/upload/v1593001009/banner_nihvgl.png", height: 300, width: 400, crop: :fill %>');">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h1>CreeksApp</h1>
+          <h1 class="brand-title">Creeks.App</h1>
         </div>
         <%= form_tag pages_path, method: :get do %>
           <%= text_field_tag :query,
@@ -32,88 +32,94 @@
    <h1><strong>There's still room for improvement..</strong></h1>
 </div>
 
-<div class = "container text-muted">
+<div class = "container text-muted mr-0">
   <div class="card-deck">
     <div class="card card-border">
-      <%= image_tag "man.jpg", class: "card-img-top img-fluid" %>
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1592578409/kjohrteoh8kwoc2qr2k19vd0zbfs.jpg", class: "card-img-top img-fluid" %>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Meet Matty - Burpees training</h5>
+        <p class="card-text">"Promis avec moi vous allez suer, des burpees en veux-tu en voilà, en plus les 3 premières séances sont offertes !</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>
     </div>
     <div class="card card-border">
-      <%= image_tag "man.jpg", class: "card-img-top img-fluid" %>
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593005536/D_jbnbhy.jpg", class: "card-img-top img-fluid" %>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Meet Pauline</h5>
+        <p class="card-text">Experte reconnue en mindfulness, plongez-vous dans le pouvoir de guérison des vibrations sonores et sensorielles conçues pour vous amener à un état de relaxation profonde et d'harmonie vibratoire..</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Last updated 23 mins ago</small>
       </div>
     </div>
     <div class="card card-border">
-      <%= image_tag "man.jpg", class: "card-img-top img-fluid" %>
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593005391/C_gwfdjm.jpg", class: "card-img-top img-fluid" %>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <h5 class="card-title">Meet Andrea</h5>
+        <p class="card-text">I aspire to help others become the best version of themselves. She dedicates her time to helping others heal holistically through yoga, deep-tissue massage, and meditation.</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Last updated 3O mins ago</small>
       </div>
     </div>
   </div>
-  <div class="col-12 col-lg-8 pt-3">
-    <br>
-    <h1><strong>Aujourd’hui plus que jamais, cela peut changer la vie de pouvoir continuer à s'épanouir en pratiquant son sport préféré.. même à domicile !</strong></h1>
-    <br>
-    <p>Chez <strong>CreeksApp</strong>, nous faisons toujours tout pour simplifier les rencontres entre streamers et viewers</p>
-    <p>
-      Nous nous efforçons de créer un endroit où
-      chacun et chacune, dans le monde entier,
-      peut être soi-même et partager
-      de bons moments en se connectant sur notre plateforme.
-      Rejoignez notre communauté !
-      Rien ne vaut l’énergie d’un cours en bien préparé.
-      Opte pour un cours de yoga, une séance de
-      Pilates et bien d’autres disciplines avec vos professeurs favoris.
-    </p>
-  </div>
+
+
+  <div class="container-fluid pb-5">
+    <div class="row">
+          <div class="col-12 col-lg-4">
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004242/yogaphone_i343wn.jpg", height: 400, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/4_hv3onf.jpg", height: 400, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/couple-ordi_fn5cyp.jpg", height: 400, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/5_ttptpo.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/7_j6w0ld.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/yoga-ordi_khs4cx.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/11_haqx0m.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/1_znjmtq.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/6_p8q4wf.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                      <div class="carousel-item">
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/3_rpzr5b.jpg", height: 300, width: 400, crop: :fill %>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-lg-8">
+            <br>
+            <h1><strong>Aujourd’hui plus que jamais, cela peut changer la vie de pouvoir continuer à s'épanouir en pratiquant son sport préféré.. même à domicile !</strong></h1>
+            <br>
+            <p>Chez <strong>CreeksApp</strong>, nous faisons toujours tout pour simplifier les rencontres entre streamers et viewers</p>
+            <p>
+              Nous nous efforçons de créer un endroit où
+              chacun et chacune, dans le monde entier,
+              peut être soi-même et partager
+              de bons moments en se connectant sur notre plateforme.
+              Rejoignez notre communauté !
+              Rien ne vaut l’énergie d’un cours en bien préparé.
+              Opte pour un cours de yoga, une séance de
+              Pilates et bien d’autres disciplines avec vos professeurs favoris.
+            </p>
+          </div>
+    </div>
 </div>
-
-
-  <!-- <div class="row">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-lg-4 p-0">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="1.png" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="2.png" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                   <img class="d-block w-100" src="3.png" alt="trois slide">
-                </div>
-                <div class="carousel-item">
-                   <img class="d-block w-100" src="4.png" alt="quatre slide">
-                </div>
-                <div class="carousel-item">
-                   <img class="d-block w-100" src="5.png" alt="cinq slide">
-                </div>
-                <div class="carousel-item">
-                   <img class="d-block w-100" src="6.png" alt="six slide">
-                </div>
-                <div class="carousel-item">
-                   <img class="d-block w-100" src="7.png" alt="sept slide">
-                </div>
-                <div class="carousel-item">
-                   <img class="d-block w-100" src="8.png" alt="huit slide">
-                </div>
-            </div>
-        </div>
-    </div> -->
