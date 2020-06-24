@@ -1,7 +1,7 @@
 <% if @user.viewer? %>
   Rien ici, <%= link_to "home", root_path %>
 <% else %>
-  PROFILE DU STREAMER
+  <h2>PROFILE DU STREAMER</h2>
   <% if @user == current_user && current_user.streamer? %>
     <a href=<%= @link_to_google_auth %>>test</a>
     <%= link_to "Nouvelle Creek", creeks_new_path, class: "btn btn-primary" %>
