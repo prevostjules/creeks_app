@@ -53,7 +53,7 @@ class CreeksController < ApplicationController
   def call_youtube_api
     access_token = current_user.access_token
 
-    url = URI("https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet%2CcontentDetails%2Cstatus&key=AIzaSyDAKRfsEDRrWm-GjMCePa_jzyDUXWOph9U")
+    url = URI("https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet%2CcontentDetails%2Cstatus&key=#{ENV['API_KEY']}")
 
     https = Net::HTTP.new(url.host, url.port)
     https.use_ssl = true
