@@ -14,7 +14,7 @@ class CreeksController < ApplicationController
     @creek.user = current_user
     results = call_youtube_api
     results = JSON.parse(results)
-
+    p results
     @creek.iframe = results["contentDetails"]["monitorStream"]["embedHtml"]
     if @creek.save!
       redirect_to creek_path(@creek)
@@ -43,7 +43,7 @@ class CreeksController < ApplicationController
   private
 
   def set_params
-    params.require(:creek).permit(:title, :description, :scheduledStartTime, :price)
+    params.require(:creek).permit(:title, :description, :scheduledStartTime, :scheduledEndTime, :price, :capacity)
   end
 
   def set_creek
@@ -52,7 +52,6 @@ class CreeksController < ApplicationController
 
   def call_youtube_api
     access_token = current_user.access_token
-
     url = URI("https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet%2CcontentDetails%2Cstatus&key=#{ENV['API_KEY']}")
 
     https = Net::HTTP.new(url.host, url.port)
@@ -62,8 +61,7 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
     request["Accept"] = "application/json"
     request["Content-Type"] = "application/json"
-    request.body = "{\"snippet\":{\"title\":\"Test broadcast\",\"scheduledStartTime\":\"2020-06-27T05:06:07.0Z\",\"scheduledEndTime\":\"2020-06-28T05:06:07.0Z\"},\"contentDetails\":{\"enableClosedCaptions\":true,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true},\"status\":{\"privacyStatus\":\"unlisted\"}}"
-
+    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00:0Z\",\"scheduledEndTime\":\"#{@creek.scheduledEndTime}:00:0Z\",\"isDefaultBroadcast\":\"true\"},\"contentDetails\":{\"enableClosedCaptions\":true,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":false},\"status\":{\"privacyStatus\":\"unlisted\"}}"
     response = https.request(request)
     response.read_body
   end
