@@ -16,51 +16,59 @@
         <div class="col-12">
           <h1 class="brand-title">Creeks.App</h1>
         </div>
+        <%= form_tag pages_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control form-text my-1 col-sm-12",
+            placeholder: "Rechercher" %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
 </div>
 
-<div class="row justify-content-center mt-5">
+
+<div class="row justify-content-center margin-h">
    <h1><strong>There's still room for improvement..</strong></h1>
 </div>
 
-<div class = "container text-muted mr-0">
-  <div class="card-deck">
+<div class = "text-muted">
+  <div class="card-deck margin-div">
     <div class="card card-border">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1592578409/kjohrteoh8kwoc2qr2k19vd0zbfs.jpg", class: "card-img-top img-fluid" %>
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593010174/Adrienne_desktop_nc3njw.jpg", class: "card-img-top img-fluid hw-pic" %>
       <div class="card-body">
-        <h5 class="card-title">Meet Matty - Burpees training</h5>
-        <p class="card-text">"Promis avec moi vous allez suer, des burpees en veux-tu en voilà, en plus les 3 premières séances sont offertes !</p>
+        <h5 class="card-title">Meet Fabiola - Fitness Instructor</h5>
+        <p class="card-text">"Sur un rythme samba, je saurai vous faire danser avec des burpees endiablés.. en plus les 3 premières séances sont offertes !</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
       </div>
     </div>
     <div class="card card-border">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593005536/D_jbnbhy.jpg", class: "card-img-top img-fluid" %>
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593010174/Jacy_desktop_sd9nqm.jpg", class: "card-img-top img-fluid hw-pic" %>
       <div class="card-body">
-        <h5 class="card-title">Meet Pauline</h5>
+        <h5 class="card-title">Meet Matty - Yoga Instructor</h5>
+        <p class="card-text">J'aspire à aider les autres à devenir la meilleure version d'eux-mêmes. En consacrant mon temps à aider les autres à guérir grâce au yoga, au qigong et à la méditation.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3O mins ago</small>
+      </div>
+    </div>
+    <div class="card card-border">
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593010174/Jackie_desktop_n8ixnm.jpg", class: "card-img-top img-fluid hw-pic" %>
+      <div class="card-body">
+        <h5 class="card-title">Meet Aude - Mindfulness Instructor</h5>
         <p class="card-text">Experte reconnue en mindfulness, plongez-vous dans le pouvoir de guérison des vibrations sonores et sensorielles conçues pour vous amener à un état de relaxation profonde et d'harmonie vibratoire..</p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 23 mins ago</small>
       </div>
     </div>
-    <div class="card card-border">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593005391/C_gwfdjm.jpg", class: "card-img-top img-fluid" %>
-      <div class="card-body">
-        <h5 class="card-title">Meet Andrea</h5>
-        <p class="card-text">I aspire to help others become the best version of themselves. She dedicates her time to helping others heal holistically through yoga, deep-tissue massage, and meditation.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3O mins ago</small>
-      </div>
-    </div>
   </div>
 
 
-  <div class="container-fluid pb-5">
-    <div class="row">
+  <div class="pb-5">
+    <div class="row margin-div">
           <div class="col-12 col-lg-4">
               <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
@@ -74,31 +82,30 @@
                           <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/couple-ordi_fn5cyp.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/5_ttptpo.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/5_ttptpo.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/7_j6w0ld.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/7_j6w0ld.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/yoga-ordi_khs4cx.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/yoga-ordi_khs4cx.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/11_haqx0m.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/11_haqx0m.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/1_znjmtq.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/1_znjmtq.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/6_p8q4wf.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004240/6_p8q4wf.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                       <div class="carousel-item">
-                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/3_rpzr5b.jpg", height: 300, width: 400, crop: :fill %>
+                          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/3_rpzr5b.jpg", height: 400, width: 400, crop: :fill %>
                       </div>
                   </div>
               </div>
           </div>
           <div class="col-12 col-lg-8">
-            <br>
             <h1><strong>Aujourd’hui plus que jamais, cela peut changer la vie de pouvoir continuer à s'épanouir en pratiquant son sport préféré.. même à domicile !</strong></h1>
             <br>
             <p>Chez <strong>CreeksApp</strong>, nous faisons toujours tout pour simplifier les rencontres entre streamers et viewers</p>
