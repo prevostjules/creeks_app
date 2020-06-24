@@ -20,4 +20,11 @@ class PagesController < ApplicationController
       current_user.update!(access_token: results_as_hash["access_token"], refresh_token: results_as_hash["refresh_token"])
     end
   end
+
+  def index
+    if params[:query].present?
+      @creeks = Creek.where(title: params[:query])
+      @users = User.where(username: params[:query])
+    end
+  end
 end
