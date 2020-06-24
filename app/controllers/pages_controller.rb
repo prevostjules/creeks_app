@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   def home
     if params[:code].present?
       results = call_google_api
+      p results
       if current_user.description.nil?
         current_user.update!(access_token: results["access_token"], refresh_token: results["refresh_token"], description: "Description à venir")
       else

@@ -61,8 +61,10 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
     request["Accept"] = "application/json"
     request["Content-Type"] = "application/json"
-    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00:0Z\",\"scheduledEndTime\":\"#{@creek.scheduledEndTime}:00:0Z\",\"isDefaultBroadcast\":\"true\"},\"contentDetails\":{\"enableClosedCaptions\":true,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":false},\"status\":{\"privacyStatus\":\"unlisted\"}}"
+    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0Z\",\"scheduledEndTime\":\"#{@creek.scheduledEndTime}:00.0Z\"},\"contentDetails\":{\"enableClosedCaptions\":true,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true},\"status\":{\"privacyStatus\":\"unlisted\"}}"
+
     response = https.request(request)
+    p response.read_body
     response.read_body
   end
 end
