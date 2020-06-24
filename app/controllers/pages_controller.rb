@@ -14,6 +14,13 @@ class PagesController < ApplicationController
     end
   end
 
+  def index
+    if params[:query].present?
+      @creeks = Creek.search(params[:query])
+      @users = User.search(params[:query])
+    end
+  end
+
   private
 
   def call_google_api
@@ -30,4 +37,6 @@ class PagesController < ApplicationController
     results = response.read_body
     results_as_hash = JSON.parse(results)
   end
+
+
 end
