@@ -30,4 +30,11 @@ class PagesController < ApplicationController
     results = response.read_body
     results_as_hash = JSON.parse(results)
   end
+
+  def index
+    if params[:query].present?
+      @creeks = Creek.where(title: params[:query])
+      @users = User.where(username: params[:query])
+    end
+  end
 end

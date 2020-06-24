@@ -10,10 +10,17 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :description, presence: true, on: :update, if: :is_streamer?
 
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :username
+  end
+
   private
 
   def is_streamer?
     self.streamer?
   end
+
 
 end
