@@ -1,6 +1,7 @@
 <% if @user.role == "streamer" %>
   <%= @user.username %>
   <%= @user.role %>
+  <a href="https://accounts.google.com/o/oauth2/auth?client_id=206719754391-rer1a7fdjuf8g80sq4l1ab55bptsc2n7.apps.googleusercontent.com&redirect_uri=http://localhost:3000&scope=https://www.googleapis.com/auth/youtube&response_type=code&access_type=offline">test</a>
   <% if @user == current_user %>
     <%= link_to "Nouvelle Creek", creeks_new_path, class: "btn btn-primary" %>
     <%= link_to "Modifier profil", edit_user_registration_path, class: "btn btn-primary"  %>
