@@ -14,6 +14,7 @@ class CreeksController < ApplicationController
     @creek.user = current_user
     results = call_youtube_api
     results = JSON.parse(results)
+
     @creek.iframe = results["contentDetails"]["monitorStream"]["embedHtml"]
     if @creek.save!
       redirect_to creek_path(@creek)
