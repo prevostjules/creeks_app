@@ -17,8 +17,6 @@ class PagesController < ApplicationController
       response = https.request(request)
       results = response.read_body
       results_as_hash = JSON.parse(results)
-      current_user.access_token = results_as_hash["access_token"]
-      current_user.refresh_token = results_as_hash["refresh_token"]
       current_user.update!(access_token: results_as_hash["access_token"], refresh_token: results_as_hash["refresh_token"])
     end
   end
