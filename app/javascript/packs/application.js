@@ -26,7 +26,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { algoliaAutocomplete } from "../components/algolia_autocomplete";
-
+import { loadDynamicBannerText } from '../components/banner';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -34,6 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   algoliaAutocomplete();
+  loadDynamicBannerText();
 });
-
-

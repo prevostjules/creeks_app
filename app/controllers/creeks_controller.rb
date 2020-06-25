@@ -3,6 +3,7 @@ class CreeksController < ApplicationController
   require 'net/http'
   require 'uri'
   def show
+    @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}&modestbranding=1&rel=0&showinfo=0"
   end
 
   def new
@@ -15,8 +16,11 @@ class CreeksController < ApplicationController
     check_credentials
     results = call_youtube_api
     results = JSON.parse(results)
-    p results
-    @creek.iframe = results["contentDetails"]["monitorStream"]["embedHtml"]
+    @creek.id_broadcast = results["id"]
+    # stream_params = create_stream_params
+    # @creek.stream_id = stream_params["id"]
+    p current_user.stream_id
+    link_broadcast_to_stream(results["id"], current_user.stream_id)
     if @creek.save!
       redirect_to creek_path(@creek)
     else
@@ -44,7 +48,7 @@ class CreeksController < ApplicationController
   private
 
   def set_params
-    params.require(:creek).permit(:title, :description, :scheduledStartTime, :scheduledEndTime, :price, :capacity)
+    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :category)
   end
 
   def set_creek
@@ -62,8 +66,7 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
     request["Accept"] = "application/json"
     request["Content-Type"] = "application/json"
-    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0Z\",\"scheduledEndTime\":\"#{@creek.scheduledEndTime}:00.0Z\"},\"contentDetails\":{\"enableClosedCaptions\":true,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true},\"status\":{\"privacyStatus\":\"unlisted\"}}"
-
+    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0Z\",\"description\":\"#{@creek.description}\"},\"contentDetails\":{\"enableClosedCaptions\":false,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true,\"latencyPreference\":\"ultraLow\",\"monitorStream\":{\"enableMonitorStream\":false},\"enableAutoStart\":true,\"enableAutoStop\":true},\"status\":{\"privacyStatus\":\"unlisted\",\"selfDeclaredMadeForKids\":true,\"lifeCycleStatus\":\"ready\"}}"
     response = https.request(request)
     p response.read_body
     response.read_body
@@ -99,4 +102,36 @@ class CreeksController < ApplicationController
       return true
     end
   end
+
+  def link_broadcast_to_stream(broadcast_id, stream_id)
+
+    url = URI("https://www.googleapis.com/youtube/v3/liveBroadcasts/bind?id=#{broadcast_id}&part=snippet&streamId=#{stream_id}&key=#{ENV['API_KEY']}")
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Post.new(url)
+    request["Authorization"] = "Bearer #{current_user.access_token}"
+    request["Accept"] = "application/json"
+
+    response = https.request(request)
+    p response.read_body
+    response.read_body
+  end
+
+  # def create_stream_params
+  #   url = URI("https://www.googleapis.com/youtube/v3/liveStreams?part=snippet%2Ccdn%2CcontentDetails%2Cstatus&key=#{ENV['API_KEY']}")
+
+  #   https = Net::HTTP.new(url.host, url.port)
+  #   https.use_ssl = true
+
+  #   request = Net::HTTP::Post.new(url)
+  #   request["Authorization"] = "Bearer #{current_user.access_token}"
+  #   request["Accept"] = "application/json"
+  #   request["Content-Type"] = "application/json"
+  #   request.body = "{\"snippet\":{\"title\":\"CreeksApp\",\"description\":\"#{current_user.description}\"},\"cdn\":{\"frameRate\":\"30fps\",\"ingestionType\":\"rtmp\",\"resolution\":\"720p\"},\"contentDetails\":{\"isReusable\":true}}"
+
+  #   response = https.request(request)
+  #   JSON.parse(response.read_body)
+  # end
 end

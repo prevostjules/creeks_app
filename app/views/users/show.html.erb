@@ -3,8 +3,10 @@
 <% else %>
   <h2>PROFILE DU STREAMER</h2>
   <% if @user == current_user && current_user.streamer? %>
-    <a href=<%= @link_to_google_auth %>>test</a>
-    <%= link_to "Nouvelle Creek", creeks_new_path, class: "btn btn-primary" %>
+    <a href=<%= @link_to_google_auth %>>Account Settings</a>
+    <% if !@user.stream_name.nil? %>
+      <%= @user.stream_name %>
+    <% end %>
     <%= render "show-streamer" %>
   <% end %>
 <% end %>

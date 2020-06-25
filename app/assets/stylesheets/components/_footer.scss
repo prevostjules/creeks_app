@@ -6,13 +6,12 @@
   height: 80px;
   color: rgba(0,0,0,0.3);
   color: white;
+  font-weight: bold;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
-  color: white;
-  padding-left: 30px;
   color: white;
 }
 
@@ -28,3 +27,6 @@
   opacity: 1;
 }
 
+.fix-nf {
+  min-height: calc(100vh - 65px - 80px);
+}
