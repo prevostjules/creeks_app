@@ -1,6 +1,7 @@
 class Creek < ApplicationRecord
   belongs_to :user
   has_many :tickets, dependent: :destroy
+  has_many :users, through: :tickets
 
   validates :title, presence: true
   validates :description, presence: true

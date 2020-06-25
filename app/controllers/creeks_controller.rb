@@ -4,6 +4,8 @@ class CreeksController < ApplicationController
   require 'uri'
   def show
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}&modestbranding=1&rel=0&showinfo=0"
+    @tickets = @creek.tickets.where(payment_status: true)
+    @users = @creek.users
   end
 
   def new

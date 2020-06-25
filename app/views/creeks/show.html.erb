@@ -1,14 +1,18 @@
-<div class="fix-nf">
+<div class="fix-nf container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_tag "https://www.publicdomainpictures.net/pictures/250000/velka/yoga-silhouette-1522576506u1F.jpg", alt: "alttext" %>');">
+</div>
   <h1>Creeks#show</h1>
-  <p>Find me in app/views/creeks/show.html.erb</p>
+  <%= @creek.title %>
+  <%= @creek.description %>
+  <%= @creek.scheduledStartTime %>
+  <%= @creek.price %>
+  <%= @creek.capacity %>
+  <%= @creek.user.username %>
 
-<%= @creek.title %>
-<%= @creek.description %>
-<%= @creek.scheduledStartTime %>
-<%= @creek.price %>
-<%= @creek.capacity %>
-<%= @creek.user.username %>
+  <% if @users.include?(current_user) || @creek.user == current_user %>
+    <iframe width="848" height="480" src=<%= @embed_link %> frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; modest-branding=1; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <% else %>
+    <%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>
+  <% end %>
 
-<iframe width="848" height="480" src=<%= @embed_link %> frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; modest-branding=1; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>
+</div>
