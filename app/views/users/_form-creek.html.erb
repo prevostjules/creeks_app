@@ -1,0 +1,11 @@
+<%= simple_form_for @creek do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :scheduledStartTime, as: :string, input_html: {:type => "datetime-local"} %>
+  <%= f.input :scheduledEndTime, as: :string, input_html: {:type => "datetime-local"} %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :capacity %>
+  <%= f.button :submit, class: "btn btn-primary"%>
+<% end %>
+<br>
