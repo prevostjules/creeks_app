@@ -2,15 +2,25 @@
   background-size: cover;
   color: white;
   height: 610px;
-  text-align: center;
-  font-size: 60px;
+  text-align: right;
+  font-size: 30px;
 }
 
-.brand-title {
+.brand-h1 {
     font-size: 120px;
     font-weight: bold;
     padding-top: 70px;
     padding-left: 750px;
+}
+
+.brand-h2 {
+    font-size: 30px;
+    padding-top: 0px;
+    padding-left: 800px;
+}
+
+.background-visuel {
+  background-color: #f4f2f2;
 }
 
 // body {

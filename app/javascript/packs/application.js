@@ -33,3 +33,11 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   hasGetUserMedia();
 });
+
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicBannerText();
+});
