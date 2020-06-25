@@ -4,7 +4,6 @@
   <h2>PROFILE DU STREAMER</h2>
   <% if @user == current_user && current_user.streamer? %>
     <a href=<%= @link_to_google_auth %>>Account Settings</a>
-    <%= link_to "New Creek", creeks_new_path, class: "btn btn-primary" %>
     <%= render "show-streamer" %>
   <% end %>
 <% end %>
