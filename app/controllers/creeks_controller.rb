@@ -12,6 +12,7 @@ class CreeksController < ApplicationController
   def create
     @creek = Creek.new(set_params)
     @creek.user = current_user
+    check_credentials
     results = call_youtube_api
     results = JSON.parse(results)
     p results
@@ -66,5 +67,36 @@ class CreeksController < ApplicationController
     response = https.request(request)
     p response.read_body
     response.read_body
+  end
+
+  def check_credentials
+    access_token = current_user.access_token
+    url = URI("https://www.googleapis.com/youtube/v3/channels?part=id&mine=true")
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    request["Authorization"] = "Bearer #{access_token}"
+
+    response = https.request(request)
+    if JSON.parse(response.read_body).key?("error")
+      url = URI("https://accounts.google.com/o/oauth2/token")
+
+      https = Net::HTTP.new(url.host, url.port);
+      https.use_ssl = true
+
+      request = Net::HTTP::Post.new(url)
+      request["Content-Type"] = "application/x-www-form-urlencoded"
+      request["Cookie"] = "GAPS=1:Y1vNLoVUz49hu5_j8hDhxnAlOwX9NQ:XgiLKsUk1JSIdb5z; __Host-GAPS=1:Y1vNLoVUz49hu5_j8hDhxnAlOwX9NQ:XgiLKsUk1JSIdb5z"
+      request.body = "client_id=206719754391-rer1a7fdjuf8g80sq4l1ab55bptsc2n7.apps.googleusercontent.com&client_secret=I8KNI8zDhCxf5ysZ6lgEu1i7&refresh_token=1//03ndkIduieTfqCgYIARAAGAMSNwF-L9Iray8IIkWDP3xD1R4htBvo2LXBuFT9Pap91OluntyREiwcnkoe6B2Mmq9x_0J6tOLDA48&grant_type=refresh_token&response_type=code&scope=https%3A//www.googleapis.com/auth/youtube&redirect_uri=http%253A//localhost%253A3000"
+
+      response = https.request(request)
+      puts response.read_body
+      results = JSON.parse(response.read_body)
+      current_user.update!(access_token: results["access_token"])
+    else
+      return true
+    end
   end
 end
