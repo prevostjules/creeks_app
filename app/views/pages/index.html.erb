@@ -1,13 +1,19 @@
-<% if @creeks.present? %>
-<% @creeks.each do |creek| %>
-  <%= creek.title %>
-<% end %>
-<% end %>
+<div class="container">
+  <div class="class-border">
+    <% if @creeks.present? %>
+    <% @creeks.each do |creek| %>
+      <%= creek.title %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
 
-<% if @users.present? %>
-<% @users.each do |user| %>
-  <%= user.username %>
-<% end %>
-<% end %>
+<div class="container">
+  <% if @users.present? %>
+  <% @users.each do |user| %>
+    <%= user.username %>
+  <% end %>
+  <% end %>
+</div>
 
 
