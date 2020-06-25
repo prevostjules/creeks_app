@@ -3,7 +3,7 @@ class CreeksController < ApplicationController
   require 'net/http'
   require 'uri'
   def show
-    @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}&modestbranding=1&rel=0&showinfo=0"
+    @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}??autoplay=1&controls=0&modestbranding=1&iv_load_policy=3"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
   end
@@ -19,9 +19,7 @@ class CreeksController < ApplicationController
     results = call_youtube_api
     results = JSON.parse(results)
     @creek.id_broadcast = results["id"]
-    # stream_params = create_stream_params
-    # @creek.stream_id = stream_params["id"]
-    p current_user.stream_id
+    p @creek
     link_broadcast_to_stream(results["id"], current_user.stream_id)
     if @creek.save!
       redirect_to creek_path(@creek)
