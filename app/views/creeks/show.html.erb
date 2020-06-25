@@ -1,28 +1,29 @@
-<h1>Creeks#show</h1>
-<p>Find me in app/views/creeks/show.html.erb</p>
+<div class="fix-nf">
+  <h1>Creeks#show</h1>
+  <p>Find me in app/views/creeks/show.html.erb</p>
 
-<%= @creek.title %>
-<%= @creek.description %>
-<%= @creek.scheduledStartTime %>
-<%= @creek.price %>
-<%= @creek.capacity %>
-<%= @creek.user.username %>
-<video autoplay></video>
+  <%= @creek.title %>
+  <%= @creek.description %>
+  <%= @creek.scheduledStartTime %>
+  <%= @creek.price %>
+  <%= @creek.capacity %>
+  <%= @creek.user.username %>
+  <video autoplay></video>
 
-<script>
-const constraints = {
-  video: true
-};
+  <script>
+  const constraints = {
+    video: true
+  };
 
-const video = document.querySelector('video');
+  const video = document.querySelector('video');
 
-navigator.mediaDevices.getUserMedia(constraints).
-  then((stream) => {video.srcObject = stream});
-</script>
-<div>
-  <% if @creek.iframe.present?  %>
-    <%= @creek.iframe.html_safe %>
-  <% end %>
+  navigator.mediaDevices.getUserMedia(constraints).
+    then((stream) => {video.srcObject = stream});
+  </script>
+  <div>
+    <% if @creek.iframe.present?  %>
+      <%= @creek.iframe.html_safe %>
+    <% end %>
+  </div>
+  <%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>
 </div>
-<%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>
-
