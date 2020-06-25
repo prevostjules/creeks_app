@@ -7,7 +7,6 @@
     <% if !@user.stream_name.nil? %>
       <%= @user.stream_name %>
     <% end %>
-    <%= link_to "New Creek", creeks_new_path, class: "btn btn-primary" %>
     <%= render "show-streamer" %>
   <% end %>
 <% end %>
