@@ -16,6 +16,7 @@ class User < ApplicationRecord
     attributes :username
   end
 
+
   private
 
   def is_streamer?

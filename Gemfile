@@ -32,6 +32,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem "algoliasearch-rails"
 gem 'cloudinary', '~> 1.12.0'
+gem 'jquery-rails'
+gem 'hogan_assets'
 
 gem 'google-api-client', '~> 0.34'
 

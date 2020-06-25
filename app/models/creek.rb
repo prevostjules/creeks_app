@@ -12,5 +12,4 @@ class Creek < ApplicationRecord
   algoliasearch do
     attributes :title, :description
   end
-
 end

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home, :index ]
   require "uri"
   require "net/http"
 
@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   end
 
   def index
+
     if params[:query].present?
       @creeks = Creek.search(params[:query])
       @users = User.search(params[:query])
