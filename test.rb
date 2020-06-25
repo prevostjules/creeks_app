@@ -11,7 +11,14 @@ request = Net::HTTP::Post.new(url)
 request["Authorization"] = "Bearer #{access_token}"
 request["Accept"] = "application/json"
 request["Content-Type"] = "application/json"
-request.body = "{\"snippet\":{\"title\":\"CreeksApp\",\"description\":\"#{current_user.description}\"},\"cdn\":{\"frameRate\":\"60fps\",\"ingestionType\":\"rtmp\",\"resolution\":\"1080p\"},\"contentDetails\":{\"isReusable\":true}}"
+request.body = "{\"snippet\":{\"title\":\"CreeksApp\",\"description\":\"#{current_user.description}\"},\"cdn\":{\"frameRate\":\"30fps\",\"ingestionType\":\"rtmp\",\"resolution\":\"720p\"},\"contentDetails\":{\"isReusable\":true}}"
 
 response = https.request(request)
 puts response.read_body
+
+
+----
+
+
+
+
