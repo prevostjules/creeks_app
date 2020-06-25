@@ -6,6 +6,7 @@ class CreeksController < ApplicationController
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}??autoplay=1&controls=0&modestbranding=1&iv_load_policy=3"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
+    @remain_capacity = @creek.capacity - @tickets.count
   end
 
   def new
