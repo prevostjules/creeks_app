@@ -2,28 +2,13 @@
   <h1>Creeks#show</h1>
   <p>Find me in app/views/creeks/show.html.erb</p>
 
-  <%= @creek.title %>
-  <%= @creek.description %>
-  <%= @creek.scheduledStartTime %>
-  <%= @creek.price %>
-  <%= @creek.capacity %>
-  <%= @creek.user.username %>
-  <video autoplay></video>
+<%= @creek.title %>
+<%= @creek.description %>
+<%= @creek.scheduledStartTime %>
+<%= @creek.price %>
+<%= @creek.capacity %>
+<%= @creek.user.username %>
 
-  <script>
-  const constraints = {
-    video: true
-  };
+<iframe width="424" height="240" src=<%= @embed_link %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  const video = document.querySelector('video');
-
-  navigator.mediaDevices.getUserMedia(constraints).
-    then((stream) => {video.srcObject = stream});
-  </script>
-  <div>
-    <% if @creek.iframe.present?  %>
-      <%= @creek.iframe.html_safe %>
-    <% end %>
-  </div>
-  <%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>
-</div>
+<%= link_to "Acheter", creek_tickets_path(@creek), method: :post %>

@@ -1,0 +1,11 @@
+<%= simple_form_for @creek do |f| %>
+  <%= f.input :title, label: "Stream Name" %>
+  <%= f.input :description, label: "Description (240 characters)" %>
+  <%= f.input :scheduledStartTime, as: :string, input_html: {:type => "datetime-local"}, label: "Starting Date" %>
+  <%= f.input :scheduledEndTime, as: :string, input_html: {:type => "datetime-local"}, label: "Ending Date" %>
+  <%= f.input :category %>
+  <%= f.input :price %>
+  <%= f.input :capacity, label: "Number of Tickets" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+<br>

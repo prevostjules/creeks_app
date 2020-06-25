@@ -1,3 +1,4 @@
+<!-- Présentation Streamer -->
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -9,8 +10,8 @@
   </div>
 </div>
 
-
 <!-- Cards des Streams -->
+
 <div class="container cards-streamer">
   <div class="card-streamer">
     <%=image_tag "man.jpg", class: "stream-resa"%>
@@ -56,30 +57,17 @@
 </div>
 <hr class="my-4">
 
-<!-- Two Column Section -->
+<!-- Programmer un stream -->
 
 <div class="container padding">
   <div class="row padding">
-    <div class="col-lg-6">
-      <h2>If you stream it...</h2>
-      <p><strong>Our philosophy</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      <br>
-      <a class="btn btn-primary" href="#">Learn More</a>
-    </div>
-    <div class="col-lg-6">
-      <%= image_tag "start.jpg", class: "illu"%>
+    <div class="col-lg-5">
+      <h2>NEW CREEK</h2>
+      <%= render "form-creek"%>
     </div>
   </div>
 </div>
 <hr class="my-4">
-
-
-
-
-
-
 
 <!-- A placer à la fin de la page (pub pour les streamers) -->
 <!-- Welcome Section -->
@@ -122,7 +110,23 @@
   <hr class="my-4">
 </div>
 
+<!-- Two Column Section -->
 
+<div class="container padding">
+  <div class="row padding">
+    <div class="col-lg-6">
+      <h2>If you stream it...</h2>
+      <p><strong>Our philosophy</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <br>
+      <a class="btn btn-primary" href="#">Learn More</a>
+    </div>
+    <div class="col-lg-6">
+      <%= image_tag "start.jpg", class: "illu"%>
+    </div>
+  </div>
+</div>
 
 
 
