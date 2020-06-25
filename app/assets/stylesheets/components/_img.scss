@@ -11,14 +11,20 @@
 }
 
 .hw-pic {
-  height: 430px;
-  width: 430px;
+  height: 400px;
+  width: 450px;
+  border-radius: 5px;
 }
 
 .streamer-img {
-  max-width: 30%;
+  max-width: 33%;
   height: auto;
   border-radius: 5px;
   margin: 0 auto;
 }
 
+.hw-stream-pic {
+  height: 300px;
+  width: 450px;
+  border-radius: 5px;
+}
