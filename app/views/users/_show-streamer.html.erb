@@ -4,8 +4,7 @@
   <div class="container">
     <h1 class="display-4"><%= @user.username %></h1>
     <div class="d-flex">
-      <%= image_tag "superman.jpg", class: "streamer-img"%>
-
+       <%= cl_image_tag @user.photo.key, class: "streamer-img" %>
         <% if @user.description.nil? %>
           <p>Une super description</p>
         <% else %>
