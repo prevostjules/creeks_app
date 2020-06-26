@@ -16,6 +16,8 @@ class User < ApplicationRecord
 
   algoliasearch do
     attributes :username
+    attributes :role
+    # attributeForDistinct "1"
   end
 
 
