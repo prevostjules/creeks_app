@@ -30,32 +30,32 @@ user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166799/Camille_fiioao.jpg')
-camille = User.new(username:"Camille", email:"camille@gmail.com", password:"secret", role: 1)
+camille = User.new(username:"Camille", email:"camille@gmail.com", password:"secret", role: 1, description: "Je suis une excellente pédagogue et possède une très bonne expérience de la transmission des compétences dans cette matière.")
 camille.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 camille.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166799/Anna_mybfh9.jpg')
-anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1)
+anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1, description: "Avec moi, l'essayer c'est l'adopter !")
 anna.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 anna.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166800/Marcel_pxyq25.jpg')
-marcel = User.new(username:"Marcel", email:"marcel@gmail.com", password:"secret", role: 1)
+marcel = User.new(username:"Marcel", email:"marcel@gmail.com", password:"secret", role: 1, description: "J'ai débuté ma formation en tant que mindfulness teacher au fin fond du Tibet avec les moines du temple Ying..")
 marcel.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 marcel.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166799/Julie_onldfs.jpg')
-julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1)
+julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1, description: "Avec moi vous allez découvrir le plaisir de transpirer !")
 julie.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 julie.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166800/Kevin_ewf3tc.jpg')
-kevin = User.new(username:"Kevin", email:"kevin@gmail.com", password:"secret", role: 1)
+kevin = User.new(username:"Kevin", email:"kevin@gmail.com", password:"secret", role: 1, description: "Je suis professeur depuis 15 ans, grand passionné de ma discipline !")
 kevin.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 kevin.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166799/Emma_vwipci.jpg')
-emma = User.new(username:"Emma", email:"emma@gmail.com", password:"secret", role: 1)
+emma = User.new(username:"Emma", email:"emma@gmail.com", password:"secret", role: 1, description: "Je suis passionnée par le yoga depuis toujours, j'ai eu la chance de rencontrer les plus grands yogi de tous les temps !")
 emma.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 emma.save!
 
@@ -71,7 +71,7 @@ creek = Creek.new(title: "Mindfulness", description:"Nous allons développer dan
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593172948/emma_ixhlgc.jpg')
+file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593004241/4_hv3onf.jpg')
 creek = Creek.new(title: "Fitness", description:"Une occasion unique de faire une bonne session de sport intensive tout en s'exprimant à travers la danse", scheduledStartTime:"2020-06-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
@@ -81,17 +81,17 @@ creek = Creek.new(title: "Fitness", description:"Une nouvelle façon de garder l
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593172948/camille_tufb0v.jpg')
+file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593174145/camille2_op3dnx.jpg')
 creek = Creek.new(title: "Yoga", description:"Une technique de respiration puissante basée sur les rythmes, les sons et le souffle, permettant d'éliminer le stress et les émotions négatives profondément du système, pour méditer naturellement", scheduledStartTime:"2020-07-01T05:06:07.0Z", price:10, user:camille, capacity:60, duration:60)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593172939/julie_dkspgf.jpg')
+file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593175231/11_nmkmvc.jpg')
 creek = Creek.new(title: "Yoga", description:"Développer votre souplesse dans ce cours prévu pour les débutants de tout âge", scheduledStartTime:"2020-06-28T05:06:07.0Z", price:10, user:julie, capacity:200, duration:80)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593172948/anna_esqsav.jpg')
+file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593174268/anna_mx20ib.jpg')
 creek = Creek.new(title: "Instropection", description:"Technique de développement personnel en instropection en lien direct avec les moines tibétains !", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:anna, capacity:300, duration:60)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
