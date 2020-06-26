@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def home
     @creeks = Creek.last(4)
+    @streamers = User.where(role: "streamer")
     if params[:code].present?
       results = call_google_api
       p results

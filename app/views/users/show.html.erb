@@ -1,14 +1,16 @@
-<% if @user.viewer? %>
-  Rien ici, <%= link_to "home", root_path %>
-<% else %>
-  <h2>PROFILE DU STREAMER</h2>
-  <% if @user == current_user && current_user.streamer? %>
-    <a href=<%= @link_to_google_auth %>>Account Settings</a>
-    <% if !@user.stream_name.nil? %>
-      <%= @user.stream_name %>
-    <% end %>
+<div class="fix-nf">
+  <% if @user.viewer? %>
+    Rien ici, <%= link_to "home", root_path %>
+  <% else %>
     <%= render "show-streamer" %>
+    <% if @user == current_user && current_user.streamer? %>
+      <a href=<%= @link_to_google_auth %>>Account Settings</a>
+      <% if !@user.stream_name.nil? %>
+        <%= @user.stream_name %>
+      <% end %>
+
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 
