@@ -38,74 +38,30 @@
   </div>
 </div>
 
+<%= render "futurs-streams" %>
+
+<%= render "streamer-du-moment" %>
 
 <div class="row justify-content-center margin-h col-12">
-   <h1><strong>There's still room for improvement..</strong></h1>
+   <h2><strong>Streamers : notre philosophie</strong></h2>
 </div>
 
 
 <div class="row margin-div background-visuel">
-      <div class="col-12 col-lg-6">
-          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593075027/petit_visuel_ehlhxj.png", height: 400, crop: :fill %>
-      </div>
-      <div class="col-12 col-lg-6">
-        <br>
-        <br>
-        <br>
-        <h1 class="color-primary"><strong>Lancez votre studio en ligne et diffusez en direct vos cours et entraînements !</strong></h1>
-        <br>
-        <h2> Rejoignez notre communauté de streamers et intéragissez avec vos élèves dans le monde entier !</h2>
-      </div>
+  <div class="col-12 col-lg-6">
+    <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593075027/petit_visuel_ehlhxj.png", height: 400, crop: :fill %>
+  </div>
+  <div class="col-12 col-lg-6">
+    <br>
+    <br>
+    <br>
+    <h1 class="color-primary"><strong>Lancez votre studio en ligne et diffusez en direct vos cours et entraînements !</strong></h1>
+    <br>
+    <h2> Rejoignez notre communauté de streamers et intéragissez avec vos élèves dans le monde entier !</h2>
+  </div>
 </div>
 
 
-
-<div class = "text pt-3">
-  <div class="card-deck margin-div">
-      <div class="card card-border">
-          <%= cl_video_tag("production-id-3735537_3hwN81sB.compressed_cpo823", controls: true, :width=>350, :crop=>"scale")%>
-            <div class="card-body">
-              <h5 class="card-title">Fabiola - 60min</h5>
-              <p class="card-text">Apprendre la position du Scorpion</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">8 euros</small>
-            </div>
-      </div>
-
-      <div class="card card-border">
-        <%= cl_video_tag("production-id-4325592-hircnzigcompressed-acymlnsbcompressed_nbEmMhDa.compressed_gniasp", controls: true, :height=>200, :width=>350, :crop=>"scale")%>
-          <div class="card-body">
-            <h5 class="card-title">Michel - 43min</h5>
-            <p class="card-text">Grosse séance burpees et tractions, suivi de 30min de cardio</p>
-          </div>
-        <div class="card-footer">
-          <small class="text-muted">10 euros</small>
-        </div>
-      </div>
-
-      <div class="card card-border">
-        <%= cl_video_tag("production-id-4325592-hircnzigcompressed-acymlnsbcompressed_nbEmMhDa.compressed_gniasp", controls: true, :height=>200, :width=>350, :crop=>"scale")%>
-          <div class="card-body">
-            <h5 class="card-title">Michel - 43min</h5>
-            <p class="card-text">Grosse séance burpees et tractions, suivi de 30min de cardio</p>
-          </div>
-        <div class="card-footer">
-          <small class="text-muted">15 euros</small>
-        </div>
-      </div>
-
-      <div class="card card-border">
-        <%= cl_video_tag("pexels-videos-2376809_OKqkp9kK.compressed_pum4op", controls: true, :height=>200, :width=>350, :crop=>"scale")%>
-          <div class="card-body">
-            <h5 class="card-title">Valentine - 35min</h5>
-            <p class="card-text">Séance Fitness</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">16 euros</small>
-          </div>
-      </div>
-  </div>
 
 
 
@@ -172,40 +128,7 @@
         </div>
   </div>
 
-<div class = "text pt-5">
-  <div class="card-deck margin-div">
-    <div class="card card-border">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093309/Adrienne_desktop_nc3njw.jpg", class: "card-img-top img-fluid hw-pic" %>
-      <div class="card-body">
-        <h5 class="card-title">Meet Michelle - Fitness Instructor</h5>
-        <p class="card-text">"Sur un rythme samba, je saurai vous faire danser avec des burpees endiablés.. en plus les 3 premières séances sont offertes !</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-    <div class="card card-border">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093249/Jacy_desktop_sd9nqm.jpg", class: "card-img-top img-fluid" %>
-      <div class="card-body">
-        <h5 class="card-title">Meet Matty - Yoga Instructor</h5>
-        <p class="card-text">J'aspire à aider les autres à devenir la meilleure version d'eux-mêmes. En consacrant mon temps et mon énergie à les guérir grâce au yoga, au qigong et à la méditation.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3O mins ago</small>
-      </div>
-    </div>
-    <div class="card card-border">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093273/Jackie_desktop_n8ixnm.jpg", class: "card-img-top img-fluid hw-pic" %>
-      <div class="card-body">
-        <h5 class="card-title">Meet Aude - Mindfulness Instructor</h5>
-        <p class="card-text">Experte reconnue en mindfulness, plongez-vous dans le pouvoir de guérison des vibrations sonores et sensorielles conçues pour vous amener à un état de relaxation profonde et d'harmonie vibratoire..</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 23 mins ago</small>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- Meet the Team -->
 <div class="container-fluid padding">

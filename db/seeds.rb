@@ -95,25 +95,8 @@ file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593166799/A
 creek = Creek.new(title: "Instropection", description:"Technique de développement personnel en instropection en lien direct avec les moines tibétains !", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:anna, capacity:300, duration:60)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
-# puts "create tickets"
-
-# ticket = Ticket.create!(user: bob, creek: creek1)
 
 puts "We seed like a boss"
-
-
-
-
-# creek1 = Creek.create!(title: "Super event", description:"tu vas en chier", scheduledStartTime:"2020-06-24T05:06:07.0Z", price:10, user:jose, capacity:300)
-
-# bob = User.create!(username:"Bob", email:"bob@gmail.com", password:"secret")
-# alice = User.create!(username:"alice", email:"alice@gmail.com", password:"secret")
-# jose = User.create!(username:"jose", email:"jose@gmail.com", password:"secret", role: 1)
-
-
-
-
-
 
 
 

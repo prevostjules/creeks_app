@@ -4,7 +4,7 @@ const loadDynamicBannerText = () => {
   const banner = document.getElementById('banner-typed-text');
   if (banner) {
     new Typed('#banner-typed-text', {
-    strings: ["booker / streamer / encaisser.."],
+    strings: ["Tous les lives de vos influenceurs préférés"],
     typeSpeed: 50,
     loop: true
   });

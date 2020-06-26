@@ -1,0 +1,28 @@
+<div class="container mb-5 mt-5">
+  <h2 class="text-center">Sélection de nos futurs streams</h2>
+  <div class="card-deck">
+    <% @creeks.each do |creek| %>
+      <div class="card">
+        <% if creek.photo.attached? %>
+          <%= cl_image_tag creek.photo.key, class: "card-img-top" %>
+        <% else %>
+          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593075027/petit_visuel_ehlhxj.png", class: "card-img-top" %>
+        <% end %>
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title"><%= creek.title %></h5>
+            <h6><%= creek.duration %>min</h6>
+          </div>
+          <p class="card-text"><%= creek.description %></p>
+        </div>
+        <div class="text-center mb-2">
+          <%= link_to "Voir", creek_path(creek), class: "btn btn-primary w-50"  %>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <small class="text-muted">Début dans : 2 jours <%#= creek.scheduledStartTime.to_date - Date.today %></small>
+          <strong class="text-muted"><%= creek.price %>€ <%#= creek.scheduledStartTime.to_date - Date.today %></strong>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
