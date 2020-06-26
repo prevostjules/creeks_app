@@ -3,7 +3,7 @@ class Creek < ApplicationRecord
   has_many :tickets, dependent: :destroy
   has_many :users, through: :tickets
 
-  has_one :photo
+  has_one_attached :photo
 
   validates :title, presence: true
   validates :description, presence: true

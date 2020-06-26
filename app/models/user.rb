@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :creeks, dependent: :destroy
   enum role: { viewer: 0, streamer: 1 }
 
-  has_many :photo
+  has_one_attached :photo
 
   validates :username, presence: true, uniqueness: true
   validates :description, presence: true, on: :update, if: :is_streamer?
