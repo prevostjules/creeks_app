@@ -5,7 +5,10 @@
     <h1 class="display-4"><%= @user.username %></h1>
     <div class="d-flex">
       <%= image_tag "superman.jpg", class: "streamer-img"%>
-        <% if @user.description.present? %>
+
+        <% if @user.description.nil? %>
+          <p>Une super description</p>
+        <% else %>
           <p class="row align-self-center text-center ml-5"><%= @streamer.description %></p>
         <% end %>
     </div>
