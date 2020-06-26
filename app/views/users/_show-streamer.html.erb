@@ -2,59 +2,35 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">STREAMER NAME</h1>
+    <h1 class="display-4"><%= @user.username %></h1>
     <div class="d-flex">
       <%= image_tag "superman.jpg", class: "streamer-img"%>
-      <p class="row align-self-center text-center ml-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <% if @user.description.present? %>
+          <p class="row align-self-center text-center ml-5"><%= @streamer.description %></p>
+        <% end %>
     </div>
   </div>
 </div>
 
 <!-- Cards des Streams -->
-
 <div class="container cards-streamer">
-  <div class="card-streamer">
-    <%=image_tag "man.jpg", class: "stream-resa"%>
-    <div class="card-body">
-      <h5 class="card-title">Titre Stream 1</h5>
-      <p class="card-text">Date du stream</p>
-      <p class="card-text-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero eum, fuga natus, maxime consequuntur repudiandae vitae temporibus, dolorem doloremque ad. Iusto natus laudantium alias sequi, omnis magni, quod ipsa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero eum, fuga natus, maxime consequuntur repudiandae vitae temporibus, dolorem doloremque ad. Iusto natus laudantium alias sequi, omnis magni, quod ipsa!</p>
+  <% @user.creeks.each do |creek| %>
+    <div class="card-streamer">
+    <%= cl_image_tag creek.photo.key, class: "stream-resa" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= creek.title %></h5>
+        <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
+        <p class="card-text-description"><%= creek.description %></p>
+      </div>
+      <div class="card-right p-3">
+        <p class="card-text"><strong><%= creek.price %>€</strong></p>
+        <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+        <%= link_to "Réserver", creek_path(creek), class: "btn btn-primary" %>
+      </div>
     </div>
-    <div class="card-right p-3">
-      <p class="card-text"><strong>20€</strong></p>
-      <p class="card-text">xx places restantes</p>
-      <a href="#" class="btn btn-primary">Réserver</a>
-    </div>
-  </div>
-  <br>
-  <div class="card-streamer">
-    <%=image_tag "man.jpg", class: "stream-resa"%>
-    <div class="card-body">
-      <h5 class="card-title">Titre Stream 2</h5>
-      <p class="card-text">Date du stream</p>
-      <p class="card-text-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero eum, fuga natus, maxime consequuntur repudiandae vitae temporibus, dolorem doloremque ad. Iusto natus laudantium alias sequi, omnis magni, quod ipsa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero eum, fuga natus, maxime consequuntur repudiandae vitae temporibus, dolorem doloremque ad. Iusto natus laudantium alias sequi, omnis magni, quod ipsa!</p>
-    </div>
-    <div class="card-right p-3">
-      <p class="card-text"><strong>20€</strong></p>
-      <p class="card-text">xx places restantes</p>
-      <a href="#" class="btn btn-primary">Réserver</a>
-    </div>
-  </div>
-  <br>
-  <div class="card-streamer">
-    <%=image_tag "man.jpg", class: "stream-resa"%>
-    <div class="card-body">
-      <h5 class="card-title">Titre Stream 3</h5>
-      <p class="card-text">Date du stream</p>
-      <p class="card-text-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero eum, fuga natus, maxime consequuntur repudiandae vitae temporibus, dolorem doloremque ad. Iusto natus laudantium alias sequi, omnis magni, quod ipsa! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero eum, fuga natus, maxime consequuntur repudiandae vitae temporibus, dolorem doloremque ad. Iusto natus laudantium alias sequi, omnis magni, quod ipsa!</p>
-    </div>
-    <div class="card-right p-3">
-      <p class="card-text"><strong>20€</strong></p>
-      <p class="card-text">xx places restantes</p>
-      <a href="#" class="btn btn-primary">Réserver</a>
-    </div>
-  </div>
+  <% end %>
 </div>
+
 <hr class="my-4">
 
 <!-- Programmer un stream -->
@@ -65,6 +41,7 @@
       <h2>NEW CREEK</h2>
       <%= render "form-creek"%>
     </div>
+
   </div>
 </div>
 <hr class="my-4">
