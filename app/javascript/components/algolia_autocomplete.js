@@ -6,7 +6,7 @@ const algoliaAutocomplete = () => {
     const users = client.initIndex('User');
     autocomplete('#aa-search-input', {}, [
     {
-      source: autocomplete.sources.hits(creeks, { hitsPerPage: 3 }),
+      source: autocomplete.sources.hits(creeks, { hitsPerPage:  1}),
       displayKey: 'title',
       templates: {
         suggestion({_highlightResult}) {
@@ -15,7 +15,7 @@ const algoliaAutocomplete = () => {
       }
     },
     {
-      source: autocomplete.sources.hits(users, { hitsPerPage: 3 }),
+      source: autocomplete.sources.hits(users, { hitsPerPage: 1 }),
       displayKey: 'username',
       templates: {
         suggestion({_highlightResult}) {

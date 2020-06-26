@@ -19,11 +19,11 @@
   <% end %>
   <div class="d-flex align-items-center justify-content-between mt-2 mb-5 p-2">
     <div class="d-flex align-items-center">
-    <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093309/Adrienne_desktop_nc3njw.jpg", alt: "coach", class: "avatar-big" %>
-    <div class="d-flex flex-column ml-3">
-      <h2><%= @creek.title %></h2>
-      <h3><%= @creek.user.username %></h3>
-    </div>
+      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093309/Adrienne_desktop_nc3njw.jpg", alt: "coach", class: "avatar-big" %>
+      <div class="d-flex flex-column ml-3">
+        <h2><%= @creek.title %></h2>
+        <h3><%= @creek.user.username %></h3>
+      </div>
     </div>
     <div class="d-flex flex-column">
         <p><strong><%= @creek.price %></strong> euros</p>

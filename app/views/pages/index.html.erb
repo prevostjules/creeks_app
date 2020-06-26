@@ -1,19 +1,59 @@
-<div class="container">
-  <div class="class-border">
-    <% if @creeks.present? %>
-    <% @creeks.each do |creek| %>
-      <%= creek.title %>
+<div class="fix-nf">
+  <% if @users.count == 1 %>
+    <div class="fix-nf">
+      <div class="container">
+        <div class="card-product">
+            <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093309/Adrienne_desktop_nc3njw.jpg", class: "card-img-top img-fluid hw-pic" %>
+            <div class="card-product-infos">
+              <h2><%= @users.first.username %></h2>
+              <p><%= @users.first.description %></p>
+              <%= link_to "Profile", user_path(@users.first), class: "btn btn-primary" %>
+            </div>
+        </div>
+      </div>
+    <% @users.first.creeks.each do |creek| %>
+      <div class="container cards-streamer mt-3">
+        <div class="card-streamer-index">
+            <%=image_tag "man.jpg", class: "stream-resa"%>
+            <div class="card-body">
+              <h5 class="card-title"><%= creek.title %></h5>
+              <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
+              <p class="card-text-description"><%= creek.description %></p>
+            </div>
+            <div class="card-right p-3">
+              <p class="card-text"><strong><%= creek.price %>€</strong></p>
+              <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+              <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
+            </div>
+        </div>
+        <br>
+        <br>
+      </div>
     <% end %>
+    </div>
+  <% else %>
+    <%  @creeks.each do |creek| %>
+       <div class="container cards-streamer mt-3">
+        <div class="card-streamer-index">
+            <%=image_tag "man.jpg", class: "stream-resa"%>
+            <div class="card-body">
+              <h5 class="card-title"><%= creek.title %></h5>
+              <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
+              <p class="card-text-description"><%= creek.description %></p>
+            </div>
+            <div class="card-right p-3">
+              <p class="card-text"><strong><%= creek.price %>€</strong></p>
+              <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+              <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
+            </div>
+        </div>
+        <br>
+        <br>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
 
-<div class="container">
-  <% if @users.present? %>
-  <% @users.each do |user| %>
-    <%= user.username %>
-  <% end %>
-  <% end %>
-</div>
+
 
 

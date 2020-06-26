@@ -20,7 +20,8 @@ class PagesController < ApplicationController
 
     if params[:query].present?
       @creeks = Creek.search(params[:query])
-      @users = User.search(params[:query])
+      @users = User.search( params[:query])
+      @users = @users.select{ |user| user.role == "streamer"}
     end
   end
 
