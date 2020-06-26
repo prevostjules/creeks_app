@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   require "net/http"
 
   def home
+    @creeks = Creek.last(4)
     if params[:code].present?
       results = call_google_api
       p results

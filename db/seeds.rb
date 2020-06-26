@@ -19,7 +19,11 @@ jose = User.create!(username:"jose", email:"jose@gmail.com", password:"secret", 
 
 puts "create creeks"
 
-creek1 = Creek.create!(title: "Super event", description:"tu vas en chier", scheduledStartTime:"2020-06-24T05:06:07.0Z", price:10, user:jose, capacity:300)
+creek1 = Creek.create!(title: "Super event", description:"tu vas en chier", scheduledStartTime:"2020-06-27T05:06:07.0Z", price:10, user:jose, capacity:300, duration:20)
+creek2 = Creek.create!(title: "Super event2", description:"tu vas en chier2", scheduledStartTime:"2020-06-28T05:06:07.0Z", price:100, user:jose, capacity:300, duration:120)
+creek3 = Creek.create!(title: "Super event3", description:"tu vas en chier3", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:jose, capacity:300, duration:220)
+
+
 
 puts "create tickets"
 
