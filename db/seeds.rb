@@ -92,7 +92,7 @@ creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593174268/anna_mx20ib.jpg')
-creek = Creek.new(title: "Instropection", description:"Technique de développement personnel en instropection en lien direct avec les moines tibétains !", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:anna, capacity:300, duration:60)
+creek = Creek.new(title: "Introspection", description:"Technique de développement personnel en instropection en lien direct avec les moines tibétains !", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:anna, capacity:300, duration:60)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 

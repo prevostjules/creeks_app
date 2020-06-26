@@ -5,7 +5,7 @@
       <iframe width="100%" height="480" src=<%= @embed_link %>  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   <% else %>
-    <div id="header" class="banner rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "https://res.cloudinary.com/dvwipbafx/image/upload/v1593001009/banner_nihvgl.png", height: 300, width: 400, crop: :fill %>');">
+    <div id="header" class="banner rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @creek.photo.key, height: 300, width: 400, crop: :fill %>');">
       <div class="text-center">
         <% if @remain_capacity > 0 %>
           <%= link_to "Acheter", creek_tickets_path(@creek), method: :post, class: "btn btn-primary" %>
@@ -19,11 +19,12 @@
   <% end %>
   <div class="d-flex align-items-center justify-content-between mt-2 mb-5 p-2">
     <div class="d-flex align-items-center">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593093309/Adrienne_desktop_nc3njw.jpg", alt: "coach", class: "avatar-big" %>
-      <div class="d-flex flex-column ml-3">
-        <h2><%= @creek.title %></h2>
-        <h3><%= @creek.user.username %></h3>
-      </div>
+
+    <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big" %>
+    <div class="d-flex flex-column ml-3">
+      <h2><%= @creek.title %></h2>
+      <h3><%= @creek.user.username %></h3>
+    </div>
     </div>
     <div class="d-flex flex-column">
         <p><strong><%= @creek.price %></strong> euros</p>
