@@ -1,9 +1,11 @@
 <div class="fix-nf container">
   <% if @users.include?(current_user) || @creek.user == current_user %>
-    <div class="text-center" id="fullscreen">
-      <div id="front"></div>
-      <iframe width="100%" height="480" src=<%= @embed_link %>  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-embarquee" id="fullscreen">
+      <iframe id="fullscreen-iframe" width="840px" height="472,5px" src=<%= @embed_link %>  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div id="front"><div class="app"><h2>Creeks.app</h2></div></div>
+      <div id="back"></div>
     </div>
+     <button id="fullscreen-btn">Go Fullscreen</button>
   <% else %>
     <div id="header" class="banner rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @creek.photo.key, height: 300, width: 400, crop: :fill %>');">
       <div class="text-center">
