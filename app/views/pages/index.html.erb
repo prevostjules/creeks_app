@@ -1,6 +1,6 @@
 <div class="fix-nf">
   <h1 class="text-center">Résultats pour "<%= params[:query] %>"</h1>
-  <% if @users.count == 1 %>
+  <% if @users&.count == 1 %>
     <div class="fix-nf">
       <div class="container">
         <div class="card-product">
@@ -34,7 +34,7 @@
       </div>
     <% end %>
     </div>
-  <% else %>
+  <% elsif @creeks&.count == 1%>
     <%  @creeks.each do |creek| %>
        <div class="container cards-streamer mt-3">
         <div class="card-streamer-index">
@@ -55,6 +55,10 @@
         <br>
       </div>
     <% end %>
+  <% else %>
+    <div class="container text-center">
+      <h3 class="mt-5">Nous n'avons pas trouvé ce que vous recherchez</h3>
+    </div>
   <% end %>
 </div>
 
