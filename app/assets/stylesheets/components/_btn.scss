@@ -7,3 +7,12 @@
   font-size: 2rem;
 }
 
+.btn-primary {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.125);
+    color: $color-primary;
+    border-color: rgba(0, 0, 0, 0.125);
+  }
+}
