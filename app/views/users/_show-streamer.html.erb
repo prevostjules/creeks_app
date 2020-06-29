@@ -44,86 +44,81 @@
 
  <!-- Code de stream -->
 
-  <% if @user == current_user %>
-    <div class="text-center">
-      <a href=<%= @link_to_google_auth %>>Paramètres du compte</a>
-      <% if !@user.stream_name.nil? %>
-        <p><%= @user.stream_name %></p>
-      <% end %>
-    </div>
+
+
 
  <!-- Programmer un stream -->
-
-  <%= render "users/my-bookings" %>
-  <div class="padding">
-    <div class="row padding">
-      <div class="col-lg-5" id="form">
-        <h2>Nouveau stream</h2>
-        <%= render "users/form-creek"%>
+  <% if @user == current_user %>
+    <%= render "users/my-bookings" %>
+    <div class="padding">
+      <div class="row padding">
+        <div class="col-lg-5" id="form">
+          <h2>Nouveau stream</h2>
+          <%= render "users/form-creek"%>
+        </div>
       </div>
     </div>
   </div>
-</div>
-  <hr class="my-4">
+    <hr class="my-4">
 
-<!-- A placer à la fin de la page (pub pour les streamers) -->
-<!-- Welcome Section -->
+  <!-- A placer à la fin de la page (pub pour les streamers) -->
+  <!-- Welcome Section -->
 
-<div class="container-fluid padding">
-  <div class="row welcome text-center">
-    <div class="col-12">
-      <h1 class="display-4">Streamez facilement.</h1>
-    </div>
-    <hr>
-    <div class="col-12">
-      <p class="lead">Bienvenue sur Creeks, un lieu où vous pouvez streamer gratuitement, sans restriction et être payé pour ça !</p>
+  <div class="container-fluid padding">
+    <div class="row welcome text-center">
+      <div class="col-12">
+        <h1 class="display-4">Streamez facilement.</h1>
+      </div>
+      <hr>
+      <div class="col-12">
+        <p class="lead">Bienvenue sur Creeks, un lieu où vous pouvez streamer gratuitement, sans restriction et être payé pour ça !</p>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Three Column Section -->
+  <!-- Three Column Section -->
 
-<div class="container-fluid padding">
-  <div class="row text-center padding">
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <i class="fab"></i>
-      <%= image_tag "live.svg", class: "picto"%>
-      <h3>LIVE</h3>
-      <p>pour l'authenticité</p>
+  <div class="container-fluid padding">
+    <div class="row text-center padding">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <i class="fab"></i>
+        <%= image_tag "live.svg", class: "picto"%>
+        <h3>LIVE</h3>
+        <p>pour l'authenticité</p>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <i class="fab"></i>
+        <%= image_tag "money.svg", class: "picto"%>
+        <h3>STRIPE</h3>
+        <p>pour être payé facilement</p>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <i class="fab"></i>
+        <%= image_tag "france.svg", class: "picto"%>
+        <h3>FRENCH</h3>
+        <p>parce qu'on sait coder</p>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <i class="fab"></i>
-      <%= image_tag "money.svg", class: "picto"%>
-      <h3>STRIPE</h3>
-      <p>pour être payé facilement</p>
-    </div>
-    <div class="col-sm-12 col-md-4">
-      <i class="fab"></i>
-      <%= image_tag "france.svg", class: "picto"%>
-      <h3>FRENCH</h3>
-      <p>parce qu'on sait coder</p>
+    <hr class="my-4">
+  </div>
+
+  <!-- Two Column Section -->
+
+  <div class="container padding">
+    <div class="row padding">
+      <div class="col-lg-6">
+        <h2>Si vous streamez</h2>
+        <p><strong>Notre philosophie</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <br>
+        <a class="btn btn-primary" href="#">En savoir plus</a>
+      </div>
+      <div class="col-lg-6">
+        <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370293/person-taking-video-1654691_f1upgi.jpg", class: "illu"%>
+      </div>
     </div>
   </div>
-  <hr class="my-4">
-</div>
-
-<!-- Two Column Section -->
-
-<div class="container padding">
-  <div class="row padding">
-    <div class="col-lg-6">
-      <h2>Si vous streamez</h2>
-      <p><strong>Notre philosophie</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      <br>
-      <a class="btn btn-primary" href="#">En savoir plus</a>
-    </div>
-    <div class="col-lg-6">
-      <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370293/person-taking-video-1654691_f1upgi.jpg", class: "illu"%>
-    </div>
-  </div>
-</div>
 <% end %>
 
 

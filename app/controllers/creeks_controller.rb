@@ -17,19 +17,19 @@ class CreeksController < ApplicationController
   end
 
   def create
-    @creek = Creek.new(set_params)
-    @creek.user = current_user
-    if @creek.save!
-      check_credentials
-      results = JSON.parse(call_youtube_api)
-      @creek.id_broadcast = results["id"]
-      @creek.update!(id_broadcast: results["id"])
-      link_broadcast_to_stream(results["id"], current_user.stream_id)
-      flash[:alert] = results
-      redirect_to creek_path(@creek)
-    else
-      render :new
-    end
+      @creek = Creek.new(set_params)
+      @creek.user = current_user
+      if @creek.save!
+        check_credentials
+        results = JSON.parse(call_youtube_api)
+        @creek.id_broadcast = results["id"]
+        @creek.update!(id_broadcast: results["id"])
+        link_broadcast_to_stream(results["id"], current_user.stream_id)
+        flash[:alert] = results
+        redirect_to creek_path(@creek)
+      else
+        render :new
+      end
   end
 
   def edit
@@ -87,6 +87,7 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
 
     response = https.request(request)
+    raise
     if JSON.parse(response.read_body).key?("error")
       url = URI("https://accounts.google.com/o/oauth2/token")
 
