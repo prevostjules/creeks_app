@@ -7,7 +7,9 @@ class CreeksController < ApplicationController
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
-    @remain_capacity = @creek.capacity - @tickets.count
+    if !@creek.capacity.nil?
+      @remain_capacity = @creek.capacity - @tickets.count
+    end
   end
 
   def new
@@ -27,10 +29,7 @@ class CreeksController < ApplicationController
       redirect_to creek_path(@creek)
     else
       # flash[:alert] = "coco"
-      @user = current_user
-      @link_to_google_auth = "https://accounts.google.com/o/oauth2/auth?client_id=#{ENV['CLIENT_ID']}&redirect_uri=#{ENV['REDIRECT_URI']}&scope=https://www.googleapis.com/auth/youtube&response_type=code&access_type=offline"
-      @tickets = @user.tickets
-      render "users/show"
+      render :new
     end
   end
 

@@ -26,7 +26,9 @@
       </div>
       <div class="card-right p-3">
         <p class="card-text"><strong><%= creek.price %>€</strong></p>
-        <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+        <% if !creek.capacity.nil? %>
+          <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+        <% end %>
         <%= link_to "Réserver", creek_path(creek), class: "btn btn-primary" %>
       </div>
     </div>
@@ -35,18 +37,21 @@
 
 <hr class="my-4">
 
+
 <!-- Programmer un stream -->
-
-<div class="container padding">
-  <div class="row padding">
-    <div class="col-lg-5" id="form">
-      <h2>Nouveau stream</h2>
-      <%= render "users/form-creek"%>
+<% if @user == current_user %>
+  <%= render "users/my-bookings" %>
+  <div class="container padding">
+    <div class="row padding">
+      <div class="col-lg-5" id="form">
+        <h2>Nouveau stream</h2>
+        <%= render "users/form-creek"%>
+      </div>
     </div>
-
   </div>
-</div>
-<hr class="my-4">
+  <hr class="my-4">
+
+
 
 <!-- A placer à la fin de la page (pub pour les streamers) -->
 <!-- Welcome Section -->
@@ -106,7 +111,7 @@
     </div>
   </div>
 </div>
-
+<% end %>
 
 
 

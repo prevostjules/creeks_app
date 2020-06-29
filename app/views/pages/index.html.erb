@@ -23,7 +23,9 @@
             </div>
             <div class="card-right p-3">
               <p class="card-text"><strong><%= creek.price %>€</strong></p>
-              <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+              <% if !creek.capacity.nil? %>
+                <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+              <% end %>
               <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
             </div>
         </div>
@@ -44,8 +46,9 @@
             </div>
             <div class="card-right p-3">
               <p class="card-text"><strong><%= creek.price %>€</strong></p>
-              <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
-              <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
+              <% if !creek.capacity.nil? %>
+                <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+              <% end %>              <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
             </div>
         </div>
         <br>
