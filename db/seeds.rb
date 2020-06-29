@@ -35,17 +35,17 @@ camille.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 camille.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370203/woman-meditating-in-the-outdoors-2908175_lnxfjd.jpg')
-anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1, description: "On se calme, on se détends et on médite avec moi.")
+anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1, description: "On se calme, on se détend et on médite avec moi.")
 anna.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 anna.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370198/man-cross-legs-seating-on-white-wooden-chair-1270076_teknja.jpg')
-marcel = User.new(username:"Marcel", email:"marcel@gmail.com", password:"secret", role: 1, description: "J'ai débuté ma formation en tant que mindfulness teacher au fin fond du Tibet avec les moines du temple Ying..")
+marcel = User.new(username:"Marcel", email:"marcel@gmail.com", password:"secret", role: 1, description: "J'ai débuté ma formation en tant que mindfulness teacher au fin fond du Tibet avec les moines du temple Ying...")
 marcel.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 marcel.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370680/body-stretching-yoga-beauty-35990_rnbqy6.jpg')
-julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1, description: "Avec moi vous allez découvrir le plaisir de transpirer !")
+julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1, description: "Avec moi vous allez découvrir le plaisir de transpirer ;)")
 julie.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 julie.save!
 
@@ -55,7 +55,7 @@ kevin.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 kevin.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370198/man-holding-two-plates-with-cooked-foods-2494704_a3rxgc.jpg')
-emma = User.new(username:"Emmannuel", email:"emma@gmail.com", password:"secret", role: 1, description: "Ancien chef dans un deux étoiles, j'adore partager ma passion pour la cuisine en live !")
+emma = User.new(username:"Emmannuel", email:"emma@gmail.com", password:"secret", role: 1, description: "Ancien chef dans un restaurant deux étoiles, j'adore partager ma passion pour la cuisine en live !")
 emma.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 emma.save!
 
@@ -72,27 +72,27 @@ creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370229/burrito-chicken-delicious-dinner-461198_n8zlcb.jpg')
-creek = Creek.new(title: "Des burritos par bourratifs", description:"Tout, tout, vous saurez tout sur les burritos!", scheduledStartTime:"2020-06-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50, category: "food")
+creek = Creek.new(title: "Des burritos par bourratifs", description:"Tout, tout, vous saurez tout sur les burritos !", scheduledStartTime:"2020-06-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50, category: "food")
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370265/person-holding-barbell-841130_yp86f3.jpg')
-creek = Creek.new(title: "Fitness Ultimate", description:"Une nouvelle façon de garder la forme en répétant des postures de combat et en s'affrontant soi-même !", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:8, user:kevin, capacity:300, duration:40, category: "fitness")
+creek = Creek.new(title: "Fitness Ultimate", description:"Une nouvelle façon de garder la forme en répétant des postures de combat et en s'affrontant soi-même.", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:8, user:kevin, capacity:300, duration:40, category: "fitness")
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370252/woman-in-gray-sweater-holding-black-camera-4626358_xamczt.jpg')
-creek = Creek.new(title: "Selfie like a boss", description:"Les meilleurs réglages et lumières pour prendre des selfies comme une influenceuse !", scheduledStartTime:"2020-07-01T05:06:07.0Z", price:10, user:camille, capacity:60, duration:60, category: "photo")
+creek = Creek.new(title: "Selfie like a boss", description:"Les meilleurs réglages et lumières pour prendre des selfies comme une influenceuse.", scheduledStartTime:"2020-07-01T05:06:07.0Z", price:10, user:camille, capacity:60, duration:60, category: "photo")
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370260/active-adult-athlete-body-416778_xg68f5.jpg')
-creek = Creek.new(title: "Le meilleur cours de fitness", description:"Développer votre souplesse dans ce cours prévu pour les débutants de tout âge", scheduledStartTime:"2020-06-28T05:06:07.0Z", price:10, user:julie, capacity:200, duration:80, category: "fitness")
+creek = Creek.new(title: "Le meilleur cours de fitness", description:"Développer votre souplesse dans ce cours prévu pour les débutants de tout âge.", scheduledStartTime:"2020-06-28T05:06:07.0Z", price:10, user:julie, capacity:200, duration:80, category: "fitness")
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370270/woman-stretching-on-ground-3076509_bygnu9.jpg')
-creek = Creek.new(title: "Se développer grâce à l'introspection", description:"Technique de développement personnel en instropection en lien direct avec les moines tibétains !", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:anna, capacity:300, duration:60, category: "sophrologie")
+creek = Creek.new(title: "Se développer grâce à l'introspection", description:"Technique de développement personnel en instropection en lien direct avec les moines tibétains #peace", scheduledStartTime:"2020-06-29T05:06:07.0Z", price:10, user:anna, capacity:300, duration:60, category: "sophrologie")
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
