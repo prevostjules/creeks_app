@@ -319,6 +319,7 @@ DEPENDENCIES
   font-awesome-sass
   google-api-client (~> 0.34)
   hogan_assets
+  i18n
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
