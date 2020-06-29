@@ -11,6 +11,9 @@
           <p class="row align-self-center text-center ml-5"><%= @user.description %></p>
         <% end %>
     </div>
+    <%= link_to edit_user_registration_path do  %>
+      <i class="fas fa-user-cog float-right icon"></i>
+    <% end %>
   </div>
 </div>
 

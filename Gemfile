@@ -34,7 +34,6 @@ gem "algoliasearch-rails"
 gem 'cloudinary', '~> 1.12.0'
 gem 'jquery-rails'
 gem 'hogan_assets'
-gem 'i18n'
 
 gem 'google-api-client', '~> 0.34'
 

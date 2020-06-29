@@ -12,7 +12,7 @@
           <%= link_to "Voir", user_path(streamer), class: "btn btn-primary w-50"  %>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Dernière Vidéo : <%= DateTime.iso8601(streamer.updated_at).strftime('%A %d %b %Y %I:%M %p') %></small>
+          <small class="text-muted">Dernière Vidéo : <%= streamer.updated_at.to_date.strftime('%A %d %b %Y %I:%M %p') %></small>
         </div>
       </div>
     <% end %>
