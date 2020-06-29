@@ -15,32 +15,44 @@
 </div>
 
 <!-- Cards des Streams -->
-<div class="container cards-streamer">
-  <% @user.creeks.each do |creek| %>
-    <div class="card-streamer">
-    <%= cl_image_tag creek.photo.key, class: "stream-resa" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= creek.title %></h5>
-        <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
-        <p class="card-text-description"><%= creek.description %></p>
-      </div>
-      <div class="card-right p-3">
-        <p class="card-text"><strong><%= creek.price %>€</strong></p>
-        <% if !creek.capacity.nil? %>
-          <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
-        <% end %>
-        <%= link_to "Réserver", creek_path(creek), class: "btn btn-primary" %>
-      </div>
+<div class="container">
+  <% if @user.creeks.count > 0 %>
+    <h2>Futurs streams de <%= @user.username %></h2>
+    <div class="cards-streamer">
+      <% @user.creeks.each do |creek| %>
+        <div class="card-streamer card-border">
+        <%= cl_image_tag creek.photo.key, class: "stream-resa border-radius-left" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= creek.title %></h5>
+            <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
+            <p class="card-text-description"><%= creek.description %></p>
+          </div>
+          <div class="card-right p-3">
+            <p class="card-text"><strong><%= creek.price %>€</strong></p>
+            <% if !creek.capacity.nil? %>
+              <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+            <% end %>
+            <%= link_to "Réserver", creek_path(creek), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
-</div>
 
-<hr class="my-4">
+ <!-- Code de stream -->
 
-<!-- Programmer un stream -->
-<% if @user == current_user %>
+  <% if @user == current_user %>
+    <div class="text-center">
+      <a href=<%= @link_to_google_auth %>>Paramètres du compte</a>
+      <% if !@user.stream_name.nil? %>
+        <p><%= @user.stream_name %></p>
+      <% end %>
+    </div>
+
+ <!-- Programmer un stream -->
+
   <%= render "users/my-bookings" %>
-  <div class="container padding">
+  <div class="padding">
     <div class="row padding">
       <div class="col-lg-5" id="form">
         <h2>Nouveau stream</h2>
@@ -48,6 +60,7 @@
       </div>
     </div>
   </div>
+</div>
   <hr class="my-4">
 
 <!-- A placer à la fin de la page (pub pour les streamers) -->
