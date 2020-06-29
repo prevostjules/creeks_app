@@ -3,7 +3,7 @@ class CreeksController < ApplicationController
   require 'net/http'
   require 'uri'
   def show
-    @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3"
+    @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
     @remain_capacity = @creek.capacity - @tickets.count
@@ -93,7 +93,7 @@ class CreeksController < ApplicationController
       request = Net::HTTP::Post.new(url)
       request["Content-Type"] = "application/x-www-form-urlencoded"
       request["Cookie"] = "GAPS=1:Y1vNLoVUz49hu5_j8hDhxnAlOwX9NQ:XgiLKsUk1JSIdb5z; __Host-GAPS=1:Y1vNLoVUz49hu5_j8hDhxnAlOwX9NQ:XgiLKsUk1JSIdb5z"
-      request.body = "client_id=206719754391-rer1a7fdjuf8g80sq4l1ab55bptsc2n7.apps.googleusercontent.com&client_secret=I8KNI8zDhCxf5ysZ6lgEu1i7&refresh_token=1//03ndkIduieTfqCgYIARAAGAMSNwF-L9Iray8IIkWDP3xD1R4htBvo2LXBuFT9Pap91OluntyREiwcnkoe6B2Mmq9x_0J6tOLDA48&grant_type=refresh_token&response_type=code&scope=https%3A//www.googleapis.com/auth/youtube&redirect_uri=http%253A//localhost%253A3000"
+      request.body = "client_id=#{ENV['CLIENT_ID']}&client_secret=#{ENV['CLIENT_SECRET']}&refresh_token=#{current_user.refresh_token}&grant_type=refresh_token&response_type=code&scope=https%3A//www.googleapis.com/auth/youtube&redirect_uri=#{ENV['REDIRECT_URI']}"
 
       response = https.request(request)
       puts response.read_body

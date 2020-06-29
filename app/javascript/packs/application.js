@@ -27,7 +27,7 @@ require("channels")
 import "bootstrap";
 import { algoliaAutocomplete } from "../components/algolia_autocomplete";
 import { loadDynamicBannerText } from '../components/banner';
-import { fullscreen } from '../components/fullscreen';
+import { fullscreen, normalScreen } from '../components/fullscreen';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -36,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   algoliaAutocomplete();
   loadDynamicBannerText();
+  normalScreen();
   fullscreen();
 });

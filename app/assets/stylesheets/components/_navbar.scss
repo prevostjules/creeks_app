@@ -10,6 +10,17 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 120px;
+.navbar-brand img {
+  width: 80px;
+}
+
+.navbar-brand {
+  h2 {
+    margin-bottom: 0px;
+    font-size: 1.8rem;
+  }
+
+  img {
+    width: 54px;
+  }
 }
