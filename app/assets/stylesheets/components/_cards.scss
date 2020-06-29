@@ -23,10 +23,10 @@
 }
 
 .card-streamer {
-  border: 1px solid black;
   height: 200px;
   width: 75%;
   display: flex;
+  background: #FFF;
 }
 
 .card-streamer-index {
@@ -106,3 +106,7 @@
   border-top-left-radius: 10px;
 }
 
+.border-radius-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}

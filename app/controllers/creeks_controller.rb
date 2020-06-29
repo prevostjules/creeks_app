@@ -19,16 +19,15 @@ class CreeksController < ApplicationController
   def create
     @creek = Creek.new(set_params)
     @creek.user = current_user
-    if @creek.save
+    if @creek.save!
       check_credentials
-      results = call_youtube_api
-      results = JSON.parse(results)
+      results = JSON.parse(call_youtube_api)
       @creek.id_broadcast = results["id"]
-      p @creek
+      @creek.update!(id_broadcast: results["id"])
       link_broadcast_to_stream(results["id"], current_user.stream_id)
+      flash[:alert] = results
       redirect_to creek_path(@creek)
     else
-      # flash[:alert] = "coco"
       render :new
     end
   end
