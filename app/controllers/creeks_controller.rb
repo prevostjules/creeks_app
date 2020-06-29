@@ -2,6 +2,7 @@ class CreeksController < ApplicationController
   before_action :set_creek, only: [:show, :edit, :update, :destroy]
   require 'net/http'
   require 'uri'
+
   def show
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
@@ -16,16 +17,20 @@ class CreeksController < ApplicationController
   def create
     @creek = Creek.new(set_params)
     @creek.user = current_user
-    check_credentials
-    results = call_youtube_api
-    results = JSON.parse(results)
-    @creek.id_broadcast = results["id"]
-    p @creek
-    link_broadcast_to_stream(results["id"], current_user.stream_id)
-    if @creek.save!
+    if @creek.save
+      check_credentials
+      results = call_youtube_api
+      results = JSON.parse(results)
+      @creek.id_broadcast = results["id"]
+      p @creek
+      link_broadcast_to_stream(results["id"], current_user.stream_id)
       redirect_to creek_path(@creek)
     else
-      render :new
+      # flash[:alert] = "coco"
+      @user = current_user
+      @link_to_google_auth = "https://accounts.google.com/o/oauth2/auth?client_id=#{ENV['CLIENT_ID']}&redirect_uri=#{ENV['REDIRECT_URI']}&scope=https://www.googleapis.com/auth/youtube&response_type=code&access_type=offline"
+      @tickets = @user.tickets
+      render "users/show"
     end
   end
 

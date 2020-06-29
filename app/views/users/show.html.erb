@@ -1,7 +1,7 @@
 <div class="fix-nf">
   <% if @user.viewer? %>
   <% else %>
-    <%= render "show-streamer" %>
+    <%= render "users/show-streamer" %>
     <% if @user == current_user && current_user.streamer? %>
       <a href=<%= @link_to_google_auth %>>Account Settings</a>
       <% if !@user.stream_name.nil? %>
