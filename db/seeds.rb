@@ -87,7 +87,7 @@ creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370260/active-adult-athlete-body-416778_xg68f5.jpg')
-creek = Creek.new(title: "Le meilleur cours de yoga", description:"Développer votre souplesse dans ce cours prévu pour les débutants de tout âge", scheduledStartTime:"2020-06-28T05:06:07.0Z", price:10, user:julie, capacity:200, duration:80)
+creek = Creek.new(title: "Le meilleur cours de fitness", description:"Développer votre souplesse dans ce cours prévu pour les débutants de tout âge", scheduledStartTime:"2020-06-28T05:06:07.0Z", price:10, user:julie, capacity:200, duration:80)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 

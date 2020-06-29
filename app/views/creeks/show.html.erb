@@ -5,7 +5,7 @@
       <div id="front"><div class="app"><h2>Creeks.app</h2></div></div>
       <div id="back"></div>
     </div>
-     <button id="fullscreen-btn">Go Fullscreen</button>
+     <button id="fullscreen-btn">Plein Ecran</button>
   <% else %>
     <div id="header" class="banner rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @creek.photo.key, height: 300, width: 400, crop: :fill %>');">
       <div class="text-center">
@@ -22,7 +22,7 @@
   <div class="d-flex align-items-center justify-content-between mt-2 mb-5 p-2">
     <div class="d-flex align-items-center">
 
-    <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big" %>
+    <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big", width:160, height:160, crop: :fill %>
     <div class="d-flex flex-column ml-3">
       <h2><%= @creek.title %></h2>
       <h3><%= @creek.user.username %></h3>

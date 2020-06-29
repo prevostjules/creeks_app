@@ -3,10 +3,9 @@
     <div class="col-md-10">
       <div class="row bloc margin-div">
         <div class="register-left col-12 col-md-5">
-          <%= image_tag("logo-white.png", id:'logo-move') %>
           <h2>Rejoignez-nous</h2>
-          <p>Rejoignez notre communauté de streamers et intéragissez avec des passionnés dans le monde entier..</p>
-          <button type="button" class="btn btn-primary">About us</button>
+          <p>Rejoignez notre communauté de streamers et intéragissez avec des passionnés dans le monde entier...</p>
+          <button type="button" class="btn btn-primary">A propos de nous</button>
         </div>
         <div class="register-right col-12 col-md-7">
           <h2>Se connecter</h2>
@@ -18,14 +17,16 @@
                               input_html: { autocomplete: "email" } %>
                   <%= f.input :password,
                               required: false,
-                              input_html: { autocomplete: "current-password" } %>
+                              input_html: { autocomplete: "mot de passe actuel" } %>
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
-                <div class="form-actions btn btn-primary col-12">
-                  <%= f.button :submit, "Log in"%>
+                <div class="form-actions col-12">
+                  <%= f.button :submit, "Se connecter", class: "btn btn-primary"%>
                 </div>
               <% end %>
+              <div class="ml-3">
               <%= render "devise/shared/links" %>
+              </div>
         </div>
       </div>
     </div>

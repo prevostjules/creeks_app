@@ -9,7 +9,6 @@
       <h2 class="ml-3">creeks.app</h2>
       <% end %>
   </div>
-
   <div class="col-4">
     <ul class="nav justify-content-center">
       <li class="nav-item">
@@ -41,14 +40,19 @@
         <% end %>
       </li>
     </ul>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <% if current_user.photo.attached? %>
+            <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height:40, width:40 %>
+          <% else %>
+            <%= image_tag "avatar.png", alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height:40, width:40  %>
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <% if current_user.streamer? %>
+              <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item"  %>
 
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <% if current_user.photo.attached? %>
-              <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height:40, width:40 %>
             <% else %>
               <%= image_tag "https://publicdomainvectors.org/photos/1376606916.png", alt: "alttext", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, height:40, width:40  %>
             <% end %>
@@ -58,20 +62,19 @@
               <% else %>
                 <%= link_to "Mes réservations", user_path(current_user), class: "dropdown-item" %>
               <% end %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+            <%= link_to ""S'enregistrer", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
     </div>
-
   </div>
 
 </div>

@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :description, presence: true, on: :update, if: :is_streamer?
+  validates :photo, if: :is_streamer?, presence: true
 
   include AlgoliaSearch
 

@@ -1,19 +1,19 @@
 <h2 class="text-center">Streamers du moments</h2>
 
 <div class = "text">
-  <div class="card-deck margin-div">
+  <div class="card-deck margin-h">
     <% @streamers.first(3).each do |streamer| %>
         <div class="card card-border">
           <%= image_tag streamer.photo, class: "card-img-top img-fluid hw-pic" %>
         <div class="card-body">
-          <h5 class="card-title">Meet <%= streamer.username %> - Fitness Instructor</h5>
+          <h5 class="card-title">Rejoignez <%= streamer.username %> - Coach Sportif</h5>
           <p class="card-text"><%= streamer.description %></p>
         </div>
         <div class="text-center mb-2">
           <%= link_to "Voir", user_path(streamer), class: "btn btn-primary w-50"  %>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Last updated : <%= streamer.updated_at %></small>
+          <small class="text-muted">Dernière Vidéo :<%= streamer.updated_at %></small>
         </div>
       </div>
     <% end %>
