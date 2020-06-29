@@ -1,28 +1,44 @@
-<h2>Sign up</h2>
+<div class="fix-nf registration-body">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="row bloc margin-div">
+        <div class="register-left col-12 col-md-5">
+          <%= image_tag("logo-white.png", id:'logo-move') %>
+          <h2>Rejoignez-nous</h2>
+          <p>Rejoignez notre communauté de streamers et intéragissez avec des élèves dans le monde entier..</p>
+          <button type="button" class="btn btn-primary">About us</button>
+        </div>
+        <div class="register-right col-12 col-md-7">
+          <h2>Enregistrez-vous</h2>
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+                <div class="form-inputs col-12">
+                  <%= f.input :username %>
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" }%>
+                  <%= f.input :password,
+                              required: true,
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :password_confirmation,
+                              required: true,
+                              input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :role, as: :select, collection: ["viewer", "streamer"] %>
+                  <%= f.input :photo, as: :file %>
+                </div>
 
-  <div class="form-inputs">
-    <%= f.input :username %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :role, as: :select, collection: ["viewer", "streamer"] %>
-    <%= f.input :photo, as: :file %>
+                <div class="form-actions text-center">
+                  <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
+                </div>
+              <% end %>
+                <div class="text-center">
+                <%= render "devise/shared/links" %>
+                </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

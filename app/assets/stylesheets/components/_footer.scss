@@ -12,6 +12,7 @@
 .footer-links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   color: white;
 }
 
@@ -29,4 +30,18 @@
 
 .fix-nf {
   min-height: calc(100vh - 65px - 80px);
+}
+
+@media(max-width: 992px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 800px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
