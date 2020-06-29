@@ -1,12 +1,17 @@
-<%= simple_form_for @creek do |f| %>
-  <%= f.input :title, label: "Nom de la creek, (max: 150 signes)" %>
-  <%= f.input :description, label: "Description (max : 250 signes)" %>
-  <%= f.input :scheduledStartTime, as: :string, input_html: {:type => "datetime-local"}, label: "Début estimé du stream" %>
-  <%= f.input :duration, as: :integer, input_html: { min: 10, step: 10 }, label: "Durée (en minutes)" %>
-  <%= f.input :category %>
-  <%= f.input :price, label: "Prix (en euros)" %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :capacity, label: "Nombre de tickets" %>
-  <%= f.button :submit, "Créer une nouvelle Creek", class:"btn btn-primary" %>
+<% if !current_user.access_token.nil? %>
+  <%= simple_form_for @creek do |f| %>
+    <%= f.input :title, label: "Nom de la creek, (max: 150 signes)" %>
+    <%= f.input :description, label: "Description (max : 250 signes)" %>
+    <%= f.input :scheduledStartTime, as: :string, input_html: {:type => "datetime-local"}, label: "Début estimé du stream" %>
+    <%= f.input :duration, as: :integer, input_html: { min: 10, step: 10 }, label: "Durée (en minutes)" %>
+    <%= f.input :category %>
+    <%= f.input :price, label: "Prix (en euros)" %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :capacity, label: "Nombre de tickets" %>
+    <%= f.button :submit, "Créer une nouvelle Creek", class:"btn btn-primary" %>
+  <% end %>
+<% else %>
+  <p>Pour créer un nouveau stream, vous devez lier CreeksApp à Youtube : </p>
+  <%= link_to "Lier CreeksApp à Youtube", @link_to_google_auth, class: "btn btn-primary"  %>
 <% end %>
-<br>
+
