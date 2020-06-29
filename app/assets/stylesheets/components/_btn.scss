@@ -11,7 +11,7 @@
   background-color: $color-primary;
   border-color: $color-primary;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.125);
+    background-color: $color-call-to-action;
     color: $color-primary;
     border-color: rgba(0, 0, 0, 0.125);
   }
