@@ -18,7 +18,7 @@
             <%= cl_image_tag creek.photo.key, class: "stream-resa"%>
             <div class="card-body">
               <h5 class="card-title"><%= creek.title %></h5>
-              <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
+              <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
               <p class="card-text-description"><%= creek.description %></p>
             </div>
             <div class="card-right p-3">
@@ -41,7 +41,7 @@
             <%=image_tag "man.jpg", class: "stream-resa"%>
             <div class="card-body">
               <h5 class="card-title"><%= creek.title %></h5>
-              <p class="card-text"><%= creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
+              <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
               <p class="card-text-description"><%= creek.description %></p>
             </div>
             <div class="card-right p-3">

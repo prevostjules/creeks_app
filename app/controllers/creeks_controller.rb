@@ -70,7 +70,7 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
     request["Accept"] = "application/json"
     request["Content-Type"] = "application/json"
-    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0Z\",\"description\":\"#{@creek.description}\"},\"contentDetails\":{\"enableClosedCaptions\":false,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true,\"latencyPreference\":\"ultraLow\",\"monitorStream\":{\"enableMonitorStream\":false},\"enableAutoStart\":true,\"enableAutoStop\":true},\"status\":{\"privacyStatus\":\"unlisted\",\"selfDeclaredMadeForKids\":true,\"lifeCycleStatus\":\"ready\"}}"
+    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0+02:00\",\"description\":\"#{@creek.description}\"},\"contentDetails\":{\"enableClosedCaptions\":false,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true,\"latencyPreference\":\"ultraLow\",\"monitorStream\":{\"enableMonitorStream\":false},\"enableAutoStart\":true,\"enableAutoStop\":true},\"status\":{\"privacyStatus\":\"unlisted\",\"selfDeclaredMadeForKids\":true,\"lifeCycleStatus\":\"ready\"}}"
     response = https.request(request)
     p response.read_body
     response.read_body
