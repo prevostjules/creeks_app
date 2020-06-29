@@ -3,9 +3,8 @@
     <div class="col-md-10">
       <div class="row bloc margin-div">
         <div class="register-left col-12 col-md-5">
-          <%= image_tag("logo-white.png", id:'logo-move') %>
           <h2>Rejoignez-nous</h2>
-          <p>Rejoignez notre communauté de streamers et intéragissez avec des élèves dans le monde entier..</p>
+          <p>Rejoignez notre communauté de streamers et intéragissez avec des élèves dans le monde entier...</p>
           <button type="button" class="btn btn-primary">About us</button>
         </div>
         <div class="register-right col-12 col-md-7">
@@ -14,7 +13,7 @@
                 <%= f.error_notification %>
 
                 <div class="form-inputs col-12">
-                  <%= f.input :username %>
+                  <%= f.input :username, label: "Nom d'utilisateur" %>
                   <%= f.input :email,
                               required: true,
                               autofocus: true,
@@ -22,21 +21,18 @@
                   <%= f.input :password,
                               required: true,
                               hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                              input_html: { autocomplete: "new-password" } %>
+                              input_html: { autocomplete: "new-password" }, label: "Mot de passe" %>
                   <%= f.input :password_confirmation,
                               required: true,
-                              input_html: { autocomplete: "new-password" } %>
+                              input_html: { autocomplete: "new-password" }, label: "Confirmation du mot de passe" %>
                   <%= f.input :role, as: :select, collection: ["viewer", "streamer"] %>
                   <%= f.input :photo, as: :file %>
                 </div>
 
                 <div class="form-actions text-center">
-                  <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
+                  <%= f.button :submit, "S'enregistrer", class:"btn btn-primary" %>
                 </div>
               <% end %>
-                <div class="text-center">
-                <%= render "devise/shared/links" %>
-                </div>
         </div>
       </div>
     </div>
