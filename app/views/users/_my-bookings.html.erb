@@ -1,20 +1,24 @@
 <div class="container">
-    <h2>Mes réservations</h2>
+  <h2>Mes réservations</h2>
+  <% if @tickets.count > 0 %>
     <% @tickets.each do |ticket| %>
-    <div class="card-streamer">
-    <%= cl_image_tag ticket.creek.photo.key, class: "stream-resa" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= ticket.creek.title %></h5>
-        <p class="card-text"><%= ticket.creek.scheduledStartTime.to_date.strftime('%A %d %b %Y %I:%M %p') %></p>
-        <p class="card-text-description"><%= ticket.creek.description %></p>
+      <div class="card-streamer">
+        <%= cl_image_tag ticket.creek.photo.key, class: "stream-resa" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= ticket.creek.title %></h5>
+          <p class="card-text"><%= DateTime.iso8601(ticket.creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
+          <p class="card-text-description"><%= ticket.creek.description %></p>
+        </div>
+        <div class="card-right p-3">
+          <% if !ticket.creek.capacity.nil? %>
+            <p class="card-text"><%= ticket.creek.capacity - ticket.creek.tickets.count %> places restantes</p>
+          <% end %>
+          <%= link_to "Voir", creek_path(ticket.creek), class: "btn btn-primary" %>
+        </div>
       </div>
-      <div class="card-right p-3">
-        <% if !ticket.creek.capacity.nil? %>
-          <p class="card-text"><%= ticket.creek.capacity - ticket.creek.tickets.count %> places restantes</p>
-        <% end %>
-        <%= link_to "Voir", creek_path(ticket.creek), class: "btn btn-primary" %>
-      </div>
-    </div>
     <% end %>
-  </div>
+  <% else %>
+    <p>Vous n'avez pas encore de réservations.</p>
+  <% end %>
 </div>
+

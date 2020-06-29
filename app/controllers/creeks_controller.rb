@@ -19,16 +19,15 @@ class CreeksController < ApplicationController
   def create
     @creek = Creek.new(set_params)
     @creek.user = current_user
-    if @creek.save
+    if @creek.save!
       check_credentials
-      results = call_youtube_api
-      results = JSON.parse(results)
+      results = JSON.parse(call_youtube_api)
       @creek.id_broadcast = results["id"]
-      p @creek
+      @creek.update!(id_broadcast: results["id"])
       link_broadcast_to_stream(results["id"], current_user.stream_id)
+      flash[:alert] = results
       redirect_to creek_path(@creek)
     else
-      # flash[:alert] = "coco"
       render :new
     end
   end
@@ -71,7 +70,7 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
     request["Accept"] = "application/json"
     request["Content-Type"] = "application/json"
-    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0Z\",\"description\":\"#{@creek.description}\"},\"contentDetails\":{\"enableClosedCaptions\":false,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true,\"latencyPreference\":\"ultraLow\",\"monitorStream\":{\"enableMonitorStream\":false},\"enableAutoStart\":true,\"enableAutoStop\":true},\"status\":{\"privacyStatus\":\"unlisted\",\"selfDeclaredMadeForKids\":true,\"lifeCycleStatus\":\"ready\"}}"
+    request.body = "{\"snippet\":{\"title\":\"#{@creek.title}\",\"scheduledStartTime\":\"#{@creek.scheduledStartTime}:00.0+02:00\",\"description\":\"#{@creek.description}\"},\"contentDetails\":{\"enableClosedCaptions\":false,\"enableContentEncryption\":true,\"enableDvr\":true,\"enableEmbed\":true,\"recordFromStart\":true,\"startWithSlate\":true,\"latencyPreference\":\"ultraLow\",\"monitorStream\":{\"enableMonitorStream\":false},\"enableAutoStart\":true,\"enableAutoStop\":true},\"status\":{\"privacyStatus\":\"unlisted\",\"selfDeclaredMadeForKids\":true,\"lifeCycleStatus\":\"ready\"}}"
     response = https.request(request)
     p response.read_body
     response.read_body

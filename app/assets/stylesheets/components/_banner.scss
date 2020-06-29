@@ -35,6 +35,13 @@ header {
   overflow: hidden;
 }
 
+.hr-half-width {
+  width: 80%;
+  border: 3px;
+  color: $color-primary;
+  margin: 0 auto;
+}
+
 header video {
   position: absolute;
   top: 50%;
