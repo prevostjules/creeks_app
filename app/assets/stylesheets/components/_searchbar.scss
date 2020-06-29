@@ -1,5 +1,4 @@
 .aa-input-container {
-  display: inline-block;
   position: relative;
 }
 
@@ -29,7 +28,8 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   fill: #e4e4e4;
-  pointer-events: none;
+  // pointer-events: none;
+  z-index: 1000;
 }
 .aa-dropdown-menu {
   background-color: #fff;
@@ -43,7 +43,6 @@
 .aa-suggestion {
   padding: 6px 12px;
   cursor: pointer;
-  color: pink;
   font-family: $body-font;
   font-size: 21px;
   -webkit-transition: .2s;
