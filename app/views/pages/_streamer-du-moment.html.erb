@@ -1,7 +1,7 @@
 <h2 class="text-center">Streamers du moments</h2>
 
 <div class = "text">
-  <div class="card-deck margin-div">
+  <div class="card-deck margin-h">
     <% @streamers.first(3).each do |streamer| %>
         <div class="card card-border">
           <%= image_tag streamer.photo, class: "card-img-top img-fluid hw-pic" %>
