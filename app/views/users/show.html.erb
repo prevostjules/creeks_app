@@ -4,7 +4,7 @@
   <% else %>
     <%= render "users/show-streamer" %>
     <% if @user == current_user && current_user.streamer? %>
-      <a href=<%= @link_to_google_auth %>>Account Settings</a>
+      <a href=<%= @link_to_google_auth %>>Paramètres du compte</a>
       <% if !@user.stream_name.nil? %>
         <%= @user.stream_name %>
       <% end %>
