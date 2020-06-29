@@ -1,10 +1,10 @@
 <div class="container mb-5 mt-5">
-  <h2 class="text-center">Sélection de nos futurs streams</h2>
-  <div class="card-deck">
+  <h1 class="text-center">Sélection des futurs streams</h1>
+  <div class="card-deck margin-h">
     <% @creeks.each do |creek| %>
       <div class="card card-border">
         <% if creek.photo.attached? %>
-          <%= cl_image_tag creek.photo.key, class: "card-img-top  border-radius-top", height:170, crop: :fill %>
+          <%= cl_image_tag creek.photo.key, class: "card-img-top border-radius-top", height:170, crop: :fill %>
         <% else %>
           <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593075027/petit_visuel_ehlhxj.png", class: "card-img-top" %>
         <% end %>

@@ -19,94 +19,85 @@
 
 <%= render "futurs-streams" %>
 
+<div class="hr-half-width"><hr></div>
+
 <%= render "streamer-du-moment" %>
 
+<div class="hr-half-width"><hr></div>
+
 <div class="row justify-content-center margin-h col-12">
-   <h2><strong>Streamers : notre philosophie</strong></h2>
+   <h1>Streamers : notre philosophie</h1>
 </div>
-
-
-<div class="row margin-div background-visuel">
+<div class="row margin-div background-visuel container">
   <div class="col-12 col-lg-6">
     <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593371543/young-woman-chatting-via-laptop-in-kitchen-4049988_wnolzo.jpg", height: 400, crop: :fill %>
   </div>
-  <div class="col-12 col-lg-6">
-    <br>
-    <br>
-    <br>
-    <h1 class="color-primary"><strong>Lancez votre studio en ligne et diffusez en direct vos cours et entraînements !</strong></h1>
+  <div class="col-12 col-lg-6 text-justify">
+    <h1 class="color-primary margin-h"><strong>Lancez votre studio en ligne et diffusez en direct vos cours et entraînements !</strong></h1>
     <br>
     <h2> Rejoignez notre communauté de streamers et intéragissez avec vos élèves dans le monde entier !</h2>
   </div>
 </div>
 
+<div class="hr-half-width"><hr></div>
 
-
-
-
-
-
-
-<div class="pt-3">
-  <div class="row margin-div">
-        <div class="col-12 col-lg-5">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370325/man-wearing-white-shirt-brown-shorts-and-green-backpack-672358_vye9vh.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370289/woman-wearing-black-fitness-outfit-performs-yoga-near-body-802417_fm5xbc.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370267/adult-athlete-body-bodybuilding-414029_edde01.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370265/woman-exercising-bear-body-of-water-1300526_nnkixq.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370260/active-adult-athlete-body-416778_xg68f5.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370276/happy-girlfriends-exercising-on-mat-on-grass-in-daylight-4127339_pjfsda.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370255/happy-sportspeople-of-different-ages-preparing-to-run-in-4148954_yswjle.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370241/young-man-grilling-meat-in-camp-4311067_radm6b.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370300/woman-looking-at-the-map-3935702_tkydjt.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                    <div class="carousel-item">
-                        <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370311/ball-shaped-blur-close-up-focus-346885_ocawhj.jpg", height: 400, width: 600, crop: :fill %>
-                    </div>
-                </div>
-            </div>
+<div class="row margin-div background-visuel container">
+  <div class="d-flex justify-content-between">
+      <div class="col-12 col-lg-6 text-justify">
+      <h1 class="color-primary ">Nous vous accompagnons au quotidien pour vous aider à développer votre activité !</h1>
+      <p>Chez <strong>CreeksApp</strong>, nous faisons toujours tout pour simplifier les rencontres entre streamers et viewers</p>
+      <p>
+        Nous nous efforçons de créer un endroit où
+        chacun et chacune, dans le monde entier,
+        peut être soi-même et partager
+        de bons moments en se connectant sur notre plateforme.
+        Rejoignez notre communauté !
+        <br>
+        Rien ne vaut l’énergie d’un cours en live bien préparé.
+        Optez pour un cours de yoga, une séance de
+        fitness, des conseils Mode & Beauté,  et bien d’autres disciplines avec tous vos professeurs favoris !
+      </p>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370325/man-wearing-white-shirt-brown-shorts-and-green-backpack-672358_vye9vh.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370289/woman-wearing-black-fitness-outfit-performs-yoga-near-body-802417_fm5xbc.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370267/adult-athlete-body-bodybuilding-414029_edde01.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370265/woman-exercising-bear-body-of-water-1300526_nnkixq.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370260/active-adult-athlete-body-416778_xg68f5.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370276/happy-girlfriends-exercising-on-mat-on-grass-in-daylight-4127339_pjfsda.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370255/happy-sportspeople-of-different-ages-preparing-to-run-in-4148954_yswjle.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370241/young-man-grilling-meat-in-camp-4311067_radm6b.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370300/woman-looking-at-the-map-3935702_tkydjt.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
+          <div class="carousel-item">
+              <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370311/ball-shaped-blur-close-up-focus-346885_ocawhj.jpg", height: 400, width: 600, crop: :fill %>
+          </div>
         </div>
-        <div class="col-12 col-lg-7 ">
-          <br>
-          <h1 class="color-primary">Nous vous accompagnons au quotidien pour vous aider à développer votre activité !</h1>
-            <br>
-            <br>
-              <p>Chez <strong>CreeksApp</strong>, nous faisons toujours tout pour simplifier les rencontres entre streamers et viewers</p>
-                <br>
-                  <p>
-                    Nous nous efforçons de créer un endroit où
-                    chacun et chacune, dans le monde entier,
-                    peut être soi-même et partager
-                    de bons moments en se connectant sur notre plateforme.
-                    Rejoignez notre communauté !
-                    <br>
-                    <br>
-                    Rien ne vaut l’énergie d’un cours en live bien préparé.
-                    Optez pour un cours de yoga, une séance de
-                    fitness, des conseils Mode & Beauté,  et bien d’autres disciplines avec tous vos professeurs favoris !
-                  </p>
-        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="hr-half-width"><hr></div>
 
 
 <!-- Meet the Team -->
@@ -115,12 +106,11 @@
     <div class=col-12>
       <h1 class="display-4">Meet the (amazing) Team!</h1>
     </div>
-    <hr>
   </div>
 </div>
 
 <!-- Les cards de la Team -->
-<div class="container-fluid padding">
+<div class="container-fluid padding margin-h">
   <div class="row padding">
     <div class="col-md-3 d-flex align-items-stretch">
       <div class="card card-border">
@@ -160,4 +150,4 @@
     </div>
   </div>
 </div>
-<hr>
+<div class="hr-half-width"><hr></div>
