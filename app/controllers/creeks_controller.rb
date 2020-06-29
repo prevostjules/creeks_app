@@ -2,11 +2,14 @@ class CreeksController < ApplicationController
   before_action :set_creek, only: [:show, :edit, :update, :destroy]
   require 'net/http'
   require 'uri'
+
   def show
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
-    @remain_capacity = @creek.capacity - @tickets.count
+    if !@creek.capacity.nil?
+      @remain_capacity = @creek.capacity - @tickets.count
+    end
   end
 
   def new
@@ -16,15 +19,16 @@ class CreeksController < ApplicationController
   def create
     @creek = Creek.new(set_params)
     @creek.user = current_user
-    check_credentials
-    results = call_youtube_api
-    results = JSON.parse(results)
-    @creek.id_broadcast = results["id"]
-    p @creek
-    link_broadcast_to_stream(results["id"], current_user.stream_id)
-    if @creek.save!
+    if @creek.save
+      check_credentials
+      results = call_youtube_api
+      results = JSON.parse(results)
+      @creek.id_broadcast = results["id"]
+      p @creek
+      link_broadcast_to_stream(results["id"], current_user.stream_id)
       redirect_to creek_path(@creek)
     else
+      # flash[:alert] = "coco"
       render :new
     end
   end

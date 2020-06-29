@@ -5,8 +5,11 @@ class Creek < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :title, presence: true
-  validates :description, presence: true
+  validates :photo, presence: true
+  validates :category, presence: true
+  validates :duration, presence: true
+  validates :title, presence: true, length: { maximum: 150 }
+  validates :description, presence: true, length: { maximum: 250 }
   validates :scheduledStartTime, presence: true
   validates :price, presence: true
 
