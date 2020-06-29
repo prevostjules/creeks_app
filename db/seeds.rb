@@ -8,6 +8,23 @@ require "open-uri"
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destroy EVERYTHING !!!"
 
+users = User.all
+
+users.each do |user|
+  if user.photo.attached?
+    user.photo.purge
+  end
+end
+
+creeks = Creek.all
+
+creeks.each do |creek|
+  if creek.photo.attached?
+    creek.photo.purge
+  end
+end
+
+
 Ticket.destroy_all
 Creek.destroy_all
 User.destroy_all
