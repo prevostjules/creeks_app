@@ -43,7 +43,7 @@
     <% @creeks.each do |creek| %>
        <div class="container cards-streamer mt-3">
         <div class="card-streamer-index">
-            <%=image_tag "man.jpg", class: "stream-resa"%>
+            <%= cl_image_tag creek.photo.key, class: "stream-resa"%>
             <div class="card-body">
               <h5 class="card-title"><%= creek.title %></h5>
               <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
