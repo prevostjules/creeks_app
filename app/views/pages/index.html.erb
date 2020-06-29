@@ -1,5 +1,10 @@
 <div class="fix-nf">
-  <h1 class="text-center">Résultats pour "<%= params[:query] %>"</h1>
+  <% if params[:streamers] = 1 %>
+    <h1 class="text-center">Tous nos streamers</h1>
+  <% else %>
+    <h1 class="text-center">Résultats pour "<%= params[:query] %>"</h1>
+  <% end %>
+
   <% if @users&.count == 1 %>
     <div class="fix-nf">
       <div class="container">
@@ -35,7 +40,7 @@
     <% end %>
     </div>
   <% elsif @creeks&.count == 1%>
-    <%  @creeks.each do |creek| %>
+    <% @creeks.each do |creek| %>
        <div class="container cards-streamer mt-3">
         <div class="card-streamer-index">
             <%=image_tag "man.jpg", class: "stream-resa"%>
@@ -56,8 +61,18 @@
       </div>
     <% end %>
   <% elsif @users&.count > 1 %>
-
-  <p>bravo</p>
+    <% @users.each do |user| %>
+      <div class="container">
+        <div class="card-product mb-4">
+            <%= cl_image_tag user.photo.key, class: "card-img-top img-fluid hw-pic" %>
+            <div class="card-product-infos">
+              <h2><%= user.username %></h2>
+              <p><%= user.description %></p>
+              <%= link_to "Profil", user_path(user), class: "btn btn-primary mt-2" %>
+            </div>
+        </div>
+      </div>
+    <% end %>
   <% else %>
     <div class="container text-center">
       <h3 class="mt-5">Nous n'avons pas trouvé ce que vous recherchez</h3>

@@ -10,11 +10,8 @@
   flex-grow: 0;
 }
 
-.navbar-brand img {
-  width: 80px;
-}
-
 .navbar-brand {
+
   h2 {
     margin-bottom: 0px;
     font-size: 1.8rem;
@@ -24,3 +21,18 @@
     width: 54px;
   }
 }
+
+.nav-item
+  a {
+    color: $color-primary;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: $color-call-to-action;
+  }
+
+.navbar-light .navbar-nav .nav-link {
+  color: $color-primary;
+  text-decoration: none;
+}
+
