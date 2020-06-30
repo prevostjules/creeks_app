@@ -1,0 +1,19 @@
+.chat {
+  max-height: 400px;
+  overflow: scroll;
+  border: solid 1px black;
+  width: 600px;
+}
+
+.chat-title {
+  position: absolute; /* Set the navbar to fixed position */
+  width: 597px;
+  background: white;
+  h2 {
+    text-align: center;
+  }
+}
+
+.messages {
+  padding: 3rem 2rem 0 2rem;
+}

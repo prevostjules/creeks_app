@@ -119,7 +119,7 @@ creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370229/burrito-chicken-delicious-dinner-461198_n8zlcb.jpg')
-creek = Creek.new(title: "Des burritos par bourratifs", description:"Tout, tout, vous saurez tout sur les burritos !", scheduledStartTime:"2020-06-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50, category:food)
+creek = Creek.new(title: "Des burritos pas bourratifs", description:"Tout, tout, vous saurez tout sur les burritos !", scheduledStartTime:"2020-06-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50, category:food)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
