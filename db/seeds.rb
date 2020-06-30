@@ -1,18 +1,6 @@
 require "open-uri"
-<<<<<<< HEAD
 
-
-puts "Destroy ta maman"
-=======
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
-# Examples:
-
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts "destroy EVERYTHING !!!"
->>>>>>> c0e4f245a50d64c46b185238eb8356671ea6ee6f
 
 users = User.all
 
@@ -49,36 +37,28 @@ puts "Create categories"
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439523/51frjmuyymwkd1967jcim83bgdvw.jpg')
 food = Category.new(name:"Food")
 food.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+food.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439494/itg7ftxdqo3cfauqvrkvkrlkc7dg.jpg')
 meditation = Category.new(name:"Meditation")
 meditation.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+meditation.save!
 
-<<<<<<< HEAD
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439506/5znr0609lrpok8yui0uy48pnjmeh.jpg')
 fitness = Category.new(name:"Fitness")
 fitness.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+fitness.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593435597/qjqpq7t7lm8yk8xs3jkq0z8st7v9.jpg')
-=======
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593529648/j3car31q78r03j2gjemqistp02i6.jpg')
-fitness = Category.new(name:"Fitness")
-fitness.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
-
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593529605/mfywzjvngl88zku06w9i848orltp.jpg')
-
->>>>>>> c0e4f245a50d64c46b185238eb8356671ea6ee6f
 photo = Category.new(name:"Photo")
 photo.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+photo.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593373338/hyshceozbj79ehjl8jk4jeo8fb4w.jpg')
 sophrologie = Category.new(name:"Sophrologie")
 sophrologie.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+sophrologie.save!
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c0e4f245a50d64c46b185238eb8356671ea6ee6f
 puts "Create users"
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1592577270/xw9tccgmbifvdxo4zzcwaby7ozhl.jpg')
@@ -131,10 +111,6 @@ user = User.new(username:"Michel", email:"michel@gmail.com", password:"secret")
 user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c0e4f245a50d64c46b185238eb8356671ea6ee6f
 puts "create creeks"
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593370267/tranquil-girlfriends-sitting-in-namaste-pose-while-4127336_wfmlus.jpg')
@@ -167,8 +143,5 @@ creek = Creek.new(title: "Se développer grâce à l'introspection", description
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
-<<<<<<< HEAD
 
-=======
->>>>>>> c0e4f245a50d64c46b185238eb8356671ea6ee6f
 puts "We seed like a boss"
