@@ -9,7 +9,7 @@ class Category < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :name,
+    attributes :name
   end
 
 end

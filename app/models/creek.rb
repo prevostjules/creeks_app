@@ -4,7 +4,7 @@ class Creek < ApplicationRecord
   has_many :users, through: :tickets
   belongs_to :category
 
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   has_one_attached :photo
 
