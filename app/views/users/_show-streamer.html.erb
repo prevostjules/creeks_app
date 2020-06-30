@@ -22,23 +22,9 @@
 <div class="container">
   <% if @user.creeks.count > 0 %>
     <h2>Futurs streams de <%= @user.username %></h2>
-    <div class="cards-streamer">
+    <div class="cards-streamer mt-3 mb-3">
       <% @user.creeks.each do |creek| %>
-        <div class="card-streamer card-border">
-        <%= cl_image_tag creek.photo.key, class: "stream-resa border-radius-left" %>
-          <div class="card-body">
-            <h5 class="card-title"><%= creek.title %></h5>
-            <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
-            <p class="card-text-description"><%= creek.description %></p>
-          </div>
-          <div class="card-right p-3">
-            <p class="card-text"><strong><%= creek.price %>€</strong></p>
-            <% if !creek.capacity.nil? %>
-              <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
-            <% end %>
-            <%= link_to "Réserver", creek_path(creek), class: "btn btn-primary" %>
-          </div>
-        </div>
+      <%= render "shared/card-creek", creek: creek %>
       <% end %>
     </div>
   <% end %>
