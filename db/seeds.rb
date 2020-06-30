@@ -31,8 +31,8 @@ categories.each do |category|
     category.photo.purge
   end
 end
-​
-​
+
+Message.destroy_all
 Ticket.destroy_all
 Creek.destroy_all
 User.destroy_all
