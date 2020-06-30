@@ -32,7 +32,7 @@ categories.each do |category|
   end
 end
 
-
+Message.destroy_all
 Ticket.destroy_all
 Creek.destroy_all
 User.destroy_all
