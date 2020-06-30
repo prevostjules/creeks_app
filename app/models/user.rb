@@ -6,12 +6,14 @@ class User < ApplicationRecord
   has_many :tickets, dependent: :destroy
   has_many :creeks, dependent: :destroy
   enum role: { viewer: 0, streamer: 1 }
+  belongs_to :category
 
   has_one_attached :photo
 
   validates :username, presence: true, uniqueness: true
   validates :description, presence: true, on: :update, if: :is_streamer?
   validates :photo, if: :is_streamer?, presence: true
+  validates :category, if: :is_streamer?, presence: true
 
   include AlgoliaSearch
 
