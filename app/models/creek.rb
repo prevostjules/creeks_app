@@ -4,6 +4,8 @@ class Creek < ApplicationRecord
   has_many :users, through: :tickets
   belongs_to :category
 
+  has_many :messages
+
   has_one_attached :photo
 
   validates :photo, presence: true
