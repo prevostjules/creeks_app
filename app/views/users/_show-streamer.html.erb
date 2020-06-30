@@ -18,6 +18,7 @@
 </div>
 
 <!-- Cards des Streams -->
+
 <div class="container">
   <% if @user.creeks.count > 0 %>
     <h2>Futurs streams de <%= @user.username %></h2>
@@ -42,12 +43,8 @@
     </div>
   <% end %>
 
- <!-- Code de stream -->
-
-
-
-
  <!-- Programmer un stream -->
+
   <% if @user == current_user %>
     <%= render "users/my-bookings" %>
     <div class="padding">
@@ -105,17 +102,17 @@
   <!-- Two Column Section -->
 
   <div class="container padding">
-    <div class="row padding">
+    <div class="row padding align-items-center mb-5">
       <div class="col-lg-6">
         <h2>Si vous streamez</h2>
-        <p><strong>Notre philosophie</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p><strong>Notre philosophie</strong></p>
+        <p>Vous aider à promouvoir votre chaîne, faire découvrir vos créations, garantir un contenu de qualité.</p>
+        <p>Nous sommes ravis de vous trouver sur notre plateforme et avons hâte de faire partager votre passion au plus grand nombre.</p>
         <br>
         <a class="btn btn-primary" href="#">En savoir plus</a>
       </div>
       <div class="col-lg-6">
-        <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370293/person-taking-video-1654691_f1upgi.jpg", class: "illu"%>
+        <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370293/person-taking-video-1654691_f1upgi.jpg", class: "promo"%>
       </div>
     </div>
   </div>
