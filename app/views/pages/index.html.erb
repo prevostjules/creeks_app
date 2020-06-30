@@ -61,11 +61,13 @@
       </div>
     <% end %>
   <% elsif @users&.count > 1 %>
+        <div class="container">
     <% @users.each do |user| %>
-      <div class="container">
+
         <%= render "shared/card-streamer", user: user %>
-      </div>
+
     <% end %>
+          </div>
   <% else %>
     <div class="container text-center">
       <h3 class="mt-5">Nous n'avons pas trouvé ce que vous recherchez</h3>
