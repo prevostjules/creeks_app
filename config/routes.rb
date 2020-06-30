@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :pages, only: [:index]
+  resources :contacts, only: [:new, :create]
   resources :categories, only: [:index]
 
   resources :creeks, only: [ :show, :new, :create, :update, :destroy, :edit ] do

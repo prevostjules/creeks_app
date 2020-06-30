@@ -1,0 +1,21 @@
+<div class="pl-5 fix-nf registration-body">
+  <div class="row contact-title">
+    <h1>Toute l'équipe de Creek.app est à votre écoute..</h1>
+  </div>
+  <div class="row py-5">
+      <div class="col-12 col-lg-6 contact-left">
+        <h3>Nous contacter</h3>
+          <%= simple_form_for(@contact) do |f| %>
+            <%= f.input :prenom, placeholder: "Marcel" %>
+            <%= f.input :nom, placeholder: "Creeks" %>
+            <%= f.input :email, placeholder: "marcel@creeks.com" %>
+            <%= f.input :telephone, placeholder: "06 12 34 56 78" %>
+            <%= f.input :message, placeholder: "Veuillez écrire l'objet de votre message ici.." %>
+            <%= f.button :submit, "Envoyez", class:"btn btn-primary" %>
+          <% end %>
+      </div>
+    <div class="col-12 col-lg-6 contact-right">
+      <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593526259/carte_ugvqm3.png", height: 440, crop: :fill %>
+    </div>
+  </div>
+</div>
