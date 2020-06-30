@@ -40,6 +40,7 @@
   </div>
   <div class="text-center mb-4">
     <% if @creek.user == current_user %>
+      <p>Clé de stream: <%= current_user.stream_name %></p>
       <%= link_to "Modifier ma creek", edit_creek_path(@creek), class: "btn btn-primary" %>
       <%= link_to "Supprimer ma creek",
               creek_path(@creek),
