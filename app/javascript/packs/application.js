@@ -34,8 +34,9 @@ import { fullscreen, normalScreen } from '../components/fullscreen';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  fullscreen();
   algoliaAutocomplete();
   loadDynamicBannerText();
   normalScreen();
-  fullscreen();
+
 });

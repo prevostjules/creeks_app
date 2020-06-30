@@ -87,7 +87,7 @@ class CreeksController < ApplicationController
     request["Authorization"] = "Bearer #{access_token}"
 
     response = https.request(request)
-    raise
+
     if JSON.parse(response.read_body).key?("error")
       url = URI("https://accounts.google.com/o/oauth2/token")
 
