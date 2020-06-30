@@ -38,4 +38,14 @@
     <h2>DESCRIPTION</h2>
     <p><%= @creek.description %></p>
   </div>
+  <div class="text-center mb-4">
+    <% if @creek.user == current_user %>
+      <%= link_to "Modifier ma creek", edit_creek_path(@creek), class: "btn btn-primary" %>
+      <%= link_to "Supprimer ma creek",
+              creek_path(@creek),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class:"btn btn-danger mr-2" %>
+    <% end %>
+  </div>
 </div>
