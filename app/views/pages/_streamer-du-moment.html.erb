@@ -3,7 +3,7 @@
   <div class="card-deck margin-h">
     <% @streamers.first(3).each do |streamer| %>
         <div class="card card-border">
-          <%= image_tag streamer.photo, class: "card-img-top img-fluid hw-pic" %>
+          <%= image_tag streamer.photo, class: "card-img-top border-radius-top img-fluid" %>
         <div class="card-body">
           <h5 class="card-title">Rejoignez <%= streamer.username %></h5>
           <p class="card-text"><%= streamer.description %></p>
