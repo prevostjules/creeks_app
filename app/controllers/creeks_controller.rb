@@ -4,6 +4,7 @@ class CreeksController < ApplicationController
   require 'uri'
 
   def show
+    @message = Message.new
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
@@ -19,6 +20,7 @@ class CreeksController < ApplicationController
   def create
       @creek = Creek.new(set_params)
       @creek.user = current_user
+      byebug
       if @creek.save!
         check_credentials
         results = JSON.parse(call_youtube_api)
@@ -60,7 +62,7 @@ class CreeksController < ApplicationController
   private
 
   def set_params
-    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :photo)
+    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :photo, :category_id)
   end
 
   def set_creek

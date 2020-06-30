@@ -51,16 +51,13 @@
   </div>
   <% if @users.include?(current_user) || @creek.user == current_user %>
     <h1>Messages</h1>
-    <div id="messages" data-chatroom-id="">
+    <div id="messages" data-chatroom-id="<%= @creek.id %>">
       <% @creek.messages.each do |message| %>
-        <div class="message-container" id="message-<%= message.id %>">
-          <i class="author">
-            <span><%= message.user.username %></span>
-            <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-          </i>
-          <p><%= message.content %></p>
-        </div>
+        <%= render "messages/messages", message: message %>
       <% end %>
     </div>
+    <%= simple_form_for [ @creek, @message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message" %>
+<% end %>
   <% end %>
 </div>
