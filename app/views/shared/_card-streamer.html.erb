@@ -1,0 +1,14 @@
+
+<div class="card-streamer card-border">
+    <%= cl_image_tag user.photo.key, class: "stream-resa border-radius-left" %>
+    <div class="card-body p-3">
+      <h2><%= user.username %></h2>
+      <p><%= user.description %></p>
+      <%= link_to "Profil", user_path(user), class: "btn btn-primary mt-2 btn-fit" %>
+    </div>
+</div>
+
+
+
+
+
