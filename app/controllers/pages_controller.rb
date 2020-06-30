@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       p results
       stream_params = create_stream_params(results["access_token"])
       if current_user.description.nil?
-        current_user.update!(access_token: results["access_token"], refresh_token: results["refresh_token"], description: "Description à venir", stream_id: stream_params["id"], stream_name: stream_params["cdn"]["ingestionInfo"]["streamName"])
+        current_user.update!(access_token: results["access_token"], refresh_token: results["refresh_token"], description: "Description à venir", category: Category.first, stream_id: stream_params["id"], stream_name: stream_params["cdn"]["ingestionInfo"]["streamName"])
       else
         current_user.update!(access_token: results["access_token"], refresh_token: results["refresh_token"], stream_id: stream_params["id"], stream_name: stream_params["cdn"]["ingestionInfo"]["streamName"])
       end

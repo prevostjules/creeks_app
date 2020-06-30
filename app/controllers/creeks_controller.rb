@@ -60,7 +60,7 @@ class CreeksController < ApplicationController
   private
 
   def set_params
-    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :category, :photo)
+    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :photo)
   end
 
   def set_creek

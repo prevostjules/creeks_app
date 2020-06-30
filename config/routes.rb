@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   resources :creeks, only: [ :show, :new, :create, :update, :destroy, :edit ] do
     resources :tickets, only: [ :create ]
+    resources :messages, only: [ :create ]
   end
 end
