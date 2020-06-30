@@ -27,7 +27,8 @@ require("channels")
 import "bootstrap";
 import { algoliaAutocomplete } from "../components/algolia_autocomplete";
 import { loadDynamicBannerText } from '../components/banner';
-import { fullscreen, normalScreen } from '../components/fullscreen';
+import { fullscreen } from '../components/fullscreen';
+import { initChatroomCable } from '../channels/creek_channel';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -35,8 +36,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   fullscreen();
+  initChatroomCable();
   algoliaAutocomplete();
   loadDynamicBannerText();
-  normalScreen();
 
 });

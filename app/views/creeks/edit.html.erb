@@ -1,8 +1,3 @@
-<%= simple_form_for @creek do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :scheduledStartTime %>
-  <%= f.input :price %>
-  <%= f.input :capacity %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= render "users/form-creek" %>
+</div>

@@ -23,7 +23,7 @@
   height: 16px;
   width: 16px;
   position: absolute;
-  top: 57%;
+  top: 55%;
   right: 16px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -62,8 +62,8 @@
   color: #333;
 }
 .aa-suggestion span:last-child {
-  text-transform: uppercase;
-  color: #a9a9a9;
+  // text-transform: uppercase;
+  color: $color-primary;
 }
 
 .aa-suggestion span:first-child em, .aa-suggestion span:last-child em {

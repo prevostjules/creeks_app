@@ -1,6 +1,6 @@
 <div class="fix-nf">
   <% if params[:streamers] = 1 %>
-    <h1 class="text-center">Tous nos streamers</h1>
+    <h1 class="text-center mt-5 mb-3">Tous nos streamers</h1>
   <% else %>
     <h1 class="text-center">Résultats pour "<%= params[:query] %>"</h1>
   <% end %>
@@ -8,13 +8,13 @@
   <% if @users&.count == 1 %>
     <div class="fix-nf">
       <div class="container">
-        <div class="card-product">
-            <%= cl_image_tag @users.first.photo.key, class: "card-img-top img-fluid hw-pic" %>
-            <div class="card-product-infos">
-              <h2><%= @users.first.username %></h2>
-              <p><%= @users.first.description %></p>
-              <%= link_to "Profil", user_path(@users.first), class: "btn btn-primary mt-2" %>
-            </div>
+        <div class="card-streamer card-border">
+          <%= cl_image_tag @users.first.photo.key, class: "stream-resa border-radius-left" %>
+          <div class="card-body">
+            <h2><%= @users.first.username %></h2>
+            <p><%= @users.first.description %></p>
+            <%= link_to "Profil", user_path(@users.first), class: "btn btn-primary mt-2" %>
+          </div>
         </div>
       </div>
     <% @users.first.creeks.each do |creek| %>
@@ -61,21 +61,15 @@
       </div>
     <% end %>
   <% elsif @users&.count > 1 %>
+  <div class="container">
     <% @users.each do |user| %>
-      <div class="container">
-        <div class="card-product mb-4">
-            <%= cl_image_tag user.photo.key, class: "card-img-top img-fluid hw-pic" %>
-            <div class="card-product-infos">
-              <h2><%= user.username %></h2>
-              <p><%= user.description %></p>
-              <%= link_to "Profil", user_path(user), class: "btn btn-primary mt-2" %>
-            </div>
-        </div>
-      </div>
+    <%= render "shared/card-streamer", user: user %>
     <% end %>
-  <% else %>
+    </div>
+    <% else %>
     <div class="container text-center">
       <h3 class="mt-5">Nous n'avons pas trouvé ce que vous recherchez</h3>
+      <iframe src="https://giphy.com/embed/g01ZnwAUvutuK8GIQn" width="480" height="270" frameBorder="0" class="giphy" allowFullScreen></iframe>
     </div>
   <% end %>
 </div>

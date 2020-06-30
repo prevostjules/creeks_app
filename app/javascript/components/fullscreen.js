@@ -10,12 +10,12 @@ const fullscreen = () => {
   }
 }
 
-const normalScreen = () => {
-  if (elem && document.fullscreenElement == null) {
-    iframe.height = "480px";
-  }
-}
+// const normalScreen = () => {
+  // if (elem && document.fullscreenElement == null) {
+    // iframe.height = "480px";
+  // }
+// }
 
 
 
-export { fullscreen, normalScreen }
+export { fullscreen }

@@ -38,4 +38,26 @@
     <h2>DESCRIPTION</h2>
     <p><%= @creek.description %></p>
   </div>
+  <div class="text-center mb-4">
+    <% if @creek.user == current_user %>
+      <p>Clé de stream: <%= current_user.stream_name %></p>
+      <%= link_to "Modifier ma creek", edit_creek_path(@creek), class: "btn btn-primary" %>
+      <%= link_to "Supprimer ma creek",
+              creek_path(@creek),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class:"btn btn-danger mr-2" %>
+    <% end %>
+  </div>
+  <% if @users.include?(current_user) || @creek.user == current_user %>
+    <h1>Messages</h1>
+    <div id="messages" data-chatroom-id="<%= @creek.id %>">
+      <% @creek.messages.each do |message| %>
+        <%= render "messages/messages", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [ @creek, @message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message" %>
+<% end %>
+  <% end %>
 </div>

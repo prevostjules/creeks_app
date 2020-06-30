@@ -1,9 +1,9 @@
 <div class="container">
-  <h2>Mes réservations</h2>
+  <h2 class="text-center mt-5 mb-3">Mes réservations</h2>
   <% if @tickets.count > 0 %>
     <% @tickets.each do |ticket| %>
-      <div class="card-streamer">
-        <%= cl_image_tag ticket.creek.photo.key, class: "stream-resa" %>
+      <div class="card-streamer card-border">
+        <%= cl_image_tag ticket.creek.photo.key, class: "stream-resa border-radius-left" %>
         <div class="card-body">
           <h5 class="card-title"><%= ticket.creek.title %></h5>
           <p class="card-text"><%= DateTime.iso8601(ticket.creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
@@ -18,7 +18,9 @@
       </div>
     <% end %>
   <% else %>
-    <p>Vous n'avez pas encore de réservations.</p>
+    <div class="container text-center">
+      <h3 class="mt-5">Vous n'avez pas encore de réservations, cliquez <%= link_to "ici", pages_path %> pour découvrir nos streamers.</h3>
+      <iframe src="https://giphy.com/embed/le0xDZ7kpMtYQ" width="480" height="270" frameBorder="0" class="giphy" allowFullScreen></iframe>
+    </div>
   <% end %>
 </div>
-

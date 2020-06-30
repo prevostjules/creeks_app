@@ -4,6 +4,7 @@ class CreeksController < ApplicationController
   require 'uri'
 
   def show
+    @message = Message.new
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users
@@ -19,6 +20,7 @@ class CreeksController < ApplicationController
   def create
       @creek = Creek.new(set_params)
       @creek.user = current_user
+      byebug
       if @creek.save!
         check_credentials
         results = JSON.parse(call_youtube_api)
@@ -36,15 +38,23 @@ class CreeksController < ApplicationController
   end
 
   def update
-    @creek.update(set_params)
-    if @creek.save!
+    if check_credentials && @creek.update!(set_params)
+      delete_broadcast
+      results = JSON.parse(call_youtube_api)
+      @creek.id_broadcast = results["id"]
+      @creek.update!(id_broadcast: results["id"])
+      link_broadcast_to_stream(results["id"], current_user.stream_id)
+      flash[:alert] = results
       redirect_to creek_path(@creek)
     else
       render :edit
+      flash[:alert] = results
     end
   end
 
   def destroy
+    check_credentials
+    delete_broadcast
     @creek.destroy
     redirect_to user_path(current_user)
   end
@@ -52,7 +62,7 @@ class CreeksController < ApplicationController
   private
 
   def set_params
-    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :category, :photo)
+    params.require(:creek).permit(:title, :description, :scheduledStartTime, :duration, :price, :capacity, :photo, :category_id)
   end
 
   def set_creek
@@ -121,6 +131,19 @@ class CreeksController < ApplicationController
 
     response = https.request(request)
     p response.read_body
+    response.read_body
+  end
+
+  def delete_broadcast
+    url = URI("https://www.googleapis.com/youtube/v3/liveBroadcasts?id=#{@creek.id_broadcast}&key=#{ENV['API_KEY']}")
+    https = Net::HTTP.new(url.host, url.port);
+    https.use_ssl = true
+
+    request = Net::HTTP::Delete.new(url)
+    request["Authorization"] = "Bearer #{current_user.access_token}"
+    request["Accept"] = "application/json"
+
+    response = https.request(request)
     response.read_body
   end
 

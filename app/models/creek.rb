@@ -2,6 +2,9 @@ class Creek < ApplicationRecord
   belongs_to :user
   has_many :tickets, dependent: :destroy
   has_many :users, through: :tickets
+  belongs_to :category
+
+  has_many :messages, dependent: :destroy
 
   has_one_attached :photo
 
