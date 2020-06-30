@@ -48,11 +48,11 @@ file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439494/i
 meditation = Category.new(name:"Meditation")
 meditation.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439506/5znr0609lrpok8yui0uy48pnjmeh.jpg')
+file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593529648/j3car31q78r03j2gjemqistp02i6.jpg')
 fitness = Category.new(name:"Fitness")
 fitness.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593435597/qjqpq7t7lm8yk8xs3jkq0z8st7v9.jpg')
+file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593529605/mfywzjvngl88zku06w9i848orltp.jpg')
 photo = Category.new(name:"Photo")
 photo.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 

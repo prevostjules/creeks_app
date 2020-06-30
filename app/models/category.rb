@@ -5,4 +5,11 @@ class Category < ApplicationRecord
   has_one_attached :photo
 
   validates :name, presence: true
+
+  include AlgoliaSearch
+
+  algoliasearch do
+    attributes :name,
+  end
+
 end

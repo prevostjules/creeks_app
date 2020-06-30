@@ -73,7 +73,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 5px;
 }
+
+
 
 .card-product img {
   height: 100%;
@@ -99,9 +102,6 @@
   padding: 16px;
 }
 
-.card-streamer-index {
-
-}
 
 .border-radius-top {
   border-top-right-radius: 10px;
@@ -117,4 +117,22 @@
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+.link-card-product {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.card-product-infos {
+  width: 100%;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
