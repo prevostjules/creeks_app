@@ -1,0 +1,22 @@
+<div class="d-flex align-items-center justify-content-between mt-2 mb-5 m-2">
+  <%= render "infos" %>
+  <div id="messages" class="chat mt-2" data-chatroom-id="<%= @creek.id %>">
+    <div class="chat-title">
+      <h2>Tchat</h2>
+    </div>
+    <div class="messages">
+      <% @creek.messages.each do |message| %>
+        <% if message.user == current_user %>
+          <div class="text-right">
+          <%= render "messages/messages", message: message %>
+          </div>
+        <% else %>
+          <%= render "messages/messages", message: message %>
+        <% end %>
+      <% end %>
+      <%= simple_form_for [ @creek, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,6 @@
 <div class="fix-nf container">
   <% if @users.include?(current_user) || @creek.user == current_user %>
-    <div class="video-embarquee" id="fullscreen">
-      <iframe id="fullscreen-iframe" width="840px" height="472,5px" src=<%= @embed_link %>  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <div id="front"><div class="app"><h2>Creeks.app</h2></div></div>
-      <div id="back"></div>
-    </div>
-     <button id="fullscreen-btn">Plein Ecran</button>
+    <%= render "player" %>
   <% else %>
     <div id="header" class="banner-creek rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @creek.photo.key, height: 300, width: 400, crop: :fill %>');">
       <div class="text-center">
@@ -18,21 +13,10 @@
         <% end %>
       </div>
     </div>
+    <div class="d-flex align-items-center justify-content-between mt-2 mb-5 p-2">
+      <%= render "infos" %>
+    </div>
   <% end %>
-  <div class="d-flex align-items-center justify-content-between mt-2 mb-5 p-2">
-    <div class="d-flex align-items-center">
-
-    <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big", width:160, height:160, crop: :fill %>
-    <div class="d-flex flex-column ml-3">
-      <h2><%= @creek.title %></h2>
-      <h3><%= @creek.user.username %></h3>
-    </div>
-    </div>
-    <div class="d-flex flex-column">
-        <p><strong><%= @creek.price %></strong> euros</p>
-      <p><%= DateTime.iso8601(@creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
-    </div>
-  </div>
 
   <div class="p-4 card card-border mb-5">
     <h2>DESCRIPTION</h2>
@@ -49,15 +33,4 @@
               class:"btn btn-danger mr-2" %>
     <% end %>
   </div>
-  <% if @users.include?(current_user) || @creek.user == current_user %>
-    <h1>Messages</h1>
-    <div id="messages" data-chatroom-id="<%= @creek.id %>">
-      <% @creek.messages.each do |message| %>
-        <%= render "messages/messages", message: message %>
-      <% end %>
-    </div>
-    <%= simple_form_for [ @creek, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message" %>
-<% end %>
-  <% end %>
 </div>
