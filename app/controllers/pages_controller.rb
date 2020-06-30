@@ -29,6 +29,9 @@ class PagesController < ApplicationController
     end
   end
 
+  def team
+  end
+
   private
 
   def call_google_api
