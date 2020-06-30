@@ -1,20 +1,19 @@
 <div class="fix-nf">
-  <div class="container mb-5 mt-5">
+  <div class="container">
     <h1 class="text-center">Categories</h1>
-    <div class="card-deck margin-h">
+    <div class="row">
       <% @categories.each do |category| %>
-          <div class="card card-border">
-            <%= image_tag category.photo, class: "card-img-top border-radius-top img-fluid" %>
-          <div class="card-body">
-            <h5 class="card-title">Rejoignez <%= category.name %></h5>
-            <p class="card-text"><%= category.description %></p>
-          </div>
-          <div class="text-center mb-2">
-            <%= link_to "Voir", user_path(category), class: "btn btn-primary w-50"  %>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Dernière Vidéo : <%= DateTime.iso8601(category.creeks.last.scheduledStartTime).strftime('%A %d %b %Y') %></small>
-          </div>
+        <div class="col-4">
+          <%= link_to pages_path, class:"link-card-product" do %>
+              <%= image_tag category.photo, class: "card-img-top border-radius-top img-fluid" %>
+              <div class="card-product mb-3">
+                <div class="card-product-infos">
+                  <h2><%= category.name %></h2>
+                  <p class="mb-3">16 Streamers</p>
+                  <p class="mb-3">136 Creeks</p>
+                </div>
+              </div>
+          <% end %>
         </div>
       <% end %>
     </div>
