@@ -61,52 +61,52 @@ sophrologie.save!
 
 puts "Create users"
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587574/Yohann_ijpwd5.jpg')
-user = User.new(username:"Calvin", email:"calvin@gmail.com", password:"secret")
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598951/img%20projet/users/qunwhvo4fw6kloh8w5b49tmx8lx5.jpg')
+user = User.new(username:"Aude", email:"aude@gmail.com", password:"secret")
 user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587573/Romain_afggqe.jpg')
-user = User.new(username:"Dylan", email:"dylan@gmail.com", password:"secret")
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598917/img%20projet/users/ybti419doxfgkqnoevbzxqegumb7.jpg')
+user = User.new(username:"Laura", email:"laura@gmail.com", password:"secret")
 user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587572/Romain_1_pgmuja.jpg')
-user = User.new(username:"Charles", email:"charles@gmail.com", password:"secret")
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598921/img%20projet/users/a59x7ew7fu1logcptkbnpyzaoc3r.jpg')
+user = User.new(username:"Charlie", email:"charlie@gmail.com", password:"secret")
 user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587573/Valentine_2_ozloxm.jpg')
-camille = User.new(username:"Camille", email:"camille@gmail.com", password:"secret", role: 1, description: "Passionnée de photographie, je vous apprendrai tous mes trucs et astuces pour tirer le meilleur de votre appareil photo !")
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598976/img%20projet/users/122q4rimlxnqtd8oalk3g2dlg4jg.jpg')
+camille = User.new(username:"Camille", email:"camille@gmail.com", password:"secret", role: 1, description: "Passionné de photographie, je vous apprendrai tous mes trucs et astuces pour tirer le meilleur de votre appareil photo !")
 camille.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 camille.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587572/Pauline_cxattz.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593600162/img%20projet/users/woman-meditating-in-the-outdoors-2908175_ikkesx.jpg')
 anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1, description: "On se calme, on se détend et on médite avec moi.")
 anna.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 anna.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587572/Mathiueu_2_mhnlrx.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593601310/img%20projet/users/man-meditating-on-a-tree-log-3576284_ffjabq.jpg')
 marcel = User.new(username:"Marcel", email:"marcel@gmail.com", password:"secret", role: 1, description: "J'ai débuté ma formation en tant que mindfulness teacher au fin fond du Tibet avec les moines du temple Ying...")
 marcel.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 marcel.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587387/img%20projet/an3uwrjvpaf86kp9cwpr.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598964/img%20projet/users/w15x8j23uv3w02zvbrniz5h0xlno.jpg')
 julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1, description: "Avec moi vous allez découvrir le plaisir de transpirer ;)")
 julie.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 julie.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587393/img%20projet/Avatars/damir-spanic-rHDK3UU7HUw-unsplash_atfvky.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598954/img%20projet/users/f6mmen1jh15fh629cmljeu9yu753.jpg')
 kevin = User.new(username:"Kevin", email:"kevin@gmail.com", password:"secret", role: 1, description: "Je suis professeur de boxe depuis 15 ans, grand passionné de ma discipline !")
 kevin.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 kevin.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587392/img%20projet/Avatars/a-chef-in-red-apron-with-a-smile-on-his-face-3351927_dexkxh.jpg')
-emma = User.new(username:"Emmannuel", email:"emma@gmail.com", password:"secret", role: 1, description: "Ancien chef dans un restaurant deux étoiles, j'adore partager ma passion pour la cuisine en live !")
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593599763/img%20projet/users/adult-cutting-daylight-facial-expression-1153369_d5o9js.jpg')
+emma = User.new(username:"Emmanuel", email:"emma@gmail.com", password:"secret", role: 1, description: "Ancien chef dans un restaurant deux étoiles, j'adore partager ma passion pour la cuisine en live ! Avec moi plus besoin de choisir entre goût et nutrition saine")
 emma.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 emma.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587569/Charles-Henri_2_ejgakx.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598976/img%20projet/users/122q4rimlxnqtd8oalk3g2dlg4jg.jpg')
 user = User.new(username:"Michel", email:"michel@gmail.com", password:"secret")
 user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
