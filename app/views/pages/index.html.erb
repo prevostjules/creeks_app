@@ -2,7 +2,7 @@
   <% if params[:streamers] == 1 && !@users.empty? %>
     <h1 class="text-center mt-5 mb-3">Tous nos streamers</h1>
   <% else %>
-    <h1 class="text-center my-5">Resultats <%= params[:query] %></h1>
+    <h1 class="text-center my-5">Resultats pour <%= params[:query] %></h1>
   <% end %>
   <% if @users&.count == 1 %>
     <%= render "shared/card-streamer", user: @users.first %>

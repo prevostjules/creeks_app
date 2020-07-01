@@ -10,6 +10,7 @@ const algoliaAutocomplete = () => {
       source: autocomplete.sources.hits(creeks, { hitsPerPage:  1}),
       displayKey: 'title',
       templates: {
+        header: '<div class="aa-suggestions-category">Creeks</div>',
         suggestion({_highlightResult}) {
           console.log(_highlightResult)
           return `<span>${_highlightResult.title.value}</span>`;
@@ -20,6 +21,7 @@ const algoliaAutocomplete = () => {
       source: autocomplete.sources.hits(categories, { hitsPerPage:  1}),
       displayKey: 'name',
       templates: {
+        header: '<div class="aa-suggestions-category">Categories</div>',
         suggestion({_highlightResult}) {
           return `<span>${_highlightResult.name.value}</span>`;
         }
@@ -29,6 +31,7 @@ const algoliaAutocomplete = () => {
       source: autocomplete.sources.hits(users, { hitsPerPage: 1 }),
       displayKey: 'username',
       templates: {
+        header: '<div class="aa-suggestions-category">Streamers</div>',
         suggestion({_highlightResult}) {
           return `<span>${_highlightResult.username.value}</span>`;
         }
