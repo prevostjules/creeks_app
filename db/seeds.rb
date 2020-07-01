@@ -39,7 +39,7 @@ puts "Create categories"
 # food.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 # food.save!
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439494/itg7ftxdqo3cfauqvrkvkrlkc7dg.jpg')
+file = URI.open('https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_1280.jpg')
 meditation = Category.new(name:"Meditation")
 meditation.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 meditation.save!
