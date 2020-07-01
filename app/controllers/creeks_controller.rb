@@ -20,7 +20,6 @@ class CreeksController < ApplicationController
   def create
       @creek = Creek.new(set_params)
       @creek.user = current_user
-      byebug
       if @creek.save!
         check_credentials
         results = JSON.parse(call_youtube_api)
