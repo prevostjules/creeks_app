@@ -20,5 +20,8 @@ class Creek < ApplicationRecord
 
   algoliasearch do
     attributes :title, :description
+    attributes :category do
+      { name: category.name }
+    end
   end
 end

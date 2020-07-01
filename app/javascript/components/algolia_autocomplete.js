@@ -3,14 +3,15 @@ const algoliaAutocomplete = () => {
   if (search) {
     const client = algoliasearch("UGEZOCGL5L", "a64a63fabdae50e3d5f03e3d59fe5fdf");
     const creeks = client.initIndex('Creek');
-    const users = client.initIndex('User');
     const categories = client.initIndex('Category');
+    const users = client.initIndex('User');
     autocomplete('#aa-search-input', {}, [
     {
       source: autocomplete.sources.hits(creeks, { hitsPerPage:  1}),
       displayKey: 'title',
       templates: {
         suggestion({_highlightResult}) {
+          console.log(_highlightResult)
           return `<span>${_highlightResult.title.value}</span>`;
         }
       }
@@ -20,7 +21,7 @@ const algoliaAutocomplete = () => {
       displayKey: 'name',
       templates: {
         suggestion({_highlightResult}) {
-          return `<span>${_highlightResult.title.value}</span>`;
+          return `<span>${_highlightResult.name.value}</span>`;
         }
       }
     },

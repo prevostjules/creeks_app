@@ -11,4 +11,5 @@ class Category < ApplicationRecord
     attributes :name
   end
 
+  after_save { creeks.each(&:touch) }
 end
