@@ -77,7 +77,7 @@ user.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 user.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587573/Valentine_2_ozloxm.jpg')
-camille = User.new(username:"Camille", email:"camille@gmail.com", password:"secret", role: 1, category:photo, description: "Passionnée de photographie, je vous apprendrai tous mes trucs et astuces pour tirer le meilleur de votre appareil photo !")
+camille = User.new(username:"Camille", email:"camille@gmail.com", password:"secret", role: 1, category:fitness, description: "Passionnée de photographie, je vous apprendrai tous mes trucs et astuces pour tirer le meilleur de votre appareil photo !")
 camille.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 camille.save!
 
