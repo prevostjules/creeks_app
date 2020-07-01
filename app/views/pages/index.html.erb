@@ -1,5 +1,5 @@
 <div class="fix-nf">
-  <% if params[:streamers] = 1 && !@users.empty? %>
+  <% if params[:streamers] == 1 && !@users.empty? %>
     <h1 class="text-center mt-5 mb-3">Tous nos streamers</h1>
   <% else %>
     <h1 class="text-center">Résultats pour "<%= params[:query] %>"</h1>

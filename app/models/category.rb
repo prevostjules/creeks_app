@@ -11,6 +11,4 @@ class Category < ApplicationRecord
     attributes :name
   end
 
-  Category.reindex
-
 end
