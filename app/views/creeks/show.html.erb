@@ -2,7 +2,7 @@
   <% if @users.include?(current_user) || @creek.user == current_user %>
     <%= render "player" %>
   <% else %>
-    <div id="header" class="banner-creek rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @creek.photo.key, height: 300, width: 400, crop: :fill %>');">
+    <div id="header" class="banner-creek rounded-25px d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @creek.photo.key, height: 300, width: 400, crop: :fill, secure: true %>');">
       <div class="text-center">
         <% if @remain_capacity > 0 %>
           <%= link_to "Acheter", creek_tickets_path(@creek), method: :post, class: "btn btn-primary" %>
