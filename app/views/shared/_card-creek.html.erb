@@ -9,6 +9,7 @@
   </div>
   <div class="card-right p-3">
     <p class="card-text"><strong><%= creek.price %>€</strong></p>
+    <h5 class="text-right"><%= creek.category.name %></h5>
     <% if !creek.capacity.nil? %>
       <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
     <% end %>
