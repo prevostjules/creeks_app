@@ -1,6 +1,5 @@
 class Category < ApplicationRecord
   has_many :creeks
-  has_many :users
 
   has_one_attached :photo
 
@@ -11,5 +10,7 @@ class Category < ApplicationRecord
   algoliasearch do
     attributes :name
   end
+
+  Category.reindex
 
 end

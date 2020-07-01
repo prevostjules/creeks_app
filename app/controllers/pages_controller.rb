@@ -21,8 +21,12 @@ class PagesController < ApplicationController
   def index
     if params[:query].present?
       @creeks = Creek.search(params[:query])
-      @users = User.search( params[:query])
+      @users = User.search(params[:query])
       @users = @users.select{ |user| user.role == "streamer"}
+    elsif params[:category].present?
+      category = Category.search(params[:category])[0]
+      @users = User.all.select{ |user| user.category == category}
+      @creeks = Creek.all.select{ |creek| creek.category == category}
     else
       @users = User.all
       @users = @users.select{ |user| user.role == "streamer"}
