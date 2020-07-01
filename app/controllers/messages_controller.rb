@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
         @creek,
         render_to_string(partial: "messages", locals: { message: @message })
       )
-      redirect_to creek_path(@creek, anchor: "message-#{@message.id}")
+      # redirect_to creek_path(@creek, anchor: "message-#{@message.id}")
     else
       render "creeks/show"
     end

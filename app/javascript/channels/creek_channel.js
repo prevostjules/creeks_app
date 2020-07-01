@@ -1,13 +1,16 @@
 import consumer from "./consumer";
 
 const initChatroomCable = () => {
-  const messagesContainer = document.getElementById('messages');
+  const messagesContainer = document.querySelectorAll('#messages');
   if (messagesContainer) {
-    const id = messagesContainer.dataset.chatroomId;
+    const id = messagesContainer[1].dataset.chatroomId;
 
     consumer.subscriptions.create({ channel: "CreekChannel", id: id }, {
       received(data) {
-        messagesContainer.insertAdjacentHTML('beforeend', data); // called when data is broadcast in the cable
+        messagesContainer.forEach((messageContainer) => {
+          messageContainer.insertAdjacentHTML('beforeend', data);
+        });
+         // called when data is broadcast in the cable
       },
     });
   }
