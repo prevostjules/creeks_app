@@ -24,7 +24,6 @@ class PagesController < ApplicationController
       @users = User.search(params[:query])
       @users = @users.select{ |user| user.role == "streamer"}
     elsif params[:category].present?
-
       category = Category.find_by(name: params[:category])
       @creeks = Creek.all.select{ |creek| creek.category == category}
     else
