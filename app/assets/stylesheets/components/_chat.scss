@@ -17,3 +17,9 @@
 .messages {
   padding: 3rem 2rem 0 2rem;
 }
+
+.chat-fullscreen {
+  #messages, .form-fullscreen {
+    position: relative;
+  }
+}

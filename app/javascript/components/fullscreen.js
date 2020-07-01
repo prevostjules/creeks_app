@@ -24,12 +24,11 @@ const fullscreen = () => {
       elem.requestFullscreen();
       chat.style.display = "block";
     });
-  document.getElementById("fullscreen").addEventListener('fullscreenchange', (event) => {
-    if (document.fullscreenElement == null) {
-    chat.style.display = "none";
-  }
-  });
-
+    document.getElementById("fullscreen").addEventListener('fullscreenchange', (event) => {
+      if (document.fullscreenElement == null) {
+      chat.style.display = "none";
+      }
+    });
   }
 }
 

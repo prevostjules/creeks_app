@@ -29,6 +29,7 @@ import { algoliaAutocomplete } from "../components/algolia_autocomplete";
 import { loadDynamicBannerText } from '../components/banner';
 import { fullscreen } from '../components/fullscreen';
 import { initChatroomCable } from '../channels/creek_channel';
+import { scrollDown } from "../components/scrollDown";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   fullscreen();
   initChatroomCable();
+  scrollDown();
   algoliaAutocomplete();
   loadDynamicBannerText();
 });
