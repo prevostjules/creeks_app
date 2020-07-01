@@ -9,7 +9,6 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 2020_06_30_113512) do
 
   # These are extensions that must be enabled in order to support this database
@@ -117,5 +116,4 @@ ActiveRecord::Schema.define(version: 2020_06_30_113512) do
   add_foreign_key "messages", "users"
   add_foreign_key "tickets", "creeks"
   add_foreign_key "tickets", "users"
-  add_foreign_key "users", "categories"
 end

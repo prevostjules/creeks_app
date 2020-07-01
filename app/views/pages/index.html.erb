@@ -4,7 +4,6 @@
   <% else %>
     <h1 class="text-center">Résultats pour "<%= params[:query] %>"</h1>
   <% end %>
-
   <% if @users&.count == 1 %>
     <div class="fix-nf">
       <div class="container">
@@ -17,54 +16,51 @@
           </div>
         </div>
       </div>
-    <% @users.first.creeks.each do |creek| %>
+      <% @users.first.creeks.each do |creek| %>
       <div class="container cards-streamer mt-3">
         <div class="card-streamer-index">
-            <%= cl_image_tag creek.photo.key, class: "stream-resa"%>
-            <div class="card-body">
-              <h5 class="card-title"><%= creek.title %></h5>
-              <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
-              <p class="card-text-description"><%= creek.description %></p>
-            </div>
-            <div class="card-right p-3">
-              <p class="card-text"><strong><%= creek.price %>€</strong></p>
-              <% if !creek.capacity.nil? %>
-                <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
-              <% end %>
-              <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
-            </div>
+          <%= cl_image_tag creek.photo.key, class: "stream-resa"%>
+          <div class="card-body">
+            <h5 class="card-title"><%= creek.title %></h5>
+            <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
+            <p class="card-text-description"><%= creek.description %></p>
+          </div>
+          <div class="card-right p-3">
+            <p class="card-text"><strong><%= creek.price %>€</strong></p>
+            <% if !creek.capacity.nil? %>
+            <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+            <% end %>
+            <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
+          </div>
         </div>
-        <br>
-        <br>
       </div>
-    <% end %>
+      <% end %>
     </div>
-  <% elsif @creeks&.count == 1%>
+    <% elsif @creeks&.count == 1%>
     <% @creeks.each do |creek| %>
-       <div class="container cards-streamer mt-3">
-        <div class="card-streamer-index">
-            <%= cl_image_tag creek.photo.key, class: "stream-resa"%>
-            <div class="card-body">
-              <h5 class="card-title"><%= creek.title %></h5>
-              <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
-              <p class="card-text-description"><%= creek.description %></p>
-            </div>
-            <div class="card-right p-3">
-              <p class="card-text"><strong><%= creek.price %>€</strong></p>
-              <% if !creek.capacity.nil? %>
-                <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
-              <% end %>              <%= link_to "Reserver", creek_path(creek), class: "btn btn-primary" %>
-            </div>
+    <div class="container cards-streamer mt-3">
+      <div class="card-streamer-index">
+        <%= cl_image_tag creek.photo.key, class: "stream-resa"%>
+        <div class="card-body">
+          <h5 class="card-title"><%= creek.title %></h5>
+          <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
+          <p class="card-text-description"><%= creek.description %></p>
         </div>
-        <br>
-        <br>
+        <div class="card-right p-3">
+          <p class="card-text"><strong><%= creek.price %>€</strong></p>
+          <% if !creek.capacity.nil? %>
+          <p class="card-text"><%= creek.capacity - creek.tickets.count %> places restantes</p>
+          <% end %>
+          <%= link_to "Réserver", creek_path(creek), class: "btn btn-primary" %>
+        </div>
       </div>
+    </div>
     <% end %>
-  <% elsif @users&.count > 1 %>
-  <div class="container">
-    <% @users.each do |user| %>
-    <%= render "shared/card-streamer", user: user %>
-    <% end %>
+    <% elsif @users&.count > 1 %>
+    <div class="container">
+      <% @users.each do |user| %>
+      <%= render "shared/card-streamer", user: user %>
+      <% end %>
     </div>
     <% else %>
     <div class="container text-center">

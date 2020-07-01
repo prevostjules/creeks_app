@@ -23,7 +23,7 @@
                 input_html: { autocomplete: "mot de passe actuel" } %>
     <% if current_user.streamer? %>
       <%= f.input :description %>
-      <%= f.association :category %>
+      <%#= f.association :category %>
     <% end %>
   </div>
 
