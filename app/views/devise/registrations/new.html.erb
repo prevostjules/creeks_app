@@ -3,9 +3,10 @@
     <div class="col-md-10">
       <div class="row bloc margin-div">
         <div class="register-left col-12 col-md-5">
-          <h2>Rejoignez-nous</h2>
-          <p>Rejoignez notre communauté de streamers et intéragissez avec des élèves dans le monde entier...</p>
-          <button type="button" class="btn btn-primary">A propos de nous</button>
+          <%= cl_image_tag "https://res.cloudinary.com/domm9vey9/image/upload/v1593594083/noun_creek_white_vd6sio.svg" %>
+            <h2>Rejoignez-nous</h2>
+            <p>Rejoignez notre communauté de streamers et intéragissez avec des élèves dans le monde entier...</p>
+            <%= link_to "A propos de nous", team_path, class: "btn btn-primary"%>
         </div>
         <div class="register-right col-12 col-md-7">
           <h2>Enregistrez-vous</h2>
