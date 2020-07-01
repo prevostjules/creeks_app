@@ -2,13 +2,13 @@
   <h1 class="text-center">Streamers du moments</h1>
   <div class="card-deck margin-h">
     <% @streamers.first(3).each do |streamer| %>
-        <div class="card card-border">
+        <div class="card card-futur">
           <%= image_tag streamer.photo, class: "card-img-top border-radius-top img-fluid" %>
         <div class="card-body">
           <h5 class="card-title">Rejoignez <%= streamer.username %></h5>
           <p class="card-text"><%= streamer.description %></p>
         </div>
-        <div class="text-center mb-2">
+        <div class="text-center my-4">
           <%= link_to "Voir", user_path(streamer), class: "btn btn-primary w-50"  %>
         </div>
         <div class="card-footer">

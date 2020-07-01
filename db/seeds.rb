@@ -34,7 +34,7 @@ Category.destroy_all
 
 puts "Create categories"
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587392/img%20projet/food/burrito-chicken-delicious-dinner-461198_fvq4mc.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593607870/img%20projet/sebastian-coman-photography-cQbOSRpElxw-unsplash_rpsisi.jpg')
 food = Category.new(name:"Cuisine")
 food.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 food.save!
@@ -50,14 +50,19 @@ fitness.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 fitness.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587389/img%20projet/Photography/man-taking-picture-of-person-s-left-arm-1391786_c8nura.jpg')
-photo = Category.new(name:"Photo")
+photo = Category.new(name:"Photographie")
 photo.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 photo.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587390/img%20projet/sport/happy-girlfriends-exercising-on-mat-on-grass-in-daylight-4127339_jwpu5m.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593607980/img%20projet/nine-kopfer-zosE9lAYQlo-unsplash_enjbwm.jpg')
 sophrologie = Category.new(name:"Sophrologie")
 sophrologie.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 sophrologie.save!
+
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593607841/img%20projet/danial-ricaros-FCHlYvR5gJI-unsplash_iotx4g.jpg')
+code = Category.new(name:"Code")
+code.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+code.save!
 
 puts "Create users"
 
@@ -82,7 +87,7 @@ camille.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 camille.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593600162/img%20projet/users/woman-meditating-in-the-outdoors-2908175_ikkesx.jpg')
-anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1, description: "On se calme, on se détend et on médite avec moi.")
+anna = User.new(username:"Anna", email:"anna@gmail.com", password:"secret", role: 1, description: "On se calme, on se détend et on médite avec moi. Venez découvrir les bienfaits de la respiration ventrale à travers mon cours de sophrologie.")
 anna.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 anna.save!
 
@@ -92,7 +97,7 @@ marcel.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 marcel.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593598964/img%20projet/users/w15x8j23uv3w02zvbrniz5h0xlno.jpg')
-julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1, description: "Avec moi vous allez découvrir le plaisir de transpirer ;)")
+julie = User.new(username:"Julie", email:"julie@gmail.com", password:"secret", role: 1, description: "Avec moi vous allez découvrir le plaisir de transpirer ;) alors n'hésitez pas à venir très nombreux !")
 julie.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 julie.save!
 
@@ -102,7 +107,7 @@ kevin.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 kevin.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593599763/img%20projet/users/adult-cutting-daylight-facial-expression-1153369_d5o9js.jpg')
-emma = User.new(username:"Emmanuel", email:"emma@gmail.com", password:"secret", role: 1, description: "Ancien chef dans un restaurant deux étoiles, j'adore partager ma passion pour la cuisine en live ! Avec moi plus besoin de choisir entre goût et nutrition saine")
+emma = User.new(username:"Emmanuelle", email:"emma@gmail.com", password:"secret", role: 1, description: "Ancien chef dans un restaurant deux étoiles, j'adore partager ma passion pour la cuisine en live ! Avec moi plus besoin de choisir entre goût et nutrition saine")
 emma.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 emma.save!
 
@@ -119,17 +124,17 @@ creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587393/img%20projet/food/young-man-grilling-meat-in-camp-4311067_gcxbmo.jpg')
-creek = Creek.new(title: "Des burritos pas bourratifs", description:"Tout, tout, vous saurez tout sur les burritos !", scheduledStartTime:"2020-07-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50, category:food)
+creek = Creek.new(title: "Des burritos veggies", description:"Tout, tout, vous saurez tout sur nos burritos sans viande, sans graisse saturée, et sans gluten ! Zéro prise de calories et plaisir garanti !", scheduledStartTime:"2020-07-30T05:06:07.0Z", price:15, user:emma, capacity:10, duration:50, category:food)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587391/img%20projet/sport/person-holding-barbell-841130_id5dhr.jpg')
-creek = Creek.new(title: "Fitness Ultimate", description:"Une nouvelle façon de garder la forme en répétant des postures de combat et en s'affrontant soi-même.", scheduledStartTime:"2020-07-29T05:06:07.0Z", price:8, user:kevin, capacity:300, duration:40, category:fitness)
+creek = Creek.new(title: "Fitness Ultimate", description:"Une nouvelle façon de garder la forme en répétant des postures de combat et en s'affrontant soi-même. Venez affronter votre côté obscur.", scheduledStartTime:"2020-07-29T05:06:07.0Z", price:8, user:kevin, capacity:300, duration:40, category:fitness)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
 file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587390/img%20projet/Photography/photo-of-man-holding-a-camera-1567730_a7k72k.jpg')
-creek = Creek.new(title: "Selfie like a boss", description:"Les meilleurs réglages et lumières pour prendre des selfies comme une influenceuse.", scheduledStartTime:"2020-07-01T05:06:07.0Z", price:10, user:camille, capacity:60, duration:60, category:photo)
+creek = Creek.new(title: "Selfie like a boss", description:"Les meilleurs réglages et lumières pour prendre des selfies comme vos influenceuses favorites ! De long, en large, de haut, en bas !", scheduledStartTime:"2020-07-01T05:06:07.0Z", price:10, user:camille, capacity:60, duration:60, category:photo)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 

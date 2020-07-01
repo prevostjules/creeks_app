@@ -2,7 +2,7 @@
   <h1 class="text-center">Sélection des futurs streams</h1>
   <div class="card-deck margin-h">
     <% @creeks.each do |creek| %>
-      <div class="card card-border">
+      <div class="card card-futur">
         <% if creek.photo.attached? %>
           <%= cl_image_tag creek.photo.key, class: "card-img-top border-radius-top", height:170, crop: :fill %>
         <% else %>
@@ -15,7 +15,7 @@
           </div>
           <p class="card-text"><%= creek.description %></p>
         </div>
-        <div class="text-center mb-2">
+        <div class="text-center my-4">
           <%= link_to "Voir", creek_path(creek), class: "btn btn-primary w-50"  %>
         </div>
         <div class="card-footer d-flex justify-content-between">
