@@ -34,10 +34,10 @@ Category.destroy_all
 
 puts "Create categories"
 
-file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439523/51frjmuyymwkd1967jcim83bgdvw.jpg')
-food = Category.new(name:"Food")
-food.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
-food.save!
+# file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439523/51frjmuyymwkd1967jcim83bgdvw.jpg')
+# food = Category.new(name:"Food")
+# food.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
+# food.save!
 
 file = URI.open('https://res.cloudinary.com/dvwipbafx/image/upload/v1593439494/itg7ftxdqo3cfauqvrkvkrlkc7dg.jpg')
 meditation = Category.new(name:"Meditation")
