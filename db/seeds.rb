@@ -133,7 +133,7 @@ creek = Creek.new(title: "Fitness Ultimate", description:"Une nouvelle façon de
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!
 
-file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593587390/img%20projet/Photography/photo-of-man-holding-a-camera-1567730_a7k72k.jpg')
+file = URI.open('https://res.cloudinary.com/domm9vey9/image/upload/v1593611610/img%20projet/users/person-holding-iphone-1322360_seeqga.jpg')
 creek = Creek.new(title: "Selfie like a boss", description:"Les meilleurs réglages et lumières pour prendre des selfies comme vos influenceuses favorites ! De long, en large, de haut, en bas !", scheduledStartTime:"2020-07-01T05:06:07.0Z", price:10, user:camille, capacity:60, duration:60, category:photo)
 creek.photo.attach(io: file, filename: 'bob.jpg', content_type: 'image/jpg')
 creek.save!

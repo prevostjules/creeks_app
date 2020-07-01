@@ -1,11 +1,11 @@
 <div class="container mb-5 mt-5">
-  <h1 class="text-center">Streamers du moments</h1>
+  <h1 class="text-center">Streamers du moment</h1>
   <div class="card-deck margin-h">
     <% @streamers.first(3).each do |streamer| %>
         <div class="card card-futur">
           <%= image_tag streamer.photo, class: "card-img-top border-radius-top img-fluid" %>
         <div class="card-body">
-          <h5 class="card-title">Rejoignez <%= streamer.username %></h5>
+          <h5 class="card-title">Decouvrez <%= streamer.username %></h5>
           <p class="card-text"><%= streamer.description %></p>
         </div>
         <div class="text-center my-4">
