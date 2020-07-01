@@ -39,5 +39,4 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   algoliaAutocomplete();
   loadDynamicBannerText();
-
 });
