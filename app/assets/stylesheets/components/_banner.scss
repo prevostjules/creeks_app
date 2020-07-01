@@ -65,27 +65,31 @@ header video {
   transform: translateX(-50%) translateY(-50%);
 }
 
-header .container {
-  position: relative;
-  z-index: 2;
+.header-banner {
+  background-size: cover;
 }
 
-header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.3;
-  z-index: 1;
-}
+// header .container {
+//   position: relative;
+//   z-index: 2;
+// }
 
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://res.cloudinary.com/dvwipbafx/image/upload/v1593424782/banner-creek_fovod7.png') black no-repeat center center scroll;
-  }
-  header video {
-    display: none;
-  }
-}
+// header .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
+//   background-color: black;
+//   opacity: 0.3;
+//   z-index: 1;
+// }
+
+// @media (pointer: coarse) and (hover: none) {
+//   header {
+//     background: url('https://res.cloudinary.com/dvwipbafx/image/upload/v1593424782/banner-creek_fovod7.png') black no-repeat center center scroll;
+//   }
+//   header video {
+//     display: none;
+//   }
+// }
