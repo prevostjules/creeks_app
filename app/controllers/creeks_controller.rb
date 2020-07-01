@@ -22,10 +22,11 @@ class CreeksController < ApplicationController
       @creek.user = current_user
       if @creek.save!
         check_credentials
+        stream_params = create_stream_params
         results = JSON.parse(call_youtube_api)
         @creek.id_broadcast = results["id"]
-        @creek.update!(id_broadcast: results["id"])
-        link_broadcast_to_stream(results["id"], current_user.stream_id)
+        @creek.update!(id_broadcast: results["id"], stream_id: stream_params["id"], stream_name: stream_params["cdn"]["ingestionInfo"]["streamName"])
+        link_broadcast_to_stream(results["id"], @creek.stream_id)
         flash[:alert] = results
         redirect_to creek_path(@creek)
       else
@@ -144,6 +145,23 @@ class CreeksController < ApplicationController
 
     response = https.request(request)
     response.read_body
+  end
+
+  def create_stream_params
+    url = URI("https://www.googleapis.com/youtube/v3/liveStreams?part=snippet%2Ccdn%2CcontentDetails%2Cstatus&key=#{ENV['API_KEY']}")
+
+    https = Net::HTTP.new(url.host, url.port)
+    https.use_ssl = true
+
+    request = Net::HTTP::Post.new(url)
+    request["Authorization"] = "Bearer #{current_user.access_token}"
+    request["Accept"] = "application/json"
+    request["Content-Type"] = "application/json"
+    request.body = "{\"snippet\":{\"title\":\"CreeksApp#{@creek.id}\",\"description\":\"The best stream app.\",\"isDefaultStream\":true},\"cdn\":{\"frameRate\":\"60fps\",\"ingestionType\":\"rtmp\",\"resolution\":\"720p\"},\"contentDetails\":{\"isReusable\":false}}"
+
+    response = https.request(request)
+    puts response.read_body
+    JSON.parse(response.read_body)
   end
 
   # def create_stream_params

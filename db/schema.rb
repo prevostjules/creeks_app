@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_074224) do
+ActiveRecord::Schema.define(version: 2020_07_01_123157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2020_07_01_074224) do
     t.string "id_broadcast"
     t.integer "duration"
     t.bigint "category_id"
+    t.string "stream_id"
+    t.string "stream_name"
     t.index ["category_id"], name: "index_creeks_on_category_id"
     t.index ["user_id"], name: "index_creeks_on_user_id"
   end
@@ -102,8 +104,6 @@ ActiveRecord::Schema.define(version: 2020_07_01_074224) do
     t.integer "role", default: 0
     t.text "description"
     t.string "refresh_token"
-    t.string "stream_id"
-    t.string "stream_name"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_users_on_category_id"
     t.index ["email"], name: "index_users_on_email", unique: true
