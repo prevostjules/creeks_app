@@ -3,7 +3,7 @@
 
 <div class="jumbotron jumbotron-fluid jumbotron-bg-img" style="background-image: url('<%= cl_image_path(@banner,crop: :fill) %>'); background-size: cover; background-position: center;">
   <div class="container">
-    <h1 class="display-4"><%= @user.username %></h1>
+    <h1 class="display-4 ombre-text"><%= @user.username %></h1>
     <div class="d-flex bg-white border-radius-all position-relative">
        <%= cl_image_tag @user.photo.key, class: "streamer-profil border-radius-left" %>
         <% if @user.description.nil? %>
