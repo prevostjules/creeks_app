@@ -10,3 +10,16 @@
   position: relative;
 }
 
+.icon-profil {
+  font-size: 1rem;
+  font-weight: bolder;
+  color: $color-call-to-action;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.7;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}

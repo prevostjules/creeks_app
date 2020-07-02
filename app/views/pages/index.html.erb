@@ -1,6 +1,8 @@
 <div class="fix-nf pb-5">
-  <% if params[:streamers] == 1 && !@users.empty? %>
+  <% if params[:streamers] == "1" && !@users&.empty? %>
     <h1 class="text-center mt-5 mb-3">Tous nos streamers</h1>
+  <% elsif params[:category] %>
+    <h1 class="text-center mt-5 mb-3"><%= @category.name %></h1>
   <% else %>
     <h1 class="text-center my-5">Resultats pour <%= params[:query] %></h1>
   <% end %>
