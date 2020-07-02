@@ -1,19 +1,22 @@
+
 <!-- Présentation Streamer -->
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid jumbotron-bg-img" style="background-image: url('<%= cl_image_path("img%20projet/river%20imgs/michael-niessl-x_gyAYzyeQA-unsplash_kffnvh.jpg",crop: :fill) %>'); background-size: cover; background-position: center;">
   <div class="container">
     <h1 class="display-4"><%= @user.username %></h1>
-    <div class="d-flex">
-       <%= cl_image_tag @user.photo.key, class: "streamer-img" %>
+    <div class="d-flex bg-white border-radius-all position-relative">
+       <%= cl_image_tag @user.photo.key, class: "streamer-profil border-radius-left" %>
         <% if @user.description.nil? %>
           <p>Une super description</p>
         <% else %>
-          <p class="row align-self-center text-center ml-5"><%= @user.description %></p>
+          <p class="row align-self-center text-left ml-5"><%= @user.description %></p>
         <% end %>
+        <% if @user == current_user %>
+          <%= link_to edit_user_registration_path do  %>
+          <i class="fas fa-user-cog float-right icon"></i>
+        <% end %>
+      <% end %>
     </div>
-    <%= link_to edit_user_registration_path do  %>
-      <i class="fas fa-user-cog float-right icon"></i>
-    <% end %>
   </div>
 </div>
 
@@ -82,12 +85,12 @@
         <p>parce qu'on sait coder</p>
       </div>
     </div>
-    <hr class="my-4">
+<!--     <hr class="my-4"> -->
   </div>
 
   <!-- Two Column Section -->
 
-  <div class="container padding">
+<!--   <div class="container padding">
     <div class="row padding align-items-center mb-5">
       <div class="col-lg-6">
         <h2>Si vous streamez</h2>
@@ -102,7 +105,7 @@
       </div>
     </div>
   </div>
-<% end %>
+<% end %> -->
 
 
 
