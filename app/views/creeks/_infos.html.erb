@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center col-sm-6">
+<div class="d-flex align-items-center col-sm-6" id="infos-streamer">
   <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big", width:160, height:160, crop: :fill %>
   <div class="d-flex flex-column ml-3">
     <h2><%= @creek.title %></h2>
@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<% if !current_user == @creek.user && !@users.include?(current_user) %>
+<% if !@users.include?(current_user) %>
   <div class="d-flex flex-column">
     <p><strong><%= @creek.price %></strong> euros</p>
     <p><%= DateTime.iso8601(@creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>

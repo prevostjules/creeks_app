@@ -1,7 +1,8 @@
 const elem = document.getElementById("fullscreen");
 const btn = document.getElementById("fullscreen-btn");
-const iframe = document.getElementById("fullscreen-iframe")
-const chat = document.getElementById("chat-fullscreen")
+const iframe = document.getElementById("fullscreen-iframe");
+const chat = document.getElementById("chat-fullscreen");
+const infoStreamer = document.getElementById("infos-streamer");
 
 // const fullscreen = () => {
 //   if (elem) {
@@ -22,6 +23,7 @@ const fullscreen = () => {
   if (elem) {
     btn.addEventListener("click", (event) => {
       elem.requestFullscreen();
+      infoStreamer.style.display = "none";
       chat.style.display = "block";
     });
     document.getElementById("fullscreen").addEventListener('fullscreenchange', (event) => {
