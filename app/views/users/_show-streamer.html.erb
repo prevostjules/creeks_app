@@ -1,7 +1,7 @@
 
 <!-- Présentation Streamer -->
 
-<div class="jumbotron jumbotron-fluid jumbotron-bg-img" style="background-image: url('<%= cl_image_path("img%20projet/river%20imgs/michael-niessl-x_gyAYzyeQA-unsplash_kffnvh.jpg",crop: :fill) %>'); background-size: cover; background-position: center;">
+<div class="jumbotron jumbotron-fluid jumbotron-bg-img" style="background-image: url('<%= cl_image_path(@banner,crop: :fill) %>'); background-size: cover; background-position: center;">
   <div class="container">
     <h1 class="display-4"><%= @user.username %></h1>
     <div class="d-flex bg-white border-radius-all position-relative">
