@@ -1,6 +1,7 @@
 .chat {
   max-height: 400px;
   overflow: scroll;
+  backdrop-filter: blur(2px);
 }
 
 .chat-title {
@@ -19,7 +20,24 @@
   position: sticky;
   bottom: 0;
 }
+.messages {
+  display: flex;
+  flex-direction: column;
+}
 
 .message-container {
-  margin: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: white;
 }
+
+.red {
+  background: red;
+  margin: 2rem 0;
+}
+
+.yellow {
+  background: green;
+  margin-bottom: 1rem;
+}
+
