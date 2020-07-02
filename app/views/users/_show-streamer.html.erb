@@ -1,28 +1,31 @@
+
 <!-- Présentation Streamer -->
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid jumbotron-bg-img" style="background-image: url('<%= cl_image_path(@banner,crop: :fill) %>'); background-size: cover; background-position: center;">
   <div class="container">
-    <h1 class="display-4"><%= @user.username %></h1>
-    <div class="d-flex">
-       <%= cl_image_tag @user.photo.key, class: "streamer-img" %>
+    <h1 class="display-4 ombre-text"><%= @user.username %></h1>
+    <div class="d-flex bg-white border-radius-all position-relative">
+       <%= cl_image_tag @user.photo.key, class: "streamer-profil border-radius-left" %>
         <% if @user.description.nil? %>
           <p>Une super description</p>
         <% else %>
-          <p class="row align-self-center text-center ml-5"><%= @user.description %></p>
+          <p class="row align-self-center text-left px-5"><%= @user.description %></p>
         <% end %>
+        <% if @user == current_user %>
+          <%= link_to edit_user_registration_path do  %>
+          <i class="fas fa-user-cog float-right icon"></i>
+        <% end %>
+      <% end %>
     </div>
-    <%= link_to edit_user_registration_path do  %>
-      <i class="fas fa-user-cog float-right icon"></i>
-    <% end %>
   </div>
 </div>
 
 <!-- Cards des Streams -->
 
-<div class="container">
+<div class="container mb-5">
   <% if @user.creeks.count > 0 %>
     <h2>Futurs streams de <%= @user.username %></h2>
-    <div class="cards-streamer mt-3 mb-3">
+    <div class="cards-streamer my-5">
       <% @user.creeks.each do |creek| %>
       <%= render "shared/card-creek", creek: creek %>
       <% end %>
@@ -33,7 +36,7 @@
 
   <% if @user == current_user %>
     <%= render "users/my-bookings" %>
-    <div class="padding">
+    <div class="padding my-5">
       <div class="row padding">
         <div class="col-lg-5" id="form">
           <h2>Nouveau stream</h2>
@@ -61,7 +64,7 @@
 
   <!-- Three Column Section -->
 
-  <div class="container-fluid padding">
+  <div class="container-fluid padding mb-5">
     <div class="row text-center padding">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <i class="fab"></i>
@@ -80,25 +83,6 @@
         <%= image_tag "france.svg", class: "picto"%>
         <h3>FRENCH</h3>
         <p>parce qu'on sait coder</p>
-      </div>
-    </div>
-    <hr class="my-4">
-  </div>
-
-  <!-- Two Column Section -->
-
-  <div class="container padding">
-    <div class="row padding align-items-center mb-5">
-      <div class="col-lg-6">
-        <h2>Si vous streamez</h2>
-        <p><strong>Notre philosophie</strong></p>
-        <p>Vous aider à promouvoir votre chaîne, faire découvrir vos créations, garantir un contenu de qualité.</p>
-        <p>Nous sommes ravis de vous trouver sur notre plateforme et avons hâte de faire partager votre passion au plus grand nombre.</p>
-        <br>
-        <a class="btn btn-primary" href="#">En savoir plus</a>
-      </div>
-      <div class="col-lg-6">
-        <%= image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593370293/person-taking-video-1654691_f1upgi.jpg", class: "promo"%>
       </div>
     </div>
   </div>

@@ -1,22 +1,20 @@
-<div class="fix-nf">
-  <div class="container">
-    <h1 class="text-center my-5">Categories</h1>
-    <div class="row">
-      <% @categories.each do |category| %>
-        <div class="col-4 pb-5">
-          <%= link_to pages_path(:category => category.name), class:"link-card-product" do %>
-              <%= image_tag category.photo, class: "card-img-top border-radius-top img-fluid" %>
-              <div class="card-product mb-3">
-                <div class="border-bottom">
-                  <h2><%= category.name %></h2>
-                  <p class="mb-3">16 Streamers</p>
-                  <p class="mb-3">136 Creeks</p>
-                </div>
-              </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+<div class="container fix-nf">
+  <h1 class="text-center my-5">Categories</h1>
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-4 pb-5">
+        <%= link_to pages_path(:category => category.name), class:"link-card-product" do %>
+            <%= image_tag category.photo, class: "card-img-top border-radius-top img-fluid" %>
+
+            <div class="card-product py-3 text-center">
+
+                <h2><%= category.name %></h2>
+                <p class="mb-1">16 Streamers</p>
+                <p class="mb-1">136 Creeks</p>
+            </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 
