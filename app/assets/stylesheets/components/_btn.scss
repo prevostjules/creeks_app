@@ -12,3 +12,16 @@
     border-color: rgba(0, 0, 0, 0.125);
   }
 }
+
+.link {
+  font-weight: bolder;
+  color: $color-call-to-action;
+  opacity: 0.7;
+  position: relative;
+  bottom: 20px;
+  right: -210px;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
