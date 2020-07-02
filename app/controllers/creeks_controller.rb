@@ -5,6 +5,7 @@ class CreeksController < ApplicationController
 
   def show
     @message = Message.new
+    @user = current_user
     @embed_link = "https://www.youtube.com/embed/#{@creek.id_broadcast}?autoplay=1&modestbranding=1&iv_load_policy=3&controls=0"
     @tickets = @creek.tickets.where(payment_status: true)
     @users = @creek.users

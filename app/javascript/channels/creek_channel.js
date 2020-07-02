@@ -9,11 +9,14 @@ const initChatroomCable = () => {
     consumer.subscriptions.create({ channel: "CreekChannel", id: id }, {
       received(data) {
         messagesContainers.forEach((messagesContainer) => {
-          // const doc = new DOMParser().parseFromString(data, "text/xml");
-          // const idMessage = doc.all[0].attributes[1].nodeValue;
+          const doc = new DOMParser().parseFromString(data, "text/xml");
+          const idUser = doc.all[0].attributes[2].value;
+          const idCurrentUser = document.getElementById("user-id").dataset.userId;
+          if (idUser == idCurrentUser) {
+            doc.all[0].classList.add("text-right");
+            data = new XMLSerializer().serializeToString(doc.documentElement);
+          }
           messagesContainer.insertAdjacentHTML('beforeend', data);
-          // const message = messagesContainer.querySelector(idMessage);
-          // console.log(message);
           const author = messagesContainer.querySelectorAll(".author")
           const lastAuthor = author[author.length - 1];
           scrollDown(lastAuthor);
