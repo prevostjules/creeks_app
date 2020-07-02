@@ -8,11 +8,13 @@
     <div class="messages">
       <% @creek.messages.each do |message| %>
         <% if message.user == current_user %>
-          <div class="text-right">
+          <div class="text-right yellow">
            <%= render "messages/messages", message: message %>
           </div>
         <% else %>
+        <div class="text-left red">
           <%= render "messages/messages", message: message %>
+        </div>
         <% end %>
 
       <% end %>

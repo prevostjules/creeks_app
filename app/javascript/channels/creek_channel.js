@@ -14,6 +14,10 @@ const initChatroomCable = () => {
           const idCurrentUser = document.getElementById("user-id").dataset.userId;
           if (idUser == idCurrentUser) {
             doc.all[0].classList.add("text-right");
+            doc.all[0].classList.add("yellow");
+            data = new XMLSerializer().serializeToString(doc.documentElement);
+          } else {
+            doc.all[0].classList.add("red");
             data = new XMLSerializer().serializeToString(doc.documentElement);
           }
           messagesContainer.insertAdjacentHTML('beforeend', data);
