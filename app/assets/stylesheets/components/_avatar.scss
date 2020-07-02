@@ -10,3 +10,11 @@
   height: 80px;
   border-radius: 50%;
 }
+
+.avatar-large {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: auto;
+}

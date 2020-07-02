@@ -10,6 +10,12 @@
   margin: 0 auto;
 }
 
+.count {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+
 .flexbox {
  justify-content: space-between;
  align-items: center;
@@ -33,10 +39,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  p {
+    width: 550px;
+  }
   .card-text-description {
     max-height: 100%;
     width: 90%;
-
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
