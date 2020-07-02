@@ -2,8 +2,8 @@ import consumer from "./consumer";
 import { scrollDown } from "../components/scrollDown"
 
 const initChatroomCable = () => {
-  const messagesContainers = document.querySelectorAll('#messages');
-  if (messagesContainers) {
+  const messagesContainers = Array.from(document.getElementsByClassName('messages-ok'));
+  if (messagesContainers.length > 0) {
     const id = messagesContainers[1].dataset.chatroomId;
 
     consumer.subscriptions.create({ channel: "CreekChannel", id: id }, {
@@ -17,8 +17,11 @@ const initChatroomCable = () => {
           const author = messagesContainer.querySelectorAll(".author")
           const lastAuthor = author[author.length - 1];
           scrollDown(lastAuthor);
+          const form = document.querySelectorAll('.new_message');
+          document.querySelectorAll('.new_message').forEach((form) => {
+            form.reset();
+          })
         });
-         // called when data is broadcast in the cable
       },
     });
   }
