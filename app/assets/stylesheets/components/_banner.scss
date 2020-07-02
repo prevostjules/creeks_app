@@ -26,11 +26,6 @@
     padding-bottom: 200px;
 }
 
-.brand-h2 {
-    font-size: 30px;
-    padding-top: 0px;
-}
-
 .background-visuel {
   max-width: 100%;
 }
@@ -69,28 +64,3 @@ header video {
 .header-banner {
   background-size: cover;
 }
-
-// header .container {
-//   position: relative;
-//   z-index: 2;
-// }
-
-// header .overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 100%;
-//   width: 100%;
-//   background-color: black;
-//   opacity: 0.3;
-//   z-index: 1;
-// }
-
-// @media (pointer: coarse) and (hover: none) {
-//   header {
-//     background: url('https://res.cloudinary.com/dvwipbafx/image/upload/v1593424782/banner-creek_fovod7.png') black no-repeat center center scroll;
-//   }
-//   header video {
-//     display: none;
-//   }
-// }
