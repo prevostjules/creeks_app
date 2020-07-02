@@ -9,4 +9,10 @@ class TicketsController < ApplicationController
     @ticket.save!
     redirect_to creek_path(@creek)
   end
+
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to user_path(current_user)
+  end
 end
