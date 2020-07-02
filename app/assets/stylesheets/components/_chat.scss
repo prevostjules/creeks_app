@@ -1,7 +1,6 @@
 .chat {
   max-height: 400px;
   overflow: scroll;
-  padding: 0 1rem;
 }
 
 .chat-title {
@@ -19,7 +18,8 @@
 .chat-fullscreen {
   position: sticky;
   bottom: 0;
-  #messages, .form-fullscreen {
-    position: relative;
-  }
+}
+
+.message-container {
+  margin: 1rem;
 }
