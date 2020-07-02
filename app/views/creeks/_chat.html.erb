@@ -1,20 +1,14 @@
-<div class="d-flex align-items-center justify-content-between mt-2 mb-5 m-2">
+<div class="d-flex align-items-center justify-content-between mt-2 mb-5 m-2 row">
   <%= render "infos" %>
-  <div class="d-flex flex-column">
-  <div id="messages" class="chat mt-2 messages-ok" data-chatroom-id="<%= @creek.id %>">
+  <div class="d-flex flex-column chat col-sm-6">
+  <div id="messages" class="messages-ok" data-chatroom-id="<%= @creek.id %>">
     <div class="chat-title">
-      <h2>Tchat</h2>
+      <h2>Tchat en direct</h2>
     </div>
 
     <div class="messages">
       <% @creek.messages.each do |message| %>
-        <% if message.user == current_user %>
-          <div class="text-right">
           <%= render "messages/messages", message: message %>
-          </div>
-        <% else %>
-          <%= render "messages/messages", message: message %>
-        <% end %>
       <% end %>
     </div>
 
