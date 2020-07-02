@@ -9,7 +9,7 @@
         <% if @user.description.nil? %>
           <p>Une super description</p>
         <% else %>
-          <p class="row align-self-center text-left ml-5"><%= @user.description %></p>
+          <p class="row align-self-center text-left px-5"><%= @user.description %></p>
         <% end %>
         <% if @user == current_user %>
           <%= link_to edit_user_registration_path do  %>
@@ -22,10 +22,10 @@
 
 <!-- Cards des Streams -->
 
-<div class="container">
+<div class="container mb-5">
   <% if @user.creeks.count > 0 %>
     <h2>Futurs streams de <%= @user.username %></h2>
-    <div class="cards-streamer mt-3 mb-3">
+    <div class="cards-streamer my-5">
       <% @user.creeks.each do |creek| %>
       <%= render "shared/card-creek", creek: creek %>
       <% end %>
@@ -36,7 +36,7 @@
 
   <% if @user == current_user %>
     <%= render "users/my-bookings" %>
-    <div class="padding">
+    <div class="padding my-5">
       <div class="row padding">
         <div class="col-lg-5" id="form">
           <h2>Nouveau stream</h2>
@@ -64,7 +64,7 @@
 
   <!-- Three Column Section -->
 
-  <div class="container-fluid padding">
+  <div class="container-fluid padding mb-5">
     <div class="row text-center padding">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <i class="fab"></i>
