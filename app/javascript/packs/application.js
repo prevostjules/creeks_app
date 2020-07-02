@@ -36,9 +36,9 @@ import { scrollDown } from "../components/scrollDown";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  algoliaAutocomplete();
+  loadDynamicBannerText();
   fullscreen();
   initChatroomCable();
   scrollDown();
-  algoliaAutocomplete();
-  loadDynamicBannerText();
 });
