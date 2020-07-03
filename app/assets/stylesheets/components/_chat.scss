@@ -10,6 +10,7 @@
   right: 0;
   top: 0;
   background: white;
+  border-radius: 25px;
   h2 {
     text-align: center;
   }
@@ -17,8 +18,14 @@
 
 
 .chat-fullscreen {
-  position: sticky;
-  bottom: 0;
+  position: absolute;
+  top: 13vh;
+  width: 60%;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
+  left: 69%;
+  border-radius: 41px;
+  padding: 11px;
 }
 .messages {
   display: flex;
@@ -27,17 +34,18 @@
 
 .message-container {
   padding: 1rem;
-  margin-bottom: 1rem;
   color: white;
 }
 
 .red {
   background: red;
   margin: 2rem 0;
+  border-radius: 25px;
 }
 
 .yellow {
   background: green;
   margin-bottom: 1rem;
+  border-radius: 25px;
 }
 
