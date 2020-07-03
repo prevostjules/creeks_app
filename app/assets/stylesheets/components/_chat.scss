@@ -10,7 +10,7 @@
   right: 0;
   top: 0;
   background: white;
-  border-radius: 25px;
+  border-radius: 2px;
   h2 {
     text-align: center;
   }
@@ -38,14 +38,21 @@
 }
 
 .red {
-  background: red;
-  margin: 2rem 0;
+  background: #A9A9A9;
+  margin: 1rem 1rem;
   border-radius: 25px;
+    p {
+    font-size: 1.5rem;
+  }
 }
 
 .yellow {
-  background: green;
-  margin-bottom: 1rem;
+  background: #0D1030;
+  margin: 1rem 1rem;
   border-radius: 25px;
+
+  p {
+    font-size: 1.5rem;
+  }
 }
 
