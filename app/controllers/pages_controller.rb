@@ -15,6 +15,7 @@ class PagesController < ApplicationController
       end
     elsif params[:ask].present?
       current_user.update!(ask_to_become_streamer: true)
+      flash[:alert] = "Votre demande pour devenir streamer a bien été prise en compte. Nous reviendrons vers vous au plus vite. Merci."
     end
   end
 
