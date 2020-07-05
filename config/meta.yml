@@ -1,0 +1,5 @@
+meta_product_name: "CreeksApp"
+meta_title: "Tous les lives de vos influenceurs préférés"
+meta_description: "CreeksApp permet aux influenceurs de proposer des streams à un public payant et aux fans de consulter du contenu exclusif."
+meta_image: "creeksapp.jpg" # should exist in `app/assets/images/`
+twitter_account: "@prevost_jules"
