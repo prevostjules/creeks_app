@@ -1,7 +1,7 @@
 <!-- CARD STREAMER SHOW -->
 
 <div class="card-streamer card-border">
-<%= cl_image_tag creek.photo.key, class: "stream-resa border-radius-left" %>
+<%= cl_image_tag creek.photo.key, class: "stream-resa border-radius-left", secure: true %>
   <div class="card-body">
     <h5 class="card-title"><%= creek.title %></h5>
     <p class="card-text"><%= DateTime.iso8601(creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>

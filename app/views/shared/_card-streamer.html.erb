@@ -1,6 +1,6 @@
 <div class="card-streamer card-border position-relative">
   <div class="pl-3 d-flex flex-basis-160">
-    <%= cl_image_tag user.photo.key, class: "avatar-large", crop: :fill %>
+    <%= cl_image_tag user.photo.key, class: "avatar-large", crop: :fill, secure: true %>
   </div>
   <div class="card-body ">
     <div class="d-flex align-items-center">

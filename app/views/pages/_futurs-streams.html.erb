@@ -4,9 +4,9 @@
     <% @creeks.each do |creek| %>
       <div class="card card-futur">
         <% if creek.photo.attached? %>
-          <%= cl_image_tag creek.photo.key, class: "card-img-top border-radius-top"%>
+          <%= cl_image_tag creek.photo.key, class: "card-img-top border-radius-top", secure: true %>
         <% else %>
-          <%= cl_image_tag "https://res.cloudinary.com/dvwipbafx/image/upload/v1593075027/petit_visuel_ehlhxj.png", class: "card-img-top" %>
+          <%= cl_image_tag "img%20projet/stream/person-taking-video-1654691_v82yat.jpg", class: "card-img-top", secure: true %>
         <% end %>
         <div class="card-body">
           <div class="d-flex justify-content-between">
