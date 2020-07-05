@@ -13,6 +13,8 @@ class PagesController < ApplicationController
       else
         current_user.update!(access_token: results["access_token"], refresh_token: results["refresh_token"])
       end
+    elsif params[:ask].present?
+      current_user.update!(ask_to_become_streamer: true)
     end
   end
 

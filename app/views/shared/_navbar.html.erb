@@ -49,6 +49,7 @@
                 <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% else %>
                 <%= link_to "Mes réservations", user_path(current_user), class: "dropdown-item"  %>
+                <%= link_to "Modifier mes infos", edit_user_registration_path, class: "dropdown-item" %>
                 <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               <% end %>
             </div>
