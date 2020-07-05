@@ -26,6 +26,7 @@ categories.each do |category|
   end
 end
 
+Contact.destroy_all
 Message.destroy_all
 Ticket.destroy_all
 Creek.destroy_all
