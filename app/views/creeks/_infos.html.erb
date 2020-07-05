@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center col-sm-6" id="infos-streamer">
-  <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big", width:160, height:160, crop: :fill %>
+  <%= cl_image_tag @creek.user.photo.key, alt: "coach", class: "avatar-big", width:160, height:160, crop: :fill, secure: true %>
   <div class="d-flex flex-column ml-3">
     <h2><%= @creek.title %></h2>
     <h3><%= @creek.user.username %></h3>

@@ -27,6 +27,11 @@ class PagesController < ApplicationController
     elsif params[:category].present?
       @category = Category.find_by(name: params[:category])
       @creeks = Creek.all.select{ |creek| creek.category == @category}
+      users = []
+      @creeks.each do |creek|
+        users << creek.user
+      end
+      @users = users
     else
       @users = User.all.select{ |user| user.role == "streamer"}
     end

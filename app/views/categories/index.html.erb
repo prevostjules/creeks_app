@@ -4,7 +4,7 @@
     <% @categories.each do |category| %>
       <div class="col-4 pb-5">
         <%= link_to pages_path(:category => category.name), class:"link-card-product" do %>
-            <%= image_tag category.photo, class: "card-img-top border-radius-top img-fluid" %>
+            <%= cl_image_tag category.photo.key, class: "card-img-top border-radius-top img-fluid", secure: true %>
 
             <div class="card-product py-3 text-center">
 

@@ -3,7 +3,7 @@
     <h2 class="text-center mt-5 mb-3">Mes réservations</h2>
     <% @tickets.each do |ticket| %>
       <div class="card-show-streamer card-border">
-        <%= cl_image_tag ticket.creek.photo.key, class: "stream-resa border-radius-left" %>
+        <%= cl_image_tag ticket.creek.photo.key, class: "stream-resa border-radius-left", secure: true %>
         <div class="card-body">
           <h5 class="card-title"><%= ticket.creek.title %></h5>
           <p class="card-text"><%= DateTime.iso8601(ticket.creek.scheduledStartTime).strftime('%A %d %b %Y %I:%M %p') %></p>
