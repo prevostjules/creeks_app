@@ -8,8 +8,16 @@
   <% end %>
   <% if @users&.count == 1 %>
     <%= render "shared/card-streamer", user: @users.first %>
-    <% @users.first.creeks.each do |creek| %>
-      <%= render "shared/card-creek", creek: creek %>
+    <% if params[:category] %>
+      <% @users.first.creeks.each do |creek| %>
+        <% if creek.category.name == params[:category] %>
+          <%= render "shared/card-creek", creek: creek %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% @users.first.creeks.each do |creek| %>
+        <%= render "shared/card-creek", creek: creek %>
+      <% end %>
     <% end %>
   <% elsif @creeks&.count == 1%>
     <% @creeks.each do |creek| %>
@@ -19,6 +27,13 @@
     <div class="container-fluid">
       <% @users.each do |user| %>
         <%= render "shared/card-streamer", user: user %>
+        <% if params[:category] %>
+          <% user.creeks.each do |creek| %>
+            <% if creek.category.name == params[:category] %>
+              <%= render "shared/card-creek", creek: creek %>
+            <% end %>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   <% else %>
