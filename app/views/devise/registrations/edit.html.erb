@@ -23,7 +23,8 @@
                   input_html: { autocomplete: "mot de passe actuel" } %>
       <% if current_user.streamer? %>
         <%= f.input :description %>
-        <%#= f.association :category %>
+      <% else %>
+        <%= link_to "Demander à devenir streamer", root_path(:ask => true) %>
       <% end %>
     </div>
 
