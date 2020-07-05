@@ -27,7 +27,7 @@ class CreeksController < ApplicationController
         results = JSON.parse(call_youtube_api)
         @creek.id_broadcast = results["id"]
         @creek.update!(id_broadcast: results["id"], stream_id: stream_params["id"], stream_name: stream_params["cdn"]["ingestionInfo"]["streamName"])
-        link_broadcast_to_stream(results["id"], @creek.stream_id)
+        link_broadcast_to_stream(results["id"], stream_params["id"])
         flash[:alert] = results
         redirect_to creek_path(@creek)
       else
