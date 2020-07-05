@@ -17,9 +17,9 @@
 
 const fullscreen = () => {
   const elem = document.getElementById("fullscreen");
-const btn = document.getElementById("fullscreen-btn");
-const iframe = document.getElementById("fullscreen-iframe");
-const chat = document.getElementById("chat-fullscreen");
+  const btn = document.getElementById("fullscreen-btn");
+  const iframe = document.getElementById("fullscreen-iframe");
+  const chat = document.getElementById("chat-fullscreen");
   if (elem) {
     btn.addEventListener("click", (event) => {
       elem.requestFullscreen();
