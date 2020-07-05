@@ -41,10 +41,11 @@ class CreeksController < ApplicationController
   def update
     if check_credentials && @creek.update!(set_params)
       delete_broadcast
+      stream_params = create_stream_params
       results = JSON.parse(call_youtube_api)
       @creek.id_broadcast = results["id"]
-      @creek.update!(id_broadcast: results["id"])
-      link_broadcast_to_stream(results["id"], current_user.stream_id)
+      @creek.update!(id_broadcast: results["id"], stream_id: stream_params["id"], stream_name: stream_params["cdn"]["ingestionInfo"]["streamName"])
+      link_broadcast_to_stream(results["id"], @creek.stream_id)
       flash[:alert] = results
       redirect_to creek_path(@creek)
     else
