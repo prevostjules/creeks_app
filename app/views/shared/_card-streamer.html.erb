@@ -7,7 +7,7 @@
       <h2><%= user.username %></h2>
       <span class="count pl-3"><%= user.creeks.count %> creeks</span>
     </div>
-    <p class="pt-5"><%= user.description %></p>
+    <p class="center-vertically"><%= user.description %></p>
   </div>
   <div class="d-flex w-25 align-items-end ">
     <%= link_to "Voir Profil", user_path(user), class: "link icon-profil" %>
