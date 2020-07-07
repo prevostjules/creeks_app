@@ -21,5 +21,6 @@
 @include mobile-only {
   .none-mobile {
     display: none;
+    z-index: -3;
   }
 }

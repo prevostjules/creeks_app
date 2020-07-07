@@ -26,6 +26,12 @@
   left: 69%;
   border-radius: 41px;
   padding: 11px;
+  @include mobile-only {
+    top: 12vh;
+    width: 22%;
+    left: 78%;
+    padding: 0px;
+  }
 }
 .messages {
   display: flex;
@@ -41,6 +47,9 @@
   background: #A9A9A9;
   margin: 1rem 9rem 1rem 1rem;
   border-radius: 25px;
+  @include mobile-only {
+    margin: 1rem 3rem 1rem 1rem;
+  }
     p {
     font-size: 1.5rem;
   }
@@ -50,6 +59,9 @@
   background: #0D1030;
   margin: 1rem 1rem 1rem 9rem;
   border-radius: 25px;
+  @include mobile-only {
+    margin: 1rem 1rem 1rem 3rem;
+  }
 
   p {
     font-size: 1.5rem;
