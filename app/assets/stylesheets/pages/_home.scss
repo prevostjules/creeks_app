@@ -14,3 +14,9 @@
 .color-primary {
   color: $color-primary;
 }
+
+@include mobile-only {
+  #carouselExampleSlidesOnly {
+    display: none;
+  }
+}

@@ -24,8 +24,18 @@
 
   img {
     width: 54px;
+    height: auto;
+  @include mobile-only {
+    width: 42px;
+  }
   }
 }
+
+  .nav-item {
+    @include mobile-only {
+      font-size: 0.45rem;
+    }
+  }
 
 .nav-item
   a {
@@ -44,3 +54,23 @@
 .dropdown-item:hover {
   background-color: transparent;
 }
+
+.nav-mobile {
+  display: none;
+  @include mobile-only {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.collapse:not(.show) {
+  display: flex
+}
+
+.navbar-nav .dropdown-menu {
+  @include mobile-only {
+    position: absolute;
+  }
+}
+
+

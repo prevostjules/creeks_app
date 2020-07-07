@@ -2,7 +2,7 @@
   <h1 class="text-center my-5">Categories</h1>
   <div class="row">
     <% @categories.each do |category| %>
-      <div class="col-4 pb-5">
+      <div class="col-12 col-sm-4 pb-5">
         <%= link_to pages_path(:category => category.name), class:"link-card-product" do %>
             <%= cl_image_tag category.photo.key, class: "card-img-top border-radius-top img-fluid", secure: true %>
 

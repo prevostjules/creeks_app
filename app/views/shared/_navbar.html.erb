@@ -2,9 +2,9 @@
   <div class="col-6 d-flex align-items-center">
     <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
       <%= image_tag "noun_creek_22411.svg" %>
-      <h2 class="ml-3">creeks.app</h2>
+      <h2 class="ml-3 none-mobile">creeks.app</h2>
     <% end %>
-    <ul class="nav">
+    <ul class="nav none-mobile">
       <li class="nav-item">
         <%= link_to "Catégories", categories_path, class:"nav-link"  %>
       </li>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="col-6 d-flex justify-content-end">
-    <ul class="nav mr-4">
+    <ul class="nav">
       <li class="nav-item">
         <%= form_tag pages_path, method: :get, class: "aa-input-container", id: 'aa-input-container' do |f| %>
           <%= text_field_tag :query,

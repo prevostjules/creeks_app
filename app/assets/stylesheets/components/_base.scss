@@ -12,3 +12,14 @@
   color: white;
   text-shadow: black 0.1em 0.1em 0.2em
 }
+
+.max-100-img {
+  max-width: 100%;
+  height: auto;
+}
+
+@include mobile-only {
+  .none-mobile {
+    display: none;
+  }
+}
