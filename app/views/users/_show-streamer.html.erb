@@ -9,7 +9,7 @@
         <% if @user.description.nil? %>
           <p>Une super description</p>
         <% else %>
-          <p class="row align-self-center text-left px-5"><%= @user.description %></p>
+          <p class="row text-center align-items-center m-2"><%= @user.description %></p>
         <% end %>
         <% if @user == current_user %>
           <%= link_to edit_user_registration_path do  %>
@@ -25,7 +25,7 @@
 <div class="container mb-5">
   <% if @user.creeks.count > 0 %>
     <h2>Futurs streams de <%= @user.username %></h2>
-    <div class="cards-streamer my-5">
+    <div class="my-5">
       <% @user.creeks.each do |creek| %>
       <%= render "shared/card-creek", creek: creek %>
       <% end %>

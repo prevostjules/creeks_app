@@ -17,8 +17,12 @@
 }
 
 .type {
-    font-size: 110px;
-    font-weight: bold;
+  font-size: 110px;
+  font-weight: bold;
+  @include mobile-only {
+    font-size: 4rem;
+    text-align: center;
+  }
 }
 
 .brand-h1 {
