@@ -5,11 +5,11 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
 
-  include AlgoliaSearch
+  # include AlgoliaSearch
 
-  algoliasearch do
-    attributes :name
-  end
+  # algoliasearch do
+  #   attributes :name
+  # end
 
   after_save { creeks.each(&:touch) }
 end

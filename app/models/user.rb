@@ -14,13 +14,13 @@ class User < ApplicationRecord
   validates :description, presence: true, on: :update, if: :is_streamer?
   validates :photo, if: :is_streamer?, presence: true
 
-  include AlgoliaSearch
+  # include AlgoliaSearch
 
-  algoliasearch do
-    attributes :username
-    attributes :role
-    # attributeForDistinct "1"
-  end
+  # algoliasearch do
+  #   attributes :username
+  #   attributes :role
+  #   # attributeForDistinct "1"
+  # end
 
 
   private

@@ -16,12 +16,12 @@ class Creek < ApplicationRecord
   validates :scheduledStartTime, presence: true
   validates :price, presence: true
 
-  include AlgoliaSearch
+  # include AlgoliaSearch
 
-  algoliasearch do
-    attributes :title, :description
-    attributes :category do
-      { name: category.name }
-    end
-  end
+  # algoliasearch do
+  #   attributes :title, :description
+  #   attributes :category do
+  #     { name: category.name }
+  #   end
+  # end
 end
