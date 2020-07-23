@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!
   def show
     @creek = Creek.new
     @user = User.find(params[:id])
